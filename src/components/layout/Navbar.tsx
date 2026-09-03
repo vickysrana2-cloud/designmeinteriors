@@ -1,25 +1,20 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Menu,
+  X,
   ArrowUpRight,
   Phone,
   Mail,
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-  SheetClose,
-} from "@/components/ui/sheet";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
@@ -33,9 +28,15 @@ const NAV_ITEMS = [
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
 
   const isHomePage = pathname === "/";
   const isHeroNavbar = isHomePage && !scrolled;
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -49,6 +50,34 @@ export function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  // Lock body scroll when drawer is open
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Close drawer when navigating to a new path
+  React.useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Close drawer on Escape key press
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   return (
@@ -199,96 +228,128 @@ export function Navbar() {
         </div>
 
         {/* =====================================================
-            MOBILE MENU
+            MOBILE MENU (FRAMER MOTION ANIMATED DRAWER)
         ====================================================== */}
         <div className="md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                aria-label="Open Navigation Menu"
-                className={
-                  isHeroNavbar
-                    ? "text-white hover:bg-white/10 hover:text-white"
-                    : "text-[#1E1C1A]"
-                }
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Open Navigation Menu"
+            onClick={() => setIsOpen(true)}
+            className={
+              isHeroNavbar
+                ? "text-white hover:bg-white/10 hover:text-white"
+                : "text-[#1E1C1A]"
+            }
+          >
+            <Menu className="h-6 w-6" />
+          </Button>
 
-            <SheetContent
-              side="right"
-              className="flex flex-col justify-between pt-12"
-            >
-              <SheetHeader className="border-b border-[#DCD5CB] pb-6 text-left">
-                <SheetTitle className="sr-only">DesignMeInteriors</SheetTitle>
-                <Image
-                  src="/designMeLogo.svg"
-                  alt="DesignMeInteriors"
-                  width={160}
-                  height={50}
-                  className="h-10 w-auto object-contain mb-1"
-                />
+          {mounted &&
+            createPortal(
+              <AnimatePresence>
+                {isOpen && (
+                  <>
+                    {/* Backdrop Overlay */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      onClick={() => setIsOpen(false)}
+                      className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm"
+                    />
 
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Architecture & Interior Design
-                </p>
-              </SheetHeader>
-
-              {/* Mobile navigation */}
-              <div className="my-auto flex flex-col gap-6">
-                {NAV_ITEMS.map((item) => {
-                  const isActive = pathname === item.href;
-
-                  return (
-                    <SheetClose asChild key={item.href}>
-                      <Link
-                        href={item.href}
-                        className={`
-                          font-serif
-                          text-xl
-                          transition-colors
-                          ${isActive
-                            ? "text-[#C86D51]"
-                            : "text-[#1E1C1A] hover:text-[#C86D51]"
-                          }
-                        `}
+                    {/* Side Drawer Content */}
+                    <motion.aside
+                      initial={{ x: "100%" }}
+                      animate={{ x: 0 }}
+                      exit={{ x: "100%" }}
+                      transition={{
+                        duration: 0.3,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                      className="fixed inset-y-0 right-0 top-0 z-[9999] flex h-full w-3/4 max-w-sm flex-col justify-between overflow-y-auto border-l border-[#DCD5CB] bg-[#F9F8F5] p-6 pt-12 shadow-2xl"
+                    >
+                      {/* Close Button */}
+                      <button
+                        onClick={() => setIsOpen(false)}
+                        className="absolute right-6 top-6 z-10 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none"
+                        aria-label="Close menu"
                       >
-                        {item.label}
-                      </Link>
-                    </SheetClose>
-                  );
-                })}
-              </div>
+                        <X className="h-6 w-6 text-[#1E1C1A]" />
+                      </button>
 
-              {/* Mobile details */}
-              <div className="flex flex-col gap-4 border-t border-[#DCD5CB] pt-6">
-                <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                  <Phone className="h-4 w-4 text-[#C86D51]" />
-                  <span>+1 (212) 555-0198</span>
-                </div>
+                      <div className="border-b border-[#DCD5CB] pb-6 text-left">
+                        <span className="sr-only">DesignMeInteriors</span>
+                        <Image
+                          src="/designMeLogo.svg"
+                          alt="DesignMeInteriors"
+                          width={160}
+                          height={50}
+                          className="mb-1 h-10 w-auto object-contain"
+                        />
 
-                <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                  <Mail className="h-4 w-4 text-[#C86D51]" />
-                  <span>concierge@designmeinteriors.com</span>
-                </div>
+                        <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                          Architecture & Interior Design
+                        </p>
+                      </div>
 
-                <SheetClose asChild>
-                  <Button
-                    asChild
-                    variant="accent"
-                    className="mt-2 w-full"
-                  >
-                    <Link href="/contact">
-                      Inquire Project
-                    </Link>
-                  </Button>
-                </SheetClose>
-              </div>
-            </SheetContent>
-          </Sheet>
+                      {/* Mobile navigation */}
+                      <div className="my-auto flex flex-col gap-6 py-6">
+                        {NAV_ITEMS.map((item) => {
+                          const isActive = pathname === item.href;
+
+                          return (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setIsOpen(false)}
+                              className={`
+                                font-serif
+                                text-xl
+                                transition-colors
+                                ${isActive
+                                  ? "text-[#C86D51]"
+                                  : "text-[#1E1C1A] hover:text-[#C86D51]"
+                                }
+                              `}
+                            >
+                              {item.label}
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      {/* Mobile details */}
+                      <div className="flex flex-col gap-4 border-t border-[#DCD5CB] pt-6">
+                        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                          <Phone className="h-4 w-4 text-[#C86D51]" />
+                          <span>+1 (212) 555-0198</span>
+                        </div>
+
+                        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                          <Mail className="h-4 w-4 text-[#C86D51]" />
+                          <span>concierge@designmeinteriors.com</span>
+                        </div>
+
+                        <Button
+                          asChild
+                          variant="accent"
+                          className="mt-2 w-full"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <Link href="/contact">
+                            Inquire Project
+                          </Link>
+                        </Button>
+                      </div>
+                    </motion.aside>
+                  </>
+                )}
+              </AnimatePresence>,
+              document.body
+            )}
         </div>
       </div>
     </header>
