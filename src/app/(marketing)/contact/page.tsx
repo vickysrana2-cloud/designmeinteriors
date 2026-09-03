@@ -122,12 +122,12 @@ function ContactForm() {
   };
 
   return (
-    <div className="bg-white border border-[#E5DFD5] p-8 sm:p-12 shadow-sm space-y-8">
+    <div className="bg-[#FCFBF8] border border-[#D7D0C5] p-8 sm:p-12 shadow-sm space-y-8">
       <div>
-        <h2 className="text-2xl sm:text-3xl font-serif text-[#1E1C1A]">
+        <h2 className="text-2xl sm:text-3xl font-serif text-[#242321]">
           Consultation Request
         </h2>
-        <p className="text-xs text-muted-foreground mt-1">
+        <p className="text-xs text-[#706B63] mt-1">
           Fill out the form below and our client director will contact you within 24 hours.
         </p>
       </div>
@@ -160,7 +160,7 @@ function ContactForm() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-wider font-semibold text-[#1E1C1A]">
+              <label className="text-xs uppercase tracking-wider font-semibold text-[#242321]">
                 Full Name *
               </label>
               <Input
@@ -174,7 +174,7 @@ function ContactForm() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-wider font-semibold text-[#1E1C1A]">
+              <label className="text-xs uppercase tracking-wider font-semibold text-[#242321]">
                 Email Address *
               </label>
               <Input
@@ -191,7 +191,7 @@ function ContactForm() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-wider font-semibold text-[#1E1C1A]">
+              <label className="text-xs uppercase tracking-wider font-semibold text-[#242321]">
                 Phone Number
               </label>
               <Input
@@ -204,7 +204,7 @@ function ContactForm() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-wider font-semibold text-[#1E1C1A]">
+              <label className="text-xs uppercase tracking-wider font-semibold text-[#242321]">
                 Project Location
               </label>
               <Input
@@ -219,11 +219,11 @@ function ContactForm() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-wider font-semibold text-[#1E1C1A]">
+              <label className="text-xs uppercase tracking-wider font-semibold text-[#242321]">
                 Service Category
               </label>
               <select
-                className="w-full h-12 border border-[#DCD5CB] bg-transparent px-4 text-sm focus:outline-none focus:border-[#1E1C1A]"
+                className="w-full h-12 border border-[#D7D0C5] bg-[#FCFBF8] text-[#242321] px-4 text-sm focus:outline-none focus:border-[#9A8060]"
                 value={formData.serviceType}
                 onChange={(e) =>
                   setFormData({
@@ -248,11 +248,11 @@ function ContactForm() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-wider font-semibold text-[#1E1C1A]">
+              <label className="text-xs uppercase tracking-wider font-semibold text-[#242321]">
                 Estimated Budget
               </label>
               <select
-                className="w-full h-12 border border-[#DCD5CB] bg-transparent px-4 text-sm focus:outline-none focus:border-[#1E1C1A]"
+                className="w-full h-12 border border-[#D7D0C5] bg-[#FCFBF8] text-[#242321] px-4 text-sm focus:outline-none focus:border-[#9A8060]"
                 value={formData.budget}
                 onChange={(e) =>
                   setFormData({ ...formData, budget: e.target.value })
@@ -270,7 +270,7 @@ function ContactForm() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs uppercase tracking-wider font-semibold text-[#1E1C1A]">
+            <label className="text-xs uppercase tracking-wider font-semibold text-[#242321]">
               Project Overview & Vision *
             </label>
             <Textarea
@@ -307,23 +307,23 @@ function ContactForm() {
 
 export default function ContactPage() {
   return (
-    <div className="bg-[#F9F8F5]">
+    <div className="bg-[#F5F2EC]">
       {/* Page Hero */}
       <section
-        className="relative py-28 border-b border-[#DCD5CB] bg-cover bg-center bg-no-repeat overflow-hidden"
+        className="relative py-28 border-b border-[#D7D0C5] bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{ backgroundImage: "url('/contact-sketch.png')" }}
       >
-        <div className="absolute inset-0 bg-[#F9F8F5]/85 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-[#F5F2EC]/85 backdrop-blur-[1px]" />
 
         <div className="relative max-w-7xl mx-auto px-6 md:px-12">
           <div className="max-w-3xl space-y-4">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C86D51] font-semibold">
+            <span className="text-xs uppercase tracking-[0.25em] text-[#9A8060] font-semibold">
               Inquire Project
             </span>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#1E1C1A] leading-tight">
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#242321] leading-tight">
               Let&apos;s shape your space together.
             </h1>
-            <p className="text-base sm:text-lg text-muted-foreground font-light leading-relaxed">
+            <p className="text-base sm:text-lg text-[#706B63] font-light leading-relaxed">
               Whether you are planning a private coastal sanctuary, an urban
               loft, or a commercial flagship, we invite you to start a
               conversation with our studio.
@@ -333,11 +333,11 @@ export default function ContactPage() {
       </section>
 
       {/* Main Form & Contact Info Section */}
-      <section id="contact-form" className="py-20 border-b border-[#DCD5CB]">
+      <section id="contact-form" className="py-20 border-b border-[#D7D0C5]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-7">
-              <React.Suspense fallback={<div className="p-8 bg-white border border-[#E5DFD5]">Loading inquiry form...</div>}>
+              <React.Suspense fallback={<div className="p-8 bg-[#FCFBF8] border border-[#D7D0C5] text-[#706B63]">Loading inquiry form...</div>}>
                 <ContactForm />
               </React.Suspense>
             </div>
@@ -345,13 +345,13 @@ export default function ContactPage() {
             {/* Direct Studio Info */}
             <div className="lg:col-span-5 space-y-8">
               <div className="space-y-3">
-                <span className="text-xs uppercase tracking-[0.25em] text-[#C86D51] font-semibold">
+                <span className="text-xs uppercase tracking-[0.25em] text-[#9A8060] font-semibold">
                   Global Presence
                 </span>
-                <h2 className="text-3xl font-serif text-[#1E1C1A]">
+                <h2 className="text-3xl font-serif text-[#242321]">
                   Our Studio Offices
                 </h2>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-xs text-[#706B63] leading-relaxed">
                   Visit our studios by appointment for material inspections and spatial blueprint reviews.
                 </p>
               </div>
@@ -360,28 +360,28 @@ export default function ContactPage() {
                 {OFFICES.map((office, idx) => (
                   <div
                     key={idx}
-                    className="bg-white border border-[#E5DFD5] p-6 space-y-3 shadow-sm"
+                    className="bg-[#FCFBF8] border border-[#D7D0C5] p-6 space-y-3 shadow-sm"
                   >
-                    <h3 className="text-lg font-serif text-[#1E1C1A]">
+                    <h3 className="text-lg font-serif text-[#242321]">
                       {office.city}
                     </h3>
-                    <div className="space-y-1.5 text-xs text-muted-foreground">
+                    <div className="space-y-1.5 text-xs text-[#706B63]">
                       <p className="flex items-center gap-2">
-                        <MapPin className="w-3.5 h-3.5 text-[#C86D51] shrink-0" />
+                        <MapPin className="w-3.5 h-3.5 text-[#9A8060] shrink-0" />
                         <span>
                           {office.address}, {office.district}
                         </span>
                       </p>
                       <p className="flex items-center gap-2">
-                        <Phone className="w-3.5 h-3.5 text-[#C86D51] shrink-0" />
+                        <Phone className="w-3.5 h-3.5 text-[#9A8060] shrink-0" />
                         <span>{office.phone}</span>
                       </p>
                       <p className="flex items-center gap-2">
-                        <Mail className="w-3.5 h-3.5 text-[#C86D51] shrink-0" />
+                        <Mail className="w-3.5 h-3.5 text-[#9A8060] shrink-0" />
                         <span>{office.email}</span>
                       </p>
-                      <p className="flex items-center gap-2 pt-1 border-t border-[#F0ECE4]">
-                        <Clock className="w-3.5 h-3.5 text-[#C86D51] shrink-0" />
+                      <p className="flex items-center gap-2 pt-1 border-t border-[#D7D0C5]">
+                        <Clock className="w-3.5 h-3.5 text-[#9A8060] shrink-0" />
                         <span>{office.hours}</span>
                       </p>
                     </div>
@@ -394,13 +394,13 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-[#F2EFE9]">
+      <section className="py-20 bg-[#E8E1D7]">
         <div className="max-w-4xl mx-auto px-6 md:px-12 space-y-8">
           <div className="text-center space-y-2">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C86D51] font-semibold">
+            <span className="text-xs uppercase tracking-[0.25em] text-[#9A8060] font-semibold">
               Clarifications
             </span>
-            <h2 className="text-3xl font-serif text-[#1E1C1A]">
+            <h2 className="text-3xl font-serif text-[#242321]">
               Frequently Asked Questions
             </h2>
           </div>
@@ -408,14 +408,14 @@ export default function ContactPage() {
           <Accordion
             type="single"
             collapsible
-            className="bg-white p-6 border border-[#E5DFD5]"
+            className="bg-[#FCFBF8] p-6 border border-[#D7D0C5]"
           >
             {FAQS.map((faq, idx) => (
               <AccordionItem key={idx} value={`faq-${idx}`}>
-                <AccordionTrigger className="hover:no-underline font-serif text-[#1E1C1A]">
+                <AccordionTrigger className="hover:no-underline font-serif text-[#242321]">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-xs sm:text-sm text-[#706B63] leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

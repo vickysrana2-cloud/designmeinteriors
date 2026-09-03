@@ -4,6 +4,7 @@ export const residentialDesign: Service = {
   slug: "residential-design",
   number: "02",
   title: "Bespoke Residential Design",
+  category: "Residential",
   shortDescription: "End-to-end luxury residence crafting—from private coastal estates to high-rise city lofts—balancing timeless elegance with daily comfort.",
   description: "Our residential studio creates bespoke living environments that reflect the unique lifestyle and personal aesthetic of private clients. From custom joinery to rare stone sourcing, we deliver sanctuaries of calm and distinction.",
   image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",

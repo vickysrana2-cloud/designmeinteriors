@@ -4,6 +4,7 @@ export const commercialSpaces: Service = {
   slug: "commercial-spaces",
   number: "03",
   title: "Commercial & Workspace",
+  category: "Commercial",
   shortDescription: "Brand-defining commercial environments, boutique retail flagship stores, and inspiring corporate headquarters engineered for productivity.",
   description: "We design biophilic, performance-driven commercial spaces that elevate company culture and showcase brand identity. From acoustics to flexible spatial modules, our designs foster collaboration, innovation, and well-being.",
   image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",

@@ -26,7 +26,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "space-between",
-          backgroundColor: "#1E1C1A",
+          backgroundColor: "#191816",
           padding: "60px 80px",
           color: "#ffffff",
           fontFamily: "serif",
@@ -38,7 +38,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
               width: "12px",
               height: "12px",
               borderRadius: "50%",
-              backgroundColor: "#C86D51",
+              backgroundColor: "#9A8060",
             }}
           />
           <span
@@ -46,7 +46,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
               fontSize: 16,
               letterSpacing: "4px",
               textTransform: "uppercase",
-              color: "#C86D51",
+              color: "#9A8060",
             }}
           >
             {category}

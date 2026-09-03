@@ -10,18 +10,18 @@ import {
 
 export function ProcessAccordion() {
   return (
-    <section className="bg-[#F4F2EC] py-24 border-t border-[#DCD5CB]">
+    <section className="bg-[#E8E1D7] py-24 border-t border-[#D7D0C5]">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
           {/* Header */}
           <div className="space-y-4 lg:col-span-5">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#C86D51]">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
               Work Methodology
             </span>
-            <h2 className="font-serif text-3xl text-[#1E1C1A] sm:text-5xl leading-tight">
+            <h2 className="font-serif text-3xl text-[#242321] sm:text-5xl leading-tight">
               Our 4-Phase Architectural Process.
             </h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-[#706B63] leading-relaxed">
               From foundational spatial discovery to white-glove site delivery, every commission follows a disciplined workflow.
             </p>
           </div>
@@ -33,19 +33,19 @@ export function ProcessAccordion() {
                 <AccordionItem
                   key={item.step}
                   value={`item-${index}`}
-                  className="border border-[#E5DFD5] bg-white px-6 py-2 shadow-sm transition-colors data-[state=open]:border-[#C86D51]"
+                  className="border border-[#D7D0C5] bg-[#FCFBF8] px-6 py-2 transition-colors data-[state=open]:border-[#9A8060]"
                 >
                   <AccordionTrigger className="hover:no-underline">
                     <div className="flex items-center gap-6 text-left">
-                      <span className="font-serif text-lg font-bold text-[#C86D51]">
+                      <span className="font-serif text-lg font-bold text-[#9A8060]">
                         {item.step}
                       </span>
-                      <span className="font-serif text-xl text-[#1E1C1A]">
+                      <span className="font-serif text-xl text-[#242321]">
                         {item.title}
                       </span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="pt-2 text-sm text-muted-foreground leading-relaxed">
+                  <AccordionContent className="pt-2 text-sm text-[#706B63] leading-relaxed">
                     {item.description}
                   </AccordionContent>
                 </AccordionItem>

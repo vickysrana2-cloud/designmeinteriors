@@ -13,6 +13,7 @@ export interface Service {
   slug: string;
   number?: string;
   title: string;
+  category?: string;
   shortDescription: string;
   description: string;
   image: string;

@@ -21,7 +21,7 @@ const TEAM = [
 
 export function LeadershipTeam() {
   return (
-    <section className="border-b border-[#DCD5CB] py-24">
+    <section className="border-b border-[#D7D0C5] py-24">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
 
         {/* Header */}
@@ -36,11 +36,11 @@ export function LeadershipTeam() {
           className="flex flex-col justify-between gap-6 pb-12 md:flex-row md:items-end"
         >
           <div className="space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#C86D51]">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
               Leadership
             </span>
 
-            <h2 className="font-serif text-3xl text-[#1E1C1A] sm:text-4xl">
+            <h2 className="font-serif text-3xl text-[#242321] sm:text-4xl">
               The Minds Behind DesignMeInteriors
             </h2>
           </div>
@@ -76,17 +76,17 @@ export function LeadershipTeam() {
                 w-full
                 max-w-[430px]
                 overflow-hidden
+                rounded-2xl
                 border
-                border-[#E5DFD5]
-                bg-white
-                shadow-sm
+                border-[#D7D0C5]
+                bg-[#FCFBF8]
                 transition-shadow
                 duration-500
                 hover:shadow-xl
               "
             >
               {/* Image */}
-              <div className="relative h-72 w-full overflow-hidden">
+              <div className="relative m-3 mb-0 h-72 overflow-hidden rounded-xl">
                 <Image
                   src={member.image}
                   alt={member.name}
@@ -125,7 +125,7 @@ export function LeadershipTeam() {
                     top-0
                     h-[2px]
                     w-0
-                    bg-[#C86D51]
+                    bg-[#9A8060]
                     transition-all
                     duration-500
                     ease-out
@@ -133,15 +133,15 @@ export function LeadershipTeam() {
                   "
                 />
 
-                <h3 className="font-serif text-lg text-[#1E1C1A] transition-colors duration-300 group-hover:text-[#C86D51]">
+                <h3 className="font-serif text-lg text-[#242321] transition-colors duration-300 group-hover:text-[#9A8060]">
                   {member.name}
                 </h3>
 
-                <span className="block text-xs font-medium uppercase tracking-wider text-[#C86D51]">
+                <span className="block text-xs font-medium uppercase tracking-wider text-[#9A8060]">
                   {member.role}
                 </span>
 
-                <p className="pt-2 text-xs leading-relaxed text-muted-foreground">
+                <p className="pt-2 text-xs leading-relaxed text-[#706B63]">
                   {member.bio}
                 </p>
               </div>

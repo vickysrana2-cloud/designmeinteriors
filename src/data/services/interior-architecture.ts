@@ -4,6 +4,7 @@ export const interiorArchitecture: Service = {
   slug: "interior-architecture",
   number: "01",
   title: "Interior Architecture",
+  category: "Architecture",
   shortDescription: "Full spatial restructuring, floorplan engineering, and structural refinement tailored to optimize light flow and human experience.",
   description: "Interior Architecture goes beyond superficial decoration. We engineer and reimagine physical environments from structural layouts to ceiling details, ensuring proportion, natural lighting, and architectural harmony in every project.",
   image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",

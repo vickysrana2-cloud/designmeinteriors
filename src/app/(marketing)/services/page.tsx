@@ -13,7 +13,7 @@ export default function ServicesPage() {
   const services = getAllServices();
 
   return (
-    <div className="bg-[#F9F8F5]">
+    <div className="bg-[#F5F2EC]">
       <ServiceHero
         title="Comprehensive Architectural & Interior Services."
         subtitle="Capabilities & Expertise"

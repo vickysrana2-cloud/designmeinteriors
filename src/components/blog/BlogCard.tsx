@@ -42,18 +42,18 @@ export function BlogCard({ blog }: BlogCardProps) {
         flex
         flex-col
         overflow-hidden
+        rounded-2xl
         border
-        border-[#E5DFD5]
-        bg-white
-        shadow-sm
+        border-[#D7D0C5]
+        bg-[#FCFBF8]
         transition-all
         duration-500
         hover:-translate-y-1
-        hover:shadow-xl
+        hover:border-[#9A8060]
       "
     >
       {/* Cover Image Container */}
-      <div className="relative h-60 w-full overflow-hidden bg-[#F2EFE9]">
+      <div className="relative m-3 mb-0 h-60 overflow-hidden rounded-xl bg-[#E8E1D7]">
         <BlogImage
           src={coverImage}
           alt={title}
@@ -73,7 +73,7 @@ export function BlogCard({ blog }: BlogCardProps) {
 
         {/* Category Badge */}
         <div className="absolute left-4 top-4 z-10">
-          <Badge variant="secondary" className="bg-white/90 text-[#1E1C1A] backdrop-blur-md font-sans text-[11px] uppercase tracking-wider">
+          <Badge variant="secondary" className="bg-[#FCFBF8]/90 text-[#242321] backdrop-blur-md font-sans text-[11px] uppercase tracking-wider">
             {category}
           </Badge>
         </div>
@@ -83,20 +83,20 @@ export function BlogCard({ blog }: BlogCardProps) {
       <div className="flex flex-1 flex-col justify-between p-6 sm:p-7">
         <div className="space-y-3">
           {/* Meta Info */}
-          <div className="flex items-center gap-4 text-xs text-muted-foreground font-sans">
+          <div className="flex items-center gap-4 text-xs text-[#706B63] font-sans">
             <span className="flex items-center gap-1.5">
-              <User className="h-3.5 w-3.5 text-[#C86D51]" />
+              <User className="h-3.5 w-3.5 text-[#9A8060]" />
               {author}
             </span>
             <span>•</span>
             <span className="flex items-center gap-1.5">
-              <Calendar className="h-3.5 w-3.5 text-[#C86D51]" />
+              <Calendar className="h-3.5 w-3.5 text-[#9A8060]" />
               {formattedDate}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#1E1C1A] line-clamp-2 transition-colors duration-300 group-hover:text-[#C86D51]">
+          <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#242321] line-clamp-2 transition-colors duration-300 group-hover:text-[#9A8060]">
             <Link href={`/blog/${slug}`}>
               <span className="absolute inset-0 z-10" />
               {title}
@@ -104,13 +104,13 @@ export function BlogCard({ blog }: BlogCardProps) {
           </h3>
 
           {/* Excerpt */}
-          <p className="text-sm font-light leading-relaxed text-muted-foreground line-clamp-3">
+          <p className="text-sm font-light leading-relaxed text-[#706B63] line-clamp-3">
             {excerpt}
           </p>
         </div>
 
         {/* Read More Link */}
-        <div className="mt-6 flex items-center gap-2 pt-4 border-t border-[#F2EFE9] text-xs font-semibold uppercase tracking-widest text-[#C86D51] transition-colors duration-300 group-hover:text-[#1E1C1A]">
+        <div className="mt-6 flex items-center gap-2 pt-4 border-t border-[#D7D0C5] text-xs font-semibold uppercase tracking-widest text-[#9A8060] transition-colors duration-300 group-hover:text-[#242321]">
           <span>Read Article</span>
           <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </div>

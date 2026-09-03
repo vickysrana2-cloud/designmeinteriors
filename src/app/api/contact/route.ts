@@ -60,17 +60,17 @@ export async function POST(request: Request) {
         <head>
           <meta charset="utf-8">
           <style>
-            body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #F9F8F5; color: #1E1C1A; margin: 0; padding: 20px; }
-            .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #E5DFD5; border-radius: 8px; overflow: hidden; }
-            .header { background-color: #1E1C1A; color: #ffffff; padding: 24px; text-align: center; }
+            body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #F5F2EC; color: #242321; margin: 0; padding: 20px; }
+            .container { max-width: 600px; margin: 0 auto; background: #FCFBF8; border: 1px solid #D7D0C5; border-radius: 4px; overflow: hidden; }
+            .header { background-color: #191816; color: #FCFBF8; padding: 24px; text-align: center; }
             .header h1 { margin: 0; font-size: 22px; font-weight: 500; letter-spacing: 1px; }
-            .header p { margin: 4px 0 0 0; font-size: 12px; color: #C86D51; text-transform: uppercase; letter-spacing: 2px; }
+            .header p { margin: 4px 0 0 0; font-size: 12px; color: #9A8060; text-transform: uppercase; letter-spacing: 2px; }
             .content { padding: 30px; }
-            .field-group { margin-bottom: 18px; border-bottom: 1px solid #F0ECE4; padding-bottom: 12px; }
-            .field-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #C86D51; font-weight: 600; margin-bottom: 4px; }
-            .field-value { font-size: 15px; color: #1E1C1A; font-weight: 400; }
-            .message-box { background: #F9F8F5; border-left: 3px solid #C86D51; padding: 16px; margin-top: 20px; font-style: italic; white-space: pre-line; }
-            .footer { background: #F4F2EC; padding: 16px; text-align: center; font-size: 12px; color: #777; border-top: 1px solid #E5DFD5; }
+            .field-group { margin-bottom: 18px; border-bottom: 1px solid #D7D0C5; padding-bottom: 12px; }
+            .field-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #9A8060; font-weight: 600; margin-bottom: 4px; }
+            .field-value { font-size: 15px; color: #242321; font-weight: 400; }
+            .message-box { background: #F5F2EC; border-left: 3px solid #9A8060; padding: 16px; margin-top: 20px; font-style: italic; white-space: pre-line; }
+            .footer { background: #E8E1D7; padding: 16px; text-align: center; font-size: 12px; color: #706B63; border-top: 1px solid #D7D0C5; }
           </style>
         </head>
         <body>

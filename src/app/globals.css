@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-bg: #F5F2EC;
+  --color-brand-surface: #FCFBF8;
+  --color-brand-sand: #E8E1D7;
+  --color-brand-charcoal: #242321;
+  --color-brand-muted: #706B63;
+  --color-brand-bronze: #9A8060;
+  --color-brand-bronze-hover: #80684D;
+  --color-brand-stone: #D7D0C5;
+  --color-brand-dark: #191816;
+}
 
 .services-slider {
   width: 100%;
@@ -39,66 +50,101 @@
   }
 }
 
+.wood-button {
+  background-color: #5A3A28;
+  background-image:
+    linear-gradient(
+      105deg,
+      rgba(55, 32, 18, 0.3) 0%,
+      rgba(90, 58, 40, 0.2) 50%,
+      rgba(45, 28, 18, 0.4) 100%
+    ),
+    url("https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=600&auto=format&fit=crop");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 5px rgba(20, 10, 5, 0.4),
+    0 4px 14px rgba(45, 28, 18, 0.35);
+
+  transition:
+    transform 300ms ease,
+    filter 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.wood-button:hover {
+  filter: brightness(1.12);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -2px 5px rgba(20, 10, 5, 0.5),
+    0 7px 22px rgba(45, 28, 18, 0.45);
+}
+
 @layer base {
   :root {
-    --background: 40 20% 97%; /* Warm off-white #F9F8F5 */
-    --foreground: 20 10% 12%; /* Warm dark charcoal #1E1C1A */
+    --background: #F5F2EC; /* Warm Ivory */
+    --foreground: #242321; /* Deep Charcoal */
     
-    --card: 0 0% 100%;
-    --card-foreground: 20 10% 12%;
+    --card: #FCFBF8;       /* Soft White Surface */
+    --card-foreground: #242321;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 12%;
+    --popover: #FCFBF8;
+    --popover-foreground: #242321;
     
-    --primary: 20 10% 14%; /* Deep charcoal */
-    --primary-foreground: 40 20% 97%;
+    --primary: #242321;    /* Deep Charcoal */
+    --primary-foreground: #FCFBF8;
     
-    --secondary: 35 15% 92%; /* Light warm beige */
-    --secondary-foreground: 20 10% 18%;
+    --secondary: #E8E1D7;  /* Soft Sand */
+    --secondary-foreground: #242321;
     
-    --muted: 35 12% 90%;
-    --muted-foreground: 20 8% 45%;
+    --muted: #E8E1D7;
+    --muted-foreground: #706B63; /* Warm Gray */
     
-    --accent: 14 55% 52%; /* Terracotta / Clay #C86D51 */
-    --accent-foreground: 0 0% 100%;
+    --accent: #9A8060;     /* Muted Bronze */
+    --accent-foreground: #FCFBF8;
     
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: #B91C1C;
+    --destructive-foreground: #FCFBF8;
 
-    --border: 35 12% 86%;
-    --input: 35 12% 86%;
-    --ring: 14 55% 52%;
-    --radius: 0.5rem;
+    --border: #D7D0C5;     /* Warm Stone */
+    --input: #D7D0C5;
+    --ring: #9A8060;
+    --radius: 0.25rem;
 
     --font-serif: var(--font-fraunces), Georgia, serif;
     --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
 
   .dark {
-    --background: 20 10% 10%; /* #141312 */
-    --foreground: 40 15% 94%;
+    --background: #191816; /* Espresso Charcoal */
+    --foreground: #F5F2EC;
     
-    --card: 20 10% 14%;
-    --card-foreground: 40 15% 94%;
+    --card: #242321;
+    --card-foreground: #F5F2EC;
     
-    --popover: 20 10% 14%;
-    --popover-foreground: 40 15% 94%;
+    --popover: #242321;
+    --popover-foreground: #F5F2EC;
     
-    --primary: 40 15% 94%;
-    --primary-foreground: 20 10% 12%;
+    --primary: #F5F2EC;
+    --primary-foreground: #191816;
     
-    --secondary: 20 10% 18%;
-    --secondary-foreground: 40 15% 94%;
+    --secondary: #242321;
+    --secondary-foreground: #F5F2EC;
     
-    --muted: 20 8% 22%;
-    --muted-foreground: 40 10% 65%;
+    --muted: #242321;
+    --muted-foreground: #D7D0C5;
     
-    --accent: 14 55% 54%;
-    --accent-foreground: 0 0% 100%;
+    --accent: #9A8060;
+    --accent-foreground: #FCFBF8;
     
-    --border: 20 8% 22%;
-    --input: 20 8% 22%;
-    --ring: 14 55% 54%;
+    --border: #322F2C;
+    --input: #322F2C;
+    --ring: #9A8060;
   }
 }
 
@@ -107,8 +153,8 @@ html {
 }
 
 body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -119,13 +165,13 @@ h1, h2, h3, h4, .font-serif-heading {
 }
 
 .bg-glass {
-  background: rgba(249, 248, 245, 0.82);
+  background: rgba(245, 242, 236, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .dark .bg-glass {
-  background: rgba(20, 19, 18, 0.85);
+  background: rgba(25, 24, 22, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -135,12 +181,12 @@ h1, h2, h3, h4, .font-serif-heading {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F2EC;
+  background: #F5F2EC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C8BBAE;
+  background: #D7D0C5;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A69685;
+  background: #9A8060;
 }
