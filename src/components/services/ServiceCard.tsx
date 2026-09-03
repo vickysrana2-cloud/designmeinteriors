@@ -189,7 +189,9 @@ export function ServiceCard({ service }: ServiceCardProps) {
                       group-hover:scale-110
                     "
                   />
-                  <span>{feature}</span>
+                  <span>
+                    {typeof feature === "string" ? feature : feature.title}
+                  </span>
                 </li>
               ))}
             </ul>
