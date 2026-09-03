@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+
+.services-slider {
+  width: 100%;
+  animation: services-slide 20s infinite;
+  will-change: transform;
+}
+
+@keyframes services-slide {
+  0%,
+  18% {
+    transform: translateX(0);
+  }
+
+  25%,
+  43% {
+    transform: translateX(-100%);
+  }
+
+  50%,
+  68% {
+    transform: translateX(-200%);
+  }
+
+  75%,
+  93% {
+    transform: translateX(-300%);
+  }
+
+  100% {
+    transform: translateX(-400%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-slider {
+    animation: none;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 40 20% 97%; /* Warm off-white #F9F8F5 */
+    --foreground: 20 10% 12%; /* Warm dark charcoal #1E1C1A */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 20 10% 12%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 10% 12%;
+    
+    --primary: 20 10% 14%; /* Deep charcoal */
+    --primary-foreground: 40 20% 97%;
+    
+    --secondary: 35 15% 92%; /* Light warm beige */
+    --secondary-foreground: 20 10% 18%;
+    
+    --muted: 35 12% 90%;
+    --muted-foreground: 20 8% 45%;
+    
+    --accent: 14 55% 52%; /* Terracotta / Clay #C86D51 */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 12% 86%;
+    --input: 35 12% 86%;
+    --ring: 14 55% 52%;
+    --radius: 0.5rem;
+
+    --font-serif: var(--font-fraunces), Georgia, serif;
+    --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+
+  .dark {
+    --background: 20 10% 10%; /* #141312 */
+    --foreground: 40 15% 94%;
+    
+    --card: 20 10% 14%;
+    --card-foreground: 40 15% 94%;
+    
+    --popover: 20 10% 14%;
+    --popover-foreground: 40 15% 94%;
+    
+    --primary: 40 15% 94%;
+    --primary-foreground: 20 10% 12%;
+    
+    --secondary: 20 10% 18%;
+    --secondary-foreground: 40 15% 94%;
+    
+    --muted: 20 8% 22%;
+    --muted-foreground: 40 10% 65%;
+    
+    --accent: 14 55% 54%;
+    --accent-foreground: 0 0% 100%;
+    
+    --border: 20 8% 22%;
+    --input: 20 8% 22%;
+    --ring: 14 55% 54%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-serif-heading {
+  font-family: var(--font-serif);
+}
+
+.bg-glass {
+  background: rgba(249, 248, 245, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .bg-glass {
+  background: rgba(20, 19, 18, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F2EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8BBAE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A69685;
+}

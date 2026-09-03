@@ -1,0 +1,125 @@
+src/
+├── app/
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── not-found.tsx
+│   ├── sitemap.ts
+│   ├── robots.ts
+│   ├── manifest.ts
+│   │
+│   ├── (marketing)/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   ├── projects/
+│   │   │   └── page.tsx
+│   │   └── blog/
+│   │       ├── page.tsx
+│   │       └── [slug]/
+│   │           ├── page.tsx
+│   │           └── opengraph-image.tsx
+│   │
+│   ├── (app)/
+│   │   ├── layout.tsx
+│   │   ├── dashboard/
+│   │   │   └── page.tsx
+│   │   └── manage-leave/
+│   │       ├── page.tsx
+│   │       └── _components/
+│   │           ├── AddLeaveModal.tsx
+│   │           ├── ColumnMenu.tsx
+│   │           ├── LeaveFilters.tsx
+│   │           ├── LeaveTable.tsx
+│   │           ├── LeaveToolbar.tsx
+│   │           ├── Toast.tsx
+│   │           └── styles.css
+│   │
+│   └── api/
+│       ├── contact/
+│       │   └── route.ts
+│       └── manage-leave/
+│           ├── route.ts
+│           └── [id]/
+│               └── route.ts
+│
+├── components/
+│   ├── layout/
+│   │   ├── Footer.tsx
+│   │   └── Navbar.tsx
+│   │
+│   ├── blog/
+│   │   ├── BlogCard.tsx
+│   │   ├── BlogImage.tsx
+│   │   └── BlogSection.tsx
+│   │
+│   ├── dashboard/
+│   │   ├── charts/
+│   │   │   ├── CategoryTrendChart.tsx
+│   │   │   ├── EmployeeDurationChart.tsx
+│   │   │   ├── EmployeeLeaveChart.tsx
+│   │   │   ├── LeaveCategoryChart.tsx
+│   │   │   ├── LeaveTrendChart.tsx
+│   │   │   ├── LeaveTypeChart.tsx
+│   │   │   └── PaidUnpaidChart.tsx
+│   │   ├── DashboardFilters.tsx
+│   │   ├── DashboardHeader.tsx
+│   │   ├── DashboardStats.tsx
+│   │   ├── LeaveCalendarTimeline.tsx
+│   │   ├── RecentLeaveTable.tsx
+│   │   ├── TopEmployees.tsx
+│   │   └── UpcomingLeaves.tsx
+│   │
+│   ├── sections/
+│   │   ├── AboutPreview.tsx
+│   │   ├── CtaBanner.tsx
+│   │   ├── GuidingPrinciples.tsx
+│   │   ├── Hero.tsx
+│   │   ├── LeadershipTeam.tsx
+│   │   ├── PortfolioShowcase.tsx
+│   │   ├── ProcessAccordion.tsx
+│   │   ├── ServicesGrid.tsx
+│   │   ├── ServicesSection.tsx
+│   │   └── Testimonials.tsx
+│   │
+│   ├── seo/
+│   │   ├── JsonLd.tsx
+│   │   └── PageSeo.tsx
+│   │
+│   └── ui/
+│       ├── accordion.tsx
+│       ├── badge.tsx
+│       ├── button.tsx
+│       ├── input.tsx
+│       ├── sheet.tsx
+│       └── textarea.tsx
+│
+├── lib/
+│   ├── api/
+│   │   ├── blog.ts
+│   │   ├── client.ts
+│   │   └── manage-leave.ts
+│   │
+│   ├── seo/
+│   │   ├── metadata.ts
+│   │   └── structured-data.ts
+│   │
+│   └── utils.ts
+│
+├── hooks/
+│   └── useDebounce.ts
+│
+├── config/
+│   ├── site.ts
+│   └── env.ts
+│
+├── data/
+│   └── images.ts
+│
+└── types/
+    ├── blog.ts
+    ├── leave.ts
+    └── dashboard.ts
