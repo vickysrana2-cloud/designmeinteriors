@@ -62,10 +62,9 @@ export function Navbar() {
         transition-all
         duration-500
         ease-out
-        ${
-          isHeroNavbar
-            ? "bg-transparent py-5"
-            : "bg-white/90 backdrop-blur-md border-b border-[#DCD5CB]/60 py-4 shadow-sm"
+        ${isHeroNavbar
+          ? "bg-transparent py-5"
+          : "bg-white/90 backdrop-blur-md py-4 shadow-sm"
         }
       `}
     >
@@ -110,11 +109,10 @@ export function Navbar() {
             alt="DesignMeInteriors"
             width={180}
             height={55}
-            className={`h-11 w-auto object-contain transition-all duration-300 ${
-  isHeroNavbar
-    ? "drop-shadow-[0_0_4px_rgba(0,0,0,1)] drop-shadow-[0_0_10px_rgba(0,0,0,0.7)]"
-    : ""
-}`}
+            className={`h-11 w-auto object-contain transition-all duration-300 ${isHeroNavbar
+                ? "drop-shadow-[0_0_1px_#000] drop-shadow-[0_0_3px_rgba(0,0,0,0.8)]"
+                : ""
+              }`}
             priority
           />
         </Link>
@@ -139,14 +137,13 @@ export function Navbar() {
                   tracking-widest
                   transition-colors
                   duration-300
-                  ${
-                    isHeroNavbar
-                      ? isActive
-                        ? "text-white"
-                        : "text-white/85 hover:text-white"
-                      : isActive
-                        ? "text-[#C86D51]"
-                        : "text-[#1E1C1A]/80 hover:text-[#C86D51]"
+                  ${isHeroNavbar
+                    ? isActive
+                      ? "text-white"
+                      : "text-white/85 hover:text-white"
+                    : isActive
+                      ? "text-[#C86D51]"
+                      : "text-[#1E1C1A]/80 hover:text-[#C86D51]"
                   }
                 `}
               >
@@ -162,10 +159,9 @@ export function Navbar() {
                       h-[1.5px]
                       transition-colors
                       duration-300
-                      ${
-                        isHeroNavbar
-                          ? "bg-white"
-                          : "bg-[#C86D51]"
+                      ${isHeroNavbar
+                        ? "bg-white"
+                        : "bg-[#C86D51]"
                       }
                     `}
                   />
@@ -186,10 +182,9 @@ export function Navbar() {
             className={`
               transition-all
               duration-300
-              ${
-                isHeroNavbar
-                  ? "border-white/70 bg-white/5 text-white hover:bg-white hover:text-[#1E1C1A]"
-                  : ""
+              ${isHeroNavbar
+                ? "border-white/70 bg-white/5 text-white hover:bg-white hover:text-[#1E1C1A]"
+                : ""
               }
             `}
           >
@@ -255,10 +250,9 @@ export function Navbar() {
                           font-serif
                           text-xl
                           transition-colors
-                          ${
-                            isActive
-                              ? "text-[#C86D51]"
-                              : "text-[#1E1C1A] hover:text-[#C86D51]"
+                          ${isActive
+                            ? "text-[#C86D51]"
+                            : "text-[#1E1C1A] hover:text-[#C86D51]"
                           }
                         `}
                       >
