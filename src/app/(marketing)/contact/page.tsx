@@ -232,17 +232,23 @@ function ContactForm() {
                   })
                 }
               >
-                <option value="interior-architecture">
-                  Interior Architecture
+                <option value="residential-interior-design">
+                  Residential Interior Design
                 </option>
-                <option value="residential-design">
-                  Bespoke Residential Design
+                <option value="commercial-interior-design">
+                  Commercial Interior Design
                 </option>
-                <option value="commercial-spaces">
-                  Commercial & Workspace
+                <option value="interior-design-consultation">
+                  Interior Design Consultation
                 </option>
-                <option value="turnkey-execution">
-                  Turnkey Project Management
+                <option value="outdoor-landscape-design">
+                  Outdoor & Landscape Design
+                </option>
+                <option value="renovation-and-remodeling">
+                  Renovation and Remodeling
+                </option>
+                <option value="interior-2d-3d-layouts">
+                  Interior 2D/3D Layouts
                 </option>
               </select>
             </div>

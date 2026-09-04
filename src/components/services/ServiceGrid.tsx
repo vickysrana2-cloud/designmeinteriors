@@ -41,7 +41,7 @@ export function ServiceGrid({ services }: ServiceGridProps) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
-      className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+      className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 md:gap-10"
     >
       {services.map((service) => (
         <motion.div key={service.slug} variants={cardAnimation} className="h-full">
