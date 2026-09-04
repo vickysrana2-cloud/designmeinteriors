@@ -57,7 +57,7 @@ export function ServicesPreview() {
           speed={700}
           wrapperClass="!items-start"
           autoplay={{
-            delay: 3500,
+            delay: 1000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
             reverseDirection: false,
