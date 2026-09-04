@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     "Bespoke Furniture",
     "Turnkey Interior Design",
   ],
+  icons: {
+    icon: "/designMeLogo.svg",
+    shortcut: "/designMeLogo.svg",
+    apple: "/designMeLogo.svg",
+  },
   openGraph: {
     title: "DesignMeInteriors — Architecture & Interior Design Studio",
     description:
@@ -43,7 +48,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${fraunces.variable} ${inter.variable}`}
+    >
       <body className="min-h-screen flex flex-col antialiased bg-[#F5F2EC] text-[#242321]">
         {children}
       </body>

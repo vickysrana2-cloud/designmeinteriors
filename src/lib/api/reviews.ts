@@ -1,49 +1,15 @@
 import { apiFetch } from "./client";
 import { ReviewInput, ReviewRecord } from "@/types/api";
 
-export const INITIAL_REVIEWS: ReviewRecord[] = [
-  {
-    id: "rev-01",
-    sentence:
-      "DesignMeInteriors transformed our coastal villa into a living masterwork. Their mastery of natural light, warm textures, and spatial flow exceeded every expectation.",
-    stars: 5,
-    name: "Marcus & Sophia Vance",
-    location: "Malibu, CA",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
-    createdAt: "2026-07-15T10:00:00.000Z",
-  },
-  {
-    id: "rev-02",
-    sentence:
-      "Working with DesignMeInteriors on our headquarters brought fresh biophilic energy to our company culture. The attention to custom joinery is unmatched.",
-    stars: 5,
-    name: "Hiroshi Tanaka",
-    location: "Tokyo, Japan",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-    createdAt: "2026-07-28T14:30:00.000Z",
-  },
-  {
-    id: "rev-03",
-    sentence:
-      "From initial mood boards to turnkey delivery, the process was serene and flawlessly executed. They truly understand luxury minimalism.",
-    stars: 5,
-    name: "Clara Dupont",
-    location: "Paris / Kyoto",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
-    createdAt: "2026-08-10T09:15:00.000Z",
-  },
-];
-
 /**
- * Fetch reviews from MockAPI with fallback to initial curated review records.
+ * Fetch reviews directly from MockAPI (/Reviews).
  */
 export async function getReviews(): Promise<ReviewRecord[]> {
   try {
     const reviews = await apiFetch<ReviewRecord[]>("/Reviews");
-    if (Array.isArray(reviews) && reviews.length > 0) {
-      // Ensure all fetched reviews format stars as valid numbers and retain avatar
-      const formatted = reviews.map((r, i) => ({
-        id: r.id || `fetched-${i}`,
+    if (Array.isArray(reviews)) {
+      return reviews.map((r, i) => ({
+        id: String(r.id || `review-${i}`),
         sentence: r.sentence || "",
         stars: typeof r.stars === "number" ? Math.min(5, Math.max(1, r.stars)) : 5,
         name: r.name || "Anonymous Client",
@@ -51,12 +17,11 @@ export async function getReviews(): Promise<ReviewRecord[]> {
         avatar: r.avatar || "",
         createdAt: r.createdAt || new Date().toISOString(),
       }));
-      return [...formatted, ...INITIAL_REVIEWS];
     }
-    return INITIAL_REVIEWS;
+    return [];
   } catch (error) {
-    console.warn("MockAPI GET /Reviews failed or endpoint not registered. Using initial reviews fallback:", error);
-    return INITIAL_REVIEWS;
+    console.warn("MockAPI GET /Reviews request failed:", error);
+    return [];
   }
 }
 
@@ -101,5 +66,32 @@ export async function createReview(data: ReviewInput): Promise<ReviewRecord> {
       ...payload,
       id: `local-${Date.now()}`,
     };
+  }
+}
+
+/**
+ * Delete a review record from MockAPI.
+ */
+export async function deleteReview(id: string): Promise<boolean> {
+  if (!id) return true;
+
+  // Local fallback items or temporary client-side IDs
+  if (
+    id.startsWith("rev-") ||
+    id.startsWith("local-") ||
+    id.startsWith("fetched-")
+  ) {
+    return true;
+  }
+
+  try {
+    await apiFetch(`/Reviews/${id}`, {
+      method: "DELETE",
+    });
+    return true;
+  } catch (error) {
+    console.warn("Delete review warning (record may be local or removed):", error);
+    // Return true so frontend removes item gracefully even if 404 returned
+    return true;
   }
 }

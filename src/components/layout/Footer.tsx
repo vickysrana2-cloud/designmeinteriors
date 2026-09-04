@@ -131,6 +131,12 @@ export function Footer() {
             <span className="hover:text-[#D7D0C5] cursor-pointer transition-colors">
               Sitemap
             </span>
+            <Link
+              href="/admin"
+              className="hover:text-[#9A8060] transition-colors font-medium text-[#706B63]"
+            >
+              Admin Portal
+            </Link>
           </div>
         </div>
       </div>
