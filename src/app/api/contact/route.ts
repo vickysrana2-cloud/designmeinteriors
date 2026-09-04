@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { createEnquiry } from "@/lib/api/enquiries";
 
 export async function POST(request: Request) {
   try {
@@ -12,6 +13,22 @@ export async function POST(request: Request) {
         { error: "Name, email, and message are required fields." },
         { status: 400 }
       );
+    }
+
+    // Persist to MockAPI alongside email functionality
+    try {
+      await createEnquiry({
+        fullName: name,
+        email: email,
+        phone: phone || "",
+        projectLocation: location || "",
+        serviceCategory: serviceType || "",
+        estimatedBudget: budget || "",
+        projectOverview: message,
+      });
+    } catch (mockApiError) {
+      // Log MockAPI persistence error without interrupting email workflow
+      console.error("MockAPI Enquiry Recording Error:", mockApiError);
     }
 
     const receiverEmail =

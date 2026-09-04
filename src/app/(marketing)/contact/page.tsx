@@ -88,6 +88,7 @@ function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
     if (!formData.name || !formData.email || !formData.message) return;
 
     setSubmitting(true);
