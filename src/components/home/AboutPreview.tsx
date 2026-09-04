@@ -11,7 +11,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export function AboutPreview() {
   return (
     <section className="relative bg-[#F5F2EC] py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:items-center">
           {/* Left Column: Visual Stack */}
           <div className="relative lg:col-span-6">
@@ -20,7 +20,7 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease }}
-              className="relative h-[420px] w-full overflow-hidden rounded-2xl border border-[#D7D0C5] shadow-lg sm:h-[520px]"
+              className="relative h-[420px] w-full overflow-hidden rounded-3xl border border-[#D7D0C5] shadow-lg sm:h-[520px]"
             >
               <Image
                 src={IMAGES.aboutMain}
@@ -37,7 +37,7 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2, ease }}
-              className="absolute -bottom-8 -right-4 hidden h-48 w-48 overflow-hidden rounded-2xl border-4 border-[#F5F2EC] shadow-xl sm:block md:-right-8 md:h-64 md:w-64"
+              className="absolute -bottom-8 -right-4 hidden h-48 w-48 overflow-hidden rounded-3xl border-4 border-[#F5F2EC] shadow-xl sm:block md:-right-8 md:h-64 md:w-64"
             >
               <Image
                 src={IMAGES.aboutStudio}

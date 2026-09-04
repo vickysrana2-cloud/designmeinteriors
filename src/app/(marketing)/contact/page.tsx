@@ -315,7 +315,7 @@ export default function ContactPage() {
       >
         <div className="absolute inset-0 bg-[#F5F2EC]/85 backdrop-blur-[1px]" />
 
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+        <div className="relative max-w-[1600px] mx-auto px-6 md:px-12">
           <div className="max-w-3xl space-y-4">
             <span className="text-xs uppercase tracking-[0.25em] text-[#9A8060] font-semibold">
               Inquire Project
@@ -334,7 +334,7 @@ export default function ContactPage() {
 
       {/* Main Form & Contact Info Section */}
       <section id="contact-form" className="py-20 border-b border-[#D7D0C5]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-7">
               <React.Suspense fallback={<div className="p-8 bg-[#FCFBF8] border border-[#D7D0C5] text-[#706B63]">Loading inquiry form...</div>}>

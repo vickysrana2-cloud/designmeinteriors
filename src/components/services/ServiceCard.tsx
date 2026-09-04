@@ -20,7 +20,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
         w-full
         flex-col
         overflow-hidden
-        rounded-2xl
+        rounded-3xl
         bg-white
         shadow-[0_1px_3px_rgba(0,0,0,0.04)]
         transition-all

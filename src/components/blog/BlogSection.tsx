@@ -59,7 +59,7 @@ export function BlogSection({
 
   return (
     <section className="py-24 bg-[#F5F2EC] border-t border-[#D7D0C5]">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12">
           <div className="space-y-3 max-w-2xl">

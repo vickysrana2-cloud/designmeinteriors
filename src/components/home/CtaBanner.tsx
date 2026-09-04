@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export function CtaBanner() {
   return (
     <section className="relative overflow-hidden bg-[#E8E1D7] border-y border-[#D7D0C5] py-20 sm:py-24 text-[#242321]">
-      <div className="mx-auto max-w-7xl px-6 md:px-12 relative z-10">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12 relative z-10">
         <div className="flex flex-col items-center text-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:text-left">
           <div className="max-w-2xl space-y-4 flex flex-col items-center lg:items-start">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">

@@ -16,7 +16,7 @@ export function ProjectHero({ project, title, subtitle, description }: ProjectHe
 
   return (
     <section className="border-b border-[#D7D0C5] bg-[#F5F2EC] pb-16 pt-32 md:pb-20">
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         {project && (
           <Link
             href="/projects"

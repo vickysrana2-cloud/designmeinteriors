@@ -12,7 +12,7 @@ export default function BlogListingPage() {
     <main className="pt-24 min-h-screen bg-[#F5F2EC]">
       {/* Hero Banner for Journal */}
       <section className="bg-[#191816] text-[#FCFBF8] py-20 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto space-y-4">
+        <div className="max-w-[1600px] mx-auto space-y-4">
           <span className="text-xs uppercase tracking-[0.3em] text-[#9A8060] font-semibold block">
             DesignMeInteriors Studio Journal
           </span>

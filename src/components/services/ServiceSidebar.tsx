@@ -15,7 +15,7 @@ export function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
   return (
     <aside className="space-y-8 lg:sticky lg:top-28">
       {/* Other Services Navigation Card */}
-      <div className="overflow-hidden rounded-2xl border border-[#D7D0C5] bg-[#FCFBF8] p-6 shadow-sm sm:p-7">
+      <div className="overflow-hidden rounded-3xl border border-[#D7D0C5] bg-[#FCFBF8] p-6 shadow-sm sm:p-7">
         <h3 className="mb-5 font-serif text-lg font-semibold text-[#242321]">
           Other Services
         </h3>
@@ -49,7 +49,7 @@ export function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
       </div>
 
       {/* Sidebar Contact / Help Card */}
-      <div className="relative overflow-hidden rounded-2xl border border-[#D7D0C5] bg-[#191816] p-7 text-[#FCFBF8] shadow-lg">
+      <div className="relative overflow-hidden rounded-3xl border border-[#D7D0C5] bg-[#191816] p-7 text-[#FCFBF8] shadow-lg">
         {/* Background Overlay Image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay transition-transform duration-700 hover:scale-105"

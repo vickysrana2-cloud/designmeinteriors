@@ -142,7 +142,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
         </header>
 
         {/* Featured Cover Image */}
-        <div className="my-10 relative h-[360px] sm:h-[480px] md:h-[540px] w-full overflow-hidden rounded-2xl border border-[#D7D0C5] bg-[#E8E1D7] shadow-md">
+        <div className="my-10 relative h-[360px] sm:h-[480px] md:h-[540px] w-full overflow-hidden rounded-3xl border border-[#D7D0C5] bg-[#E8E1D7] shadow-md">
           <BlogImage
             src={coverImage}
             alt={title}

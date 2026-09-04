@@ -58,12 +58,12 @@ export default async function SingleProjectPage({ params }: ProjectPageProps) {
 
       {/* Main Content */}
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
             {/* Left: Content & Media */}
             <div className="space-y-12 lg:col-span-8">
               {/* Primary Main Image */}
-              <div className="relative h-[450px] w-full overflow-hidden rounded-2xl border border-[#D7D0C5] shadow-md sm:h-[580px]">
+              <div className="relative h-[450px] w-full overflow-hidden rounded-3xl border border-[#D7D0C5] shadow-md sm:h-[580px]">
                 <Image
                   src={project.image}
                   alt={project.title}

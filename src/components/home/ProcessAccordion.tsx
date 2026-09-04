@@ -11,7 +11,7 @@ import {
 export function ProcessAccordion() {
   return (
     <section className="bg-[#E8E1D7] py-24 border-t border-[#D7D0C5]">
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
           {/* Header */}
           <div className="space-y-4 lg:col-span-5">

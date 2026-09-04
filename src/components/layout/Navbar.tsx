@@ -118,7 +118,7 @@ export function Navbar() {
           relative
           mx-auto
           flex
-          max-w-7xl
+          max-w-[1600px]
           items-center
           justify-between
           px-6

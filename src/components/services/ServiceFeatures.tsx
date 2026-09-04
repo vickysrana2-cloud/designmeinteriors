@@ -56,62 +56,102 @@ export function ServiceFeatures({ features }: ServiceFeaturesProps) {
 
           return (
             <div
-              key={idx}
-              className="
-                flex
-                w-full
-                items-start
-                gap-6
-              "
-            >
-              {/* Icon */}
-              <div
-                className="
-                  flex
-                  h-[100px]
-                  w-[100px]
-                  min-w-[100px]
-                  shrink-0
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-[#D2A052]
-                  text-white
-                "
-              >
-                <IconComponent className="h-9 w-9 stroke-[1.5]" />
-              </div>
+  key={idx}
+  className="
+    flex
+    w-full
+    flex-col
+    items-center
+    text-center
 
-              {/* Content */}
-              <div className="pt-0.5">
-                <h4
-                  className="
-                    font-sans
-                    text-[28px]
-                    font-bold
-                    leading-[1.15]
-                    tracking-[-0.5px]
-                    text-[#111111]
-                  "
-                >
-                  {title}
-                </h4>
+    lg:flex-row
+    lg:items-start
+    lg:gap-6
+    lg:text-left
+  "
+>
+  {/* Icon */}
+  <div
+    className="
+      mx-auto
+      flex
+      h-[68px]
+      w-[68px]
+      min-w-[68px]
+      shrink-0
+      items-center
+      justify-center
+      rounded-full
+      bg-[#D2A052]
+      text-white
 
-                <p
-                  className="
-                    mt-5
-                    max-w-[430px]
-                    font-sans
-                    text-[18px]
-                    font-normal
-                    leading-[1.55]
-                    text-[#4F5968]
-                  "
-                >
-                  {description}
-                </p>
-              </div>
-            </div>
+      lg:mx-0
+      lg:h-[100px]
+      lg:w-[100px]
+      lg:min-w-[100px]
+    "
+  >
+    <IconComponent
+      className="
+        h-6
+        w-6
+        stroke-[1.5]
+
+        lg:h-9
+        lg:w-9
+      "
+    />
+  </div>
+
+  {/* Content */}
+  <div
+    className="
+      mt-5
+      w-full
+      text-center
+
+      lg:mt-0
+      lg:pt-0.5
+      lg:text-left
+    "
+  >
+    <h4
+      className="
+        font-sans
+        text-[19px]
+        font-bold
+        leading-[1.25]
+        tracking-[-0.3px]
+        text-[#111111]
+
+        lg:text-[28px]
+      "
+    >
+      {title}
+    </h4>
+
+    <p
+      className="
+        mx-auto
+        mt-3
+        max-w-[330px]
+        font-sans
+        text-[15px]
+        font-normal
+        leading-[1.55]
+        text-[#4F5968]
+
+        lg:mx-0
+        lg:mt-5
+        lg:max-w-[430px]
+        lg:text-[18px]
+        lg:leading-[1.55]
+      "
+    >
+      {description}
+    </p>
+  </div>
+</div>
           );
         })}
       </div>

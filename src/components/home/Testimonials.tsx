@@ -6,7 +6,7 @@ import { TESTIMONIALS } from "@/data/images";
 export function Testimonials() {
   return (
     <section className="bg-[#191816] text-[#FCFBF8] py-24 border-t border-[#322F2C]">
-      <div className="mx-auto max-w-7xl px-6 md:px-12 space-y-16">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12 space-y-16">
         <div className="max-w-2xl space-y-3">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
             Client Testimonials
@@ -20,7 +20,7 @@ export function Testimonials() {
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
-              className="flex flex-col justify-between rounded-2xl border border-[#322F2C] bg-[#242321] p-8 space-y-6"
+              className="flex flex-col justify-between rounded-3xl border border-[#322F2C] bg-[#242321] p-8 space-y-6"
             >
               <p className="font-serif text-base italic leading-relaxed text-[#D7D0C5]">
                 &quot;{t.quote}&quot;

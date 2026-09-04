@@ -60,7 +60,7 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
 
       {/* Main Service Content Grid */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             {/* Left Column: Sidebar */}
             <div className="order-2 lg:order-1 lg:col-span-4">
@@ -70,7 +70,7 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
             {/* Right Column: Main Content */}
             <div className="order-1 space-y-12 lg:order-2 lg:col-span-8">
               {/* Main Hero Image */}
-              <div className="relative aspect-[16/9] sm:aspect-[16/8] w-full overflow-hidden rounded-2xl border border-[#D7D0C5] shadow-md">
+              <div className="relative aspect-[16/9] sm:aspect-[16/8] w-full overflow-hidden rounded-3xl border border-[#D7D0C5] shadow-md">
                 <Image
                   src={service.image}
                   alt={service.title}

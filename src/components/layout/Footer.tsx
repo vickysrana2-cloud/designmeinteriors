@@ -7,7 +7,7 @@ import { Globe, Share2, ExternalLink } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-[#191816] text-[#FCFBF8] pt-20 pb-12 border-t border-[#322F2C]">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         {/* Main Footer Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16">
           {/* Brand & Mission */}

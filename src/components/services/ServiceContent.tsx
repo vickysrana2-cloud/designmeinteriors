@@ -29,7 +29,7 @@ export function ServiceContent({ sections, checklist }: ServiceContentProps) {
 
       {/* Structured Checklist Section */}
       {checklist && checklist.length > 0 && (
-        <div className="space-y-6 rounded-2xl border border-[#D7D0C5] bg-[#FCFBF8] p-7 shadow-sm">
+        <div className="space-y-6 rounded-3xl border border-[#D7D0C5] bg-[#FCFBF8] p-7 shadow-sm">
           <div className="space-y-2">
             <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9A8060]">
               Quality Assurance

@@ -29,7 +29,7 @@ const PRINCIPLES = [
 export function GuidingPrinciples() {
   return (
     <section className="border-b border-[#D7D0C5] bg-[#E8E1D7] py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
 
         {/* Header */}
         <motion.div

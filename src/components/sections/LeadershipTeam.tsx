@@ -22,7 +22,7 @@ const TEAM = [
 export function LeadershipTeam() {
   return (
     <section className="border-b border-[#D7D0C5] py-24">
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
 
         {/* Header */}
         <motion.div
@@ -76,7 +76,7 @@ export function LeadershipTeam() {
                 w-full
                 max-w-[430px]
                 overflow-hidden
-                rounded-2xl
+                rounded-3xl
                 border
                 border-[#D7D0C5]
                 bg-[#FCFBF8]

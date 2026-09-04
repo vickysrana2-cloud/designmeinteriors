@@ -22,7 +22,7 @@ export function ServiceHero({ service, title, subtitle, description }: ServiceHe
       {/* Warm Ivory overlay for crystal-clear text readability */}
       <div className="absolute inset-0 bg-[#F5F2EC]/90 backdrop-blur-[1px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+      <div className="relative z-10 mx-auto max-w-[1600px] px-6 md:px-12">
         {service && (
           <Link
             href="/services"

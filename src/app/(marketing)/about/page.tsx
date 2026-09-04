@@ -42,7 +42,7 @@ export default function AboutPage() {
     <div className="pt-28 pb-20 bg-[#F5F2EC]">
       {/* Page Hero */}
       <section className="border-b border-[#D7D0C5] bg-[#F5F2EC] py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
             {/* LEFT — CONTENT */}
             <div className="relative z-10">
@@ -107,7 +107,7 @@ export default function AboutPage() {
             {/* RIGHT — IMAGE COMPOSITION */}
             <div className="relative">
               {/* Image */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[#D7D0C5]">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-[#D7D0C5]">
                 <Image
                   src={IMAGES.aboutMain}
                   alt="DesignMeInteriors Studio interior architecture"
@@ -161,9 +161,9 @@ export default function AboutPage() {
 
       {/* Main Philosophy Section */}
       <section className="py-24 border-b border-[#D7D0C5]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 relative h-[480px] w-full rounded-2xl border border-[#D7D0C5] overflow-hidden shadow-xl">
+            <div className="lg:col-span-6 relative h-[480px] w-full rounded-3xl border border-[#D7D0C5] overflow-hidden shadow-xl">
               <Image
                 src={IMAGES.aboutMain}
                 alt="DesignMeInteriors Studio Material Library"
@@ -202,7 +202,7 @@ export default function AboutPage() {
       {/* Awards & Recognition */}
 
       <section className="border-b border-[#D7D0C5] bg-[#F5F2EC] py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           {/* Header */}
           <div className="mb-14 border-b border-[#D7D0C5] pb-10">
             <div className="mb-5 flex items-center gap-4">

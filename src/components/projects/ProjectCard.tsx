@@ -11,7 +11,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#D7D0C5] bg-[#FCFBF8] transition-all duration-300 hover:border-[#9A8060] h-full">
+    <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[#D7D0C5] bg-[#FCFBF8] transition-all duration-300 hover:border-[#9A8060] h-full">
       <div>
         <div className="relative m-3 mb-0 h-72 overflow-hidden rounded-xl">
           <Image

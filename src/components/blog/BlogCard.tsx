@@ -42,7 +42,7 @@ export function BlogCard({ blog }: BlogCardProps) {
         flex
         flex-col
         overflow-hidden
-        rounded-2xl
+        rounded-3xl
         border
         border-[#D7D0C5]
         bg-[#FCFBF8]

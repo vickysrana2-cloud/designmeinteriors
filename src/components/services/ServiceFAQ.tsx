@@ -26,7 +26,7 @@ export function ServiceFAQ({ faqs }: ServiceFAQProps) {
         </h3>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-[#D7D0C5] bg-[#FCFBF8] px-6 sm:px-8 shadow-sm">
+      <div className="overflow-hidden rounded-3xl border border-[#D7D0C5] bg-[#FCFBF8] px-6 sm:px-8 shadow-sm">
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, idx) => (
             <AccordionItem

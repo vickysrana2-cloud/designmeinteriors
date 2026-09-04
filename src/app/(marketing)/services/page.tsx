@@ -21,7 +21,7 @@ export default function ServicesPage() {
       />
 
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <ServiceGrid services={services} />
         </div>
       </section>

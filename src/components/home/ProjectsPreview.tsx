@@ -13,7 +13,7 @@ export function ProjectsPreview() {
 
   return (
     <section className="bg-[#F5F2EC] py-24 border-t border-[#D7D0C5]">
-      <div className="mx-auto max-w-7xl px-6 md:px-12 space-y-12">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-12 space-y-12">
         {/* Header */}
         <div className="flex flex-col justify-between gap-6 border-b border-[#D7D0C5] pb-12 md:flex-row md:items-end">
           <div className="max-w-2xl space-y-3">
