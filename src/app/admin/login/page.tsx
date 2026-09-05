@@ -123,11 +123,7 @@ export default function AdminLoginPage() {
             </button>
           </form>
 
-          <div className="border-t border-[#322F2C] pt-4 text-center">
-            <p className="text-[11px] text-[#706B63]">
-              Default Dev Password: <code className="text-[#CAA05C] bg-[#191816] px-1.5 py-0.5 rounded font-mono">interior@2026</code>
-            </p>
-          </div>
+
         </div>
       </div>
     </main>
