@@ -1,397 +1,489 @@
 import Image from "next/image";
-import { IMAGES } from "@/data/images";
-import { CtaBanner } from "@/components/home/CtaBanner";
+import Link from "next/link";
+import { ArrowUpRight, CheckCircle2, Sparkles, Compass, Target, Clock, ShieldCheck, HeartHandshake, Lightbulb, MapPin, Calendar, Award } from "lucide-react";
+import { IMAGES, PROJECTS } from "@/data/images";
+import { services } from "@/data/services";
 import { GuidingPrinciples } from "@/components/sections/GuidingPrinciples";
 import { LeadershipTeam } from "@/components/sections/LeadershipTeam";
+import { CoreValuesSection } from "@/components/sections/CoreValuesSection";
+import WorkProcess from "@/components/sections/WorkProcess";
+import { Button } from "@/components/ui/button";
 
 export const metadata = {
-  title: "About Studio — DesignMeInteriors",
+  title: "About DesignMeInteriors | Interior Design Studio in Nagpur",
   description:
-    "Learn about DesignMeInteriors architecture studio philosophy, team, award history, and design approach.",
+    "Learn about DesignMeInteriors, a Nagpur-based interior design firm founded in 2021, our design philosophy, founder, mission, vision, and approach to creating thoughtful and functional interiors.",
 };
 
-const AWARDS = [
+const STATS = [
+  { value: "6+", label: "Years of Experience", icon: Clock },
+  { value: "2021", label: "Established", icon: Calendar },
+  { value: "Nagpur", label: "Based In", icon: MapPin },
+  { value: "End-to-End", label: "Interior Solutions", icon: ShieldCheck },
+];
+
+const CORE_VALUES = [
   {
-    year: "2024",
-    title: "International Architecture Award",
-    project: "Dune Sanctuary Villa",
-    issuer: "ArchDaily",
+    number: "01",
+    title: "Delivering Consistent Quality",
+    description:
+      "We maintain high standards of quality, professionalism, and ethics across every stage of a project, building relationships based on trust and long-term collaboration.",
+    icon: ShieldCheck,
   },
   {
-    year: "2023",
-    title: "Gold Design Excellence",
-    project: "Komorebi Tech HQ",
-    issuer: "Design Prize Asia",
+    number: "02",
+    title: "Foster Creativity & Designing",
+    description:
+      "We believe creativity and design innovation are essential to creating distinctive, meaningful, and effective interior spaces.",
+    icon: Lightbulb,
   },
   {
-    year: "2023",
-    title: "Residential Interior of the Year",
-    project: "Aurora Sky Loft",
-    issuer: "Architectural Digest",
+    number: "03",
+    title: "Seek Help & Help Others",
+    description:
+      "We believe great work grows through mutual support. We remain open to learning, helping others, and collaborating throughout every project.",
+    icon: HeartHandshake,
   },
   {
-    year: "2022",
-    title: "Best Hospitality Concept",
-    project: "Solstice Retreat",
-    issuer: "Frame Awards",
+    number: "04",
+    title: "Timely Execution of Project",
+    description:
+      "We respect our clients' time and work according to clear project plans, milestones, and execution schedules to deliver projects on time.",
+    icon: Clock,
+  },
+];
+
+const PROCESS_STEPS = [
+  {
+    step: "01",
+    title: "Consultation",
+    description:
+      "Understand the client's requirements, lifestyle, preferences, space, and budget.",
+  },
+  {
+    step: "02",
+    title: "Concept & Planning",
+    description:
+      "Develop the design direction, space planning, and initial concepts.",
+  },
+  {
+    step: "03",
+    title: "Design Development",
+    description:
+      "Finalize materials, colours, furniture, lighting, finishes, and design details.",
+  },
+  {
+    step: "04",
+    title: "Execution",
+    description:
+      "Coordinate the execution process and ensure the design is implemented according to the approved plan.",
+  },
+  {
+    step: "05",
+    title: "Handover",
+    description:
+      "Complete the final details and deliver the finished space.",
   },
 ];
 
 export default function AboutPage() {
+  const featuredProjects = PROJECTS.slice(0, 4);
+
   return (
-    <div className="pt-28 pb-20 bg-[#F5F2EC]">
-      {/* Page Hero */}
+    <div className="pt-14 bg-[#F5F2EC] text-[#242321]">
+      {/* 1. HERO SECTION */}
       <section className="border-b border-[#D7D0C5] bg-[#F5F2EC] py-16 md:py-24">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-          <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
             {/* LEFT — CONTENT */}
-            <div className="relative z-10">
+            <div className="relative z-10 space-y-6">
               {/* Eyebrow */}
-              <div className="mb-8 flex items-center gap-4">
+              <div className="flex items-center gap-4">
                 <span className="h-px w-10 bg-[#9A8060]" />
-
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
-                  About DesignMeInteriors Studio
+                  ABOUT DESIGNMEINTERIORS
                 </span>
               </div>
 
-              {/* Heading */}
-              <h1 className="max-w-3xl font-serif text-4xl leading-[1.05] text-[#242321] sm:text-6xl lg:text-[68px]">
-                We design timeless spaces where{" "}
-                <span className="italic text-[#9A8060]">human life</span>{" "}
-                unfolds in harmony.
+              {/* Main Heading */}
+              <h1 className="font-serif text-4xl leading-[1.1] text-[#242321] sm:text-5xl lg:text-[62px]">
+                We create spaces that feel as good as{" "}
+                <span className="italic text-[#9A8060]">they look.</span>
               </h1>
 
-              {/* Description */}
-              <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-[#706B63] sm:text-lg">
-                Established in 2010, DesignMeInteriors is a multi-disciplinary
-                architecture and interior design laboratory. We work closely
-                with private individuals, developers, and visionaries to
-                manifest extraordinary built environments.
+              {/* Subheading */}
+              <p className="max-w-xl text-base font-light leading-relaxed text-[#706B63] sm:text-lg">
+                Combining thoughtful design, functional planning, and quality
+                execution to create interiors that are made for the way you live and work.
               </p>
 
-              {/* Studio Information */}
-              <div className="mt-10 grid max-w-xl grid-cols-2 border-t border-[#D7D0C5] pt-6 sm:grid-cols-3">
-                <div className="border-r border-[#D7D0C5] pr-5">
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-[#706B63]">
-                    Established
+              {/* Information Row */}
+              <div className="grid grid-cols-3 gap-4 border-t border-[#D7D0C5] pt-6 max-w-lg">
+                <div>
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[#706B63]">
+                    Experience
                   </span>
-
-                  <span className="mt-2 block font-serif text-xl text-[#242321]">
-                    2010
-                  </span>
-                </div>
-
-                <div className="border-r border-[#D7D0C5] px-5">
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-[#706B63]">
-                    Discipline
-                  </span>
-
-                  <span className="mt-2 block font-serif text-xl text-[#242321]">
-                    Architecture
+                  <span className="mt-1.5 block font-serif text-lg font-medium text-[#242321]">
+                    6+ Years
                   </span>
                 </div>
-
-                <div className="pl-5">
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-[#706B63]">
-                    Focus
+                <div className="border-x border-[#D7D0C5] px-4">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[#706B63]">
+                    Founded
                   </span>
-
-                  <span className="mt-2 block font-serif text-xl text-[#242321]">
-                    Human Life
+                  <span className="mt-1.5 block font-serif text-lg font-medium text-[#242321]">
+                    2021
+                  </span>
+                </div>
+                <div className="pl-2">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[#706B63]">
+                    Location
+                  </span>
+                  <span className="mt-1.5 block font-serif text-lg font-medium text-[#242321]">
+                    Nagpur, MH
                   </span>
                 </div>
               </div>
+
+              {/* Primary CTA */}
+              <div className="pt-2">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="accent"
+                  className="px-8 py-6 text-xs font-semibold uppercase tracking-wider shadow-lg hover:shadow-xl"
+                >
+                  <Link href="/contact" className="inline-flex items-center gap-3">
+                    <span>Schedule A Call</span>
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
 
-            {/* RIGHT — IMAGE COMPOSITION */}
+            {/* RIGHT — HERO IMAGE */}
             <div className="relative">
-              {/* Image */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-[#D7D0C5]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-[#D7D0C5] shadow-2xl">
                 <Image
                   src={IMAGES.aboutMain}
-                  alt="DesignMeInteriors Studio interior architecture"
+                  alt="Nagpur interior design by DesignMeInteriors"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-1000 hover:scale-[1.02]"
+                  className="object-cover transition-transform duration-1000 hover:scale-[1.03]"
                 />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
 
-              {/* Year marker */}
-              <div className="absolute -left-4 top-8 rounded-xl bg-[#242321] px-4 py-3 text-[#FCFBF8] shadow-lg sm:-left-6">
-                <span className="block text-[9px] uppercase tracking-[0.25em] text-[#FCFBF8]/60">
-                  Studio
-                </span>
-
-                <span className="font-serif text-xl">Est. 2010</span>
-              </div>
-
-              {/* Floating experience card */}
-              <div className="absolute -bottom-6 right-4 rounded-xl bg-[#FCFBF8] border border-[#D7D0C5] px-6 py-5 shadow-xl sm:-right-6">
-                <div className="flex items-end gap-3">
-                  <span className="font-serif text-4xl leading-none text-[#242321]">
-                    15
-                  </span>
-
+              {/* Floating Badge */}
+              <div className="absolute -bottom-6 -left-4 sm:-left-6 rounded-2xl border border-[#D7D0C5] bg-[#FCFBF8] p-5 shadow-xl">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#9A8060]/10 text-[#9A8060]">
+                    <MapPin className="h-5 w-5" />
+                  </div>
                   <div>
-                    <span className="block text-[10px] uppercase tracking-[0.18em] text-[#706B63]">
-                      Years
+                    <span className="block font-serif text-sm font-medium text-[#242321]">
+                      Nagpur Interior Studio
                     </span>
-
-                    <span className="block text-xs text-[#242321]">
-                      of shaping spaces
+                    <span className="block text-[10px] text-[#706B63]">
+                      Thoughtful & Functional Spaces
                     </span>
                   </div>
                 </div>
               </div>
-
-              {/* Vertical label */}
-              <div className="absolute -right-10 top-10 hidden lg:block">
-                <span className="text-[9px] uppercase tracking-[0.35em] text-[#706B63] [writing-mode:vertical-rl]">
-                  Architecture · Interiors · Life
-                </span>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Philosophy Section */}
-      <section className="py-24 border-b border-[#D7D0C5]">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 relative h-[480px] w-full rounded-3xl border border-[#D7D0C5] overflow-hidden shadow-xl">
+      {/* 2. WHO WE ARE */}
+      <section className="py-20 md:py-28 border-b border-[#D7D0C5] bg-[#FCFBF8]">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Visual Image */}
+            <div className="lg:col-span-6 relative h-[440px] md:h-[520px] w-full rounded-3xl border border-[#D7D0C5] overflow-hidden shadow-xl">
               <Image
-                src={IMAGES.aboutMain}
-                alt="DesignMeInteriors Studio Material Library"
+                src={IMAGES.aboutStudio}
+                alt="DesignMeInteriors Studio working on custom interiors in Nagpur"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
+
+            {/* Narrative Content */}
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#9A8060] font-semibold">
-                Our Ethos
-              </span>
+              <div className="flex items-center gap-4">
+                <span className="h-px w-8 bg-[#9A8060]" />
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
+                  Who We Are
+                </span>
+              </div>
+
               <h2 className="text-3xl sm:text-4xl font-serif text-[#242321]">
-                Architecture as a quiet dialogue between space and soul.
+                Crafting interiors rooted in clarity, purpose, and comfort.
               </h2>
-              <p className="text-sm text-[#706B63] leading-relaxed">
-                We believe that the spaces we inhabit directly shape our inner
-                state. In an era dominated by superficial decoration and fast
-                construction, DesignMeInteriors champions slow, deliberate craftsmanship,
-                enduring natural materials, and spatial purity.
+
+              <p className="text-base text-[#706B63] font-light leading-relaxed">
+                DesignMeInteriors is an interior design firm based in Nagpur, with 6+ years of experience in creating thoughtful and functional interior spaces. We believe great interiors are not simply about decoration—they are about understanding people, their lifestyles, and the way they want to experience their space.
               </p>
-              <p className="text-sm text-[#706B63] leading-relaxed">
-                Our collaborative studio practice unites master architects,
-                interior specialists, lighting designers, and master carpenters
-                under a unified vision.
+
+              <p className="text-base text-[#706B63] font-light leading-relaxed">
+                From the initial concept and space planning to material selection, detailing, and execution, we focus on bringing every element together with purpose. Our approach combines creativity, functionality, quality, and attention to detail to create spaces that are personal, practical, and built to last.
+              </p>
+
+              <div className="pt-4">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-[#9A8060] text-[#242321] hover:bg-[#9A8060] hover:text-white px-7 py-6 text-xs font-semibold uppercase tracking-wider"
+                >
+                  <Link href="/contact" className="inline-flex items-center gap-3">
+                    <span>Schedule A Call</span>
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. COMPANY HIGHLIGHTS / STATS */}
+      <section className="border-b border-[#D7D0C5] bg-[#E8E1D7] py-16">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+            {STATS.map((stat, idx) => {
+              const Icon = stat.icon;
+              return (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center text-center p-6 rounded-2xl bg-[#FCFBF8]/80 border border-[#D7D0C5] backdrop-blur-sm shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#9A8060]/15 text-[#9A8060]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span className="font-serif text-3xl sm:text-4xl text-[#242321]">
+                    {stat.value}
+                  </span>
+                  <span className="mt-2 text-xs font-semibold uppercase tracking-wider text-[#706B63]">
+                    {stat.label}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 4 & 5. OUR VISION & OUR MISSION */}
+      <section className="py-20 md:py-28 border-b border-[#D7D0C5] bg-[#F5F2EC]">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
+              PURPOSE & DIRECTION
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#242321]">
+              Our Vision & Mission
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {/* Vision Card */}
+            <div className="rounded-3xl border border-[#D7D0C5] bg-[#FCFBF8] p-8 sm:p-10 shadow-lg space-y-5 relative overflow-hidden group hover:border-[#9A8060] transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#9A8060] text-white shadow-md">
+                  <Compass className="h-6 w-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
+                    FUTURE LOOKING
+                  </span>
+                  <h3 className="font-serif text-2xl text-[#242321]">Our Vision</h3>
+                </div>
+              </div>
+
+              <p className="text-base text-[#706B63] font-light leading-relaxed pt-2">
+                To lead the industry in sustainable and cost-efficient interior design practices by combining eco-friendly materials, luxurious aesthetics, and innovative solutions that create spaces in harmony with nature.
+              </p>
+            </div>
+
+            {/* Mission Card */}
+            <div className="rounded-3xl border border-[#D7D0C5] bg-[#FCFBF8] p-8 sm:p-10 shadow-lg space-y-5 relative overflow-hidden group hover:border-[#9A8060] transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#242321] text-white shadow-md">
+                  <Target className="h-6 w-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
+                    OUR COMMITMENT
+                  </span>
+                  <h3 className="font-serif text-2xl text-[#242321]">Our Mission</h3>
+                </div>
+              </div>
+
+              <p className="text-base text-[#706B63] font-light leading-relaxed pt-2">
+                Our mission is to deliver personalized interior design solutions within an affordable budget while prioritizing functionality, premium design, quality craftsmanship, and the individual preferences of every client.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <GuidingPrinciples />
-
-      {/* Leadership Team */}
+      {/* 6. OUR FOUNDER */}
       <LeadershipTeam />
 
-      {/* Awards & Recognition */}
+      {/* 7. OUR DESIGN PHILOSOPHY */}
+      <GuidingPrinciples />
 
-      <section className="border-b border-[#D7D0C5] bg-[#F5F2EC] py-20 md:py-28">
+      {/* 8. WHAT WE BELIEVE IN — CORE VALUES */}
+      <CoreValuesSection />
+
+      {/* 9. HOW WE WORK (PROCESS) */}
+      <WorkProcess />
+
+      {/* 10. OUR EXPERTISE */}
+      <section className="py-20 md:py-28 border-b border-[#D7D0C5] bg-[#F5F2EC]">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-          {/* Header */}
-          <div className="mb-14 border-b border-[#D7D0C5] pb-10">
-            <div className="mb-5 flex items-center gap-4">
-              <span className="h-px w-8 bg-[#9A8060]" />
-
-              <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#9A8060]">
-                Distinction
-              </span>
-            </div>
-
-            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <h3 className="max-w-3xl font-serif text-3xl leading-[0.95] text-[#242321] sm:text-5xl md:text-4xl">
-                Awards & Global
-                Recognition
-              </h3>
-            </div>
+          <div className="mb-14 text-center max-w-2xl mx-auto space-y-3">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
+              WHAT WE DO
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#242321]">
+              Our Expertise
+            </h2>
+            <p className="text-sm font-light text-[#706B63]">
+              End-to-end interior services tailored for residential, commercial, and custom spaces in Nagpur.
+            </p>
           </div>
 
-          {/* Editorial Award Grid */}
-          <div className="border border-[#D7D0C5]">
-            {/* Main Row */}
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* Featured Award */}
-              {AWARDS[0] && (
-                <article
-                  className="
-    group
-    border-b
-    border-[#D7D0C5]
-    transition-colors
-    duration-500
-    bg-[#FCFBF8]
-    hover:bg-[#E8E1D7]
-    lg:border-b-0
-    lg:border-r
-  "
-                >
-                  <div className="p-6 sm:p-8 md:p-10">
-                    {/* Year */}
-                    <div className="mb-10 flex items-start justify-between">
-                      <span className="font-sans text-7xl font-light tracking-[-0.06em] text-[#D7D0C5] sm:text-8xl">
-                        {AWARDS[0].year}
-                      </span>
-
-                      <span className="border border-[#D7D0C5] px-3 py-1 text-[9px] uppercase tracking-[0.2em] text-[#706B63]">
-                        {AWARDS[0].issuer}
-                      </span>
-                    </div>
-
-                    {/* Award Info */}
-                    <div className="mb-8">
-                      <h3 className="font-serif text-2xl text-[#242321] sm:text-3xl">
-                        {AWARDS[0].title}
-                      </h3>
-
-                      <p className="mt-2 text-xs uppercase tracking-[0.18em] text-[#706B63]">
-                        {AWARDS[0].project}
-                      </p>
-                    </div>
-
-                    {/* Featured Image */}
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[#E8E1D7]">
-                      <Image
-                        src={IMAGES.aboutMain}
-                        alt={AWARDS[0].project}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="
-                    object-cover
-                    transition-transform
-                    duration-700
-                    ease-out
-                    group-hover:scale-[1.03]
-                  "
-                      />
-
-                      <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/5" />
-                    </div>
-                  </div>
-                </article>
-              )}
-
-              {/* Right Side Awards */}
-              <div className="grid grid-cols-1">
-                {AWARDS.slice(1, 3).map((award) => (
-                  <article
-                    key={`${award.year}-${award.title}`}
-                    className="
-  group
-  flex
-  min-h-[240px]
-  flex-col
-  justify-between
-  border-b
-  border-[#D7D0C5]
-  p-6
-  transition-colors
-  duration-500
-  ease-out
-  bg-[#FCFBF8]
-  hover:bg-[#E8E1D7]
-  sm:p-8
-  md:p-10
-"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((srv) => (
+              <div
+                key={srv.slug}
+                className="group rounded-3xl border border-[#D7D0C5] bg-[#FCFBF8] overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              >
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#E8E1D7]">
+                  <Image
+                    src={srv.image}
+                    alt={srv.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 space-y-3">
+                  <h3 className="font-serif text-xl text-[#242321]">
+                    {srv.title}
+                  </h3>
+                  <p className="text-xs font-light text-[#706B63] line-clamp-3 leading-relaxed">
+                    {srv.shortDescription || srv.description}
+                  </p>
+                </div>
+                <div className="p-6 pt-0">
+                  <Link
+                    href={`/services/${srv.slug}`}
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#9A8060] hover:text-[#242321] transition-colors"
                   >
-                    <div className="flex items-start justify-between">
-                      <span className="font-sans text-4xl font-medium tracking-[-0.04em] text-[#242321]">
-                        {award.year}
-                      </span>
-
-                      <span className="border border-[#D7D0C5] px-3 py-1 text-[9px] uppercase tracking-[0.2em] text-[#706B63]">
-                        {award.issuer}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h3 className="font-serif text-xl text-[#242321] transition-transform duration-300 group-hover:translate-x-1 sm:text-2xl">
-                        {award.title}
-                      </h3>
-
-                      <p className="mt-2 text-xs text-[#706B63]">
-                        {award.project}
-                      </p>
-                    </div>
-                  </article>
-                ))}
+                    <span>Explore Service</span>
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
               </div>
-            </div>
-
-            {/* Bottom Awards */}
-            {AWARDS.length > 3 && (
-              <div className="grid grid-cols-1 border-t border-[#D7D0C5] md:grid-cols-2">
-                {AWARDS.slice(3).map((award) => (
-                  <article
-                    key={`${award.year}-${award.title}`}
-                    className="
-                group
-                flex
-                min-h-[180px]
-                flex-col
-                justify-between
-                border-b
-                border-[#D7D0C5]
-                p-6
-                transition-colors
-                duration-300
-                bg-[#FCFBF8]
-                hover:bg-[#E8E1D7]
-                md:border-r
-                md:p-8
-                lg:p-10
-                last:md:border-r-0
-              "
-                  >
-                    <div className="flex items-start justify-between gap-6">
-                      <span className="font-sans text-3xl font-medium tracking-[-0.04em] text-[#242321]">
-                        {award.year}
-                      </span>
-
-                      <span className="text-[9px] uppercase tracking-[0.2em] text-[#706B63]">
-                        {award.issuer}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h3 className="font-serif text-lg text-[#242321] transition-transform duration-300 group-hover:translate-x-1">
-                        {award.title}
-                      </h3>
-
-                      <p className="mt-1 text-xs text-[#706B63]">
-                        {award.project}
-                      </p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Small Footer */}
-          <div className="mt-6 flex items-center justify-between text-[9px] uppercase tracking-[0.25em] text-[#706B63]">
-            <span>DesignMeInteriors Studio</span>
-            <span>Selected Recognition</span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <CtaBanner />
+      {/* 11. SELECTED PROJECTS */}
+      <section className="py-20 md:py-28 border-b border-[#D7D0C5] bg-[#FCFBF8]">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+          <div className="mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#D7D0C5] pb-8">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060] block mb-2">
+                PORTFOLIO
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#242321]">
+                Spaces We&apos;ve Transformed
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {featuredProjects.map((prj) => (
+              <div
+                key={prj.id}
+                className="group relative overflow-hidden rounded-3xl border border-[#D7D0C5] bg-[#F5F2EC] shadow-md hover:shadow-xl transition-all"
+              >
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  <Image
+                    src={prj.image}
+                    alt={prj.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#CAA05C] block">
+                      {prj.location} · {prj.category}
+                    </span>
+                    <h3 className="font-serif text-2xl text-white mt-1">
+                      {prj.title}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 14. CLOSING CTA */}
+      <section className="relative overflow-hidden bg-[#E8E1D7] py-20 sm:py-24 text-[#242321]">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12 relative z-10">
+          <div className="flex flex-col items-center text-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:text-left">
+            <div className="max-w-2xl space-y-4 flex flex-col items-center lg:items-start">
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
+                LET&apos;S WORK TOGETHER
+              </span>
+              <h2 className="font-serif text-3xl sm:text-5xl leading-tight text-[#242321]">
+                Let&apos;s Create a Space That Feels Like Yours
+              </h2>
+              <p className="text-sm text-[#706B63] max-w-lg leading-relaxed font-light mx-auto lg:mx-0">
+                Have a space in mind? Let&apos;s discuss your requirements, ideas, and budget and explore what we can create together.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <Button
+                asChild
+                size="lg"
+                variant="accent"
+                className="w-full sm:w-auto px-8 py-6 text-xs font-semibold uppercase tracking-wider shadow-lg"
+              >
+                <Link href="/contact" className="flex items-center justify-center gap-3">
+                  <span>Schedule A Call</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </Button>
+
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto border-[#9A8060] text-[#242321] hover:bg-[#9A8060] hover:text-white px-8 py-6 text-xs font-semibold uppercase tracking-wider"
+              >
+                <Link href="/projects" className="flex items-center justify-center gap-2">
+                  <span>View Our Projects</span>
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
