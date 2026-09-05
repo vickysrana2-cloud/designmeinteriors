@@ -8,6 +8,38 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Compass, Lightbulb, Palette, Sparkles } from "lucide-react";
+
+const ACCORDION_ICONS = [
+  {
+    icon: Compass,
+    colorActive: "text-[#D97706]",
+    colorInactive: "text-amber-300",
+    bgActive: "bg-amber-500/10 border-amber-500/30",
+    bgInactive: "bg-amber-500/20 border-amber-500/40",
+  },
+  {
+    icon: Lightbulb,
+    colorActive: "text-[#2563EB]",
+    colorInactive: "text-blue-300",
+    bgActive: "bg-blue-500/10 border-blue-500/30",
+    bgInactive: "bg-blue-500/20 border-blue-500/40",
+  },
+  {
+    icon: Palette,
+    colorActive: "text-[#9333EA]",
+    colorInactive: "text-purple-300",
+    bgActive: "bg-purple-500/10 border-purple-500/30",
+    bgInactive: "bg-purple-500/20 border-purple-500/40",
+  },
+  {
+    icon: Sparkles,
+    colorActive: "text-[#059669]",
+    colorInactive: "text-emerald-300",
+    bgActive: "bg-emerald-500/10 border-emerald-500/30",
+    bgInactive: "bg-emerald-500/20 border-emerald-500/40",
+  },
+];
 
 export function ProcessAccordion() {
   const [activeStep, setActiveStep] = useState("item-0");
@@ -111,6 +143,8 @@ export function ProcessAccordion() {
             >
               {PROCESS_STEPS.map((item, index) => {
                 const isActive = activeIndex === index;
+                const iconMeta = ACCORDION_ICONS[index % ACCORDION_ICONS.length];
+                const IconComponent = iconMeta.icon;
 
                 return (
                   <AccordionItem
@@ -133,7 +167,7 @@ export function ProcessAccordion() {
                     <AccordionTrigger
                       className="py-6 hover:no-underline md:py-7"
                     >
-                      <div className="flex w-full items-center gap-5 text-left">
+                      <div className="flex w-full items-center gap-4 text-left sm:gap-5">
                         {/* NUMBER */}
                         <span
                           className={`
@@ -147,6 +181,25 @@ export function ProcessAccordion() {
                         >
                           {item.step}
                         </span>
+
+                        {/* COLORED ICON */}
+                        <div
+                          className={`
+                            flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-all duration-500 md:h-11 md:w-11
+                            ${
+                              isActive
+                                ? iconMeta.bgActive
+                                : iconMeta.bgInactive
+                            }
+                          `}
+                        >
+                          <IconComponent
+                            className={`h-5 w-5 transition-colors duration-500 ${
+                              isActive ? iconMeta.colorActive : iconMeta.colorInactive
+                            }`}
+                            strokeWidth={1.85}
+                          />
+                        </div>
 
                         {/* TITLE */}
                         <span
@@ -166,7 +219,7 @@ export function ProcessAccordion() {
 
                     <AccordionContent
                       className={`
-                        pb-7 pl-[44px] pr-4 text-sm leading-7
+                        pb-7 pl-[84px] pr-4 text-sm leading-7
                         ${
                           isActive
                             ? "text-[#706B63]"

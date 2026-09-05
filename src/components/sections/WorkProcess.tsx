@@ -14,6 +14,8 @@ const PROCESS_STEPS = [
     description:
       "Understand the client's requirements, lifestyle, preferences, space, and budget.",
     icon: MessageCircle,
+    color: "text-[#D97706]",
+    badgeBg: "bg-[#FFF8EC] border-[#FDE68A]",
     image:
       "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85",
   },
@@ -23,6 +25,8 @@ const PROCESS_STEPS = [
     description:
       "Develop the design direction, space planning, and initial concepts.",
     icon: Lightbulb,
+    color: "text-[#2563EB]",
+    badgeBg: "bg-[#EFF6FF] border-[#BFDBFE]",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85",
   },
@@ -32,6 +36,8 @@ const PROCESS_STEPS = [
     description:
       "Finalize materials, colours, furniture, lighting, finishes, and design details.",
     icon: LayoutGrid,
+    color: "text-[#9333EA]",
+    badgeBg: "bg-[#FAF5FF] border-[#E9D5FF]",
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
   },
@@ -41,6 +47,8 @@ const PROCESS_STEPS = [
     description:
       "Coordinate the execution process and ensure the design is implemented according to the approved plan.",
     icon: Settings,
+    color: "text-[#E11D48]",
+    badgeBg: "bg-[#FFF1F2] border-[#FECDD3]",
     image:
       "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=85",
   },
@@ -50,6 +58,8 @@ const PROCESS_STEPS = [
     description:
       "Complete the final details and deliver the finished space.",
     icon: Home,
+    color: "text-[#059669]",
+    badgeBg: "bg-[#ECFDF5] border-[#A7F3D0]",
     image:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
   },
@@ -197,10 +207,10 @@ export default function WorkProcess() {
                 </div>
 
                 {/* FLOATING ICON */}
-                <div className="relative z-10 mx-auto -mt-[25px] flex h-[50px] w-[50px] items-center justify-center rounded-full border border-[#E5DCD0] bg-[#FBF8F2] shadow-[0_4px_14px_rgba(0,0,0,0.08)]">
+                <div className={`relative z-10 mx-auto -mt-[25px] flex h-[50px] w-[50px] items-center justify-center rounded-full border shadow-[0_4px_14px_rgba(0,0,0,0.08)] ${proc.badgeBg}`}>
                   <Icon
-                    className="h-[21px] w-[21px] text-[#1C1A17]"
-                    strokeWidth={1.45}
+                    className={`h-[21px] w-[21px] ${proc.color}`}
+                    strokeWidth={1.6}
                   />
                 </div>
 
@@ -275,10 +285,10 @@ export default function WorkProcess() {
                         />
 
                         {/* ICON */}
-                        <div className="absolute bottom-[-1px] right-[-1px] flex h-8 w-8 items-center justify-center rounded-tl-[12px] bg-[#FBF9F5]">
+                        <div className={`absolute bottom-[-1px] right-[-1px] flex h-8 w-8 items-center justify-center rounded-tl-[12px] border-t border-l ${proc.badgeBg}`}>
                           <Icon
-                            className="h-[15px] w-[15px] text-[#1C1A17]"
-                            strokeWidth={1.5}
+                            className={`h-[15px] w-[15px] ${proc.color}`}
+                            strokeWidth={1.6}
                           />
                         </div>
                       </div>

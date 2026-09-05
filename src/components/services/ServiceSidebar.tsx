@@ -74,23 +74,23 @@ export function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
 
           <div className="space-y-3.5 border-t border-white/10 pt-5 text-xs text-[#D7D0C5]">
             <a
-              href="tel:+911145678900"
+              href="tel:+919579540206"
               className="flex items-center gap-3 transition-colors hover:text-[#9A8060]"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/5 text-[#9A8060]">
                 <Phone className="h-3.5 w-3.5" />
               </div>
-              <span className="font-medium">+91 11 4567 8900</span>
+              <span className="font-medium">+91 9579540206</span>
             </a>
 
             <a
-              href="mailto:delhi@designmeinteriors.com"
+              href="mailto:contact@designmeinteriors.com"
               className="flex items-center gap-3 transition-colors hover:text-[#9A8060]"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/5 text-[#9A8060]">
                 <Mail className="h-3.5 w-3.5" />
               </div>
-              <span className="font-medium truncate">delhi@designmeinteriors.com</span>
+              <span className="font-medium truncate">contact@designmeinteriors.com</span>
             </a>
           </div>
 

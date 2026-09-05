@@ -23,27 +23,11 @@ import {
 
 const OFFICES = [
   {
-    city: "New Delhi Studio",
-    address: "12 Golf Links, 1st Floor",
-    district: "New Delhi, Delhi 110003",
-    phone: "+91 11 4567 8900",
-    email: "delhi@designmeinteriors.com",
-    hours: "Mon – Sat: 09:30 – 18:30 IST",
-  },
-  {
-    city: "Mumbai Design Hub",
-    address: "Level 8, Maker Maxity, BKC",
-    district: "Bandra East, Mumbai 400051",
-    phone: "+91 22 6789 0123",
-    email: "mumbai@designmeinteriors.com",
-    hours: "Mon – Sat: 09:30 – 18:30 IST",
-  },
-  {
-    city: "Bengaluru Innovation Lab",
-    address: "100 Feet Road, Indiranagar",
-    district: "Bengaluru, Karnataka 560038",
-    phone: "+91 80 3456 7890",
-    email: "bengaluru@designmeinteriors.com",
+    city: "Nagpur Studio",
+    address: "DesignMeInteriors",
+    district: "Nagpur, Maharashtra, India",
+    phone: "+91 9579540206",
+    email: "contact@designmeinteriors.com",
     hours: "Mon – Sat: 09:30 – 18:30 IST",
   },
 ];
@@ -196,7 +180,7 @@ function ContactForm() {
                 Phone Number
               </label>
               <Input
-                placeholder="+91 98765 43210"
+                placeholder="+91 95795 40206"
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
