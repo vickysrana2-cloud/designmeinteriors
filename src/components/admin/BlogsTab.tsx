@@ -166,14 +166,20 @@ export function BlogsTab() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 text-[#FCFBF8]">
       {/* Header Bar & Create Action */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#322F2C] pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#2D2A26] pb-6">
         <div>
-          <h2 className="font-serif text-2xl text-[#FCFBF8]">
-            Blog Posts Management ({blogs.length})
+          <div className="flex items-center gap-3 mb-1">
+            <span className="h-px w-8 bg-[#9A7248]" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9A7248]">
+              BLOG MANAGEMENT
+            </span>
+          </div>
+          <h2 className="font-serif text-2xl sm:text-3xl text-white">
+            Blog Posts ({blogs.length})
           </h2>
-          <p className="text-xs text-[#706B63]">
+          <p className="text-xs text-[#9E978E]">
             Create, edit, and publish blogs directly to the website via MockAPI.
           </p>
         </div>
@@ -182,15 +188,15 @@ export function BlogsTab() {
           <button
             onClick={fetchBlogs}
             disabled={loading}
-            className="inline-flex items-center gap-2 rounded-xl border border-[#322F2C] bg-[#191816] px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#FCFBF8] hover:border-[#9A8060] transition-colors"
+            className="inline-flex items-center gap-2 rounded-2xl border border-[#2D2A26] bg-[#191816] px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#FCFBF8] hover:border-[#9A7248] transition-colors"
           >
-            <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
+            <RefreshCw className={`h-3.5 w-3.5 text-[#9A7248] ${loading ? "animate-spin" : ""}`} />
             <span>Refresh</span>
           </button>
 
           <button
             onClick={openCreateModal}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#9A8060] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-lg hover:bg-[#80684D] transition-colors"
+            className="inline-flex items-center gap-2 rounded-2xl bg-[#9A7248] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-lg hover:bg-[#80684D] transition-colors"
           >
             <Plus className="h-4 w-4" />
             <span>Create New Blog</span>
@@ -200,9 +206,9 @@ export function BlogsTab() {
 
       {/* Loading State */}
       {loading && (
-        <div className="py-16 text-center space-y-3">
-          <Loader2 className="mx-auto h-8 w-8 animate-spin text-[#9A8060]" />
-          <p className="text-xs text-[#706B63]">Fetching blogs from MockAPI endpoint...</p>
+        <div className="py-20 text-center space-y-3">
+          <Loader2 className="mx-auto h-8 w-8 animate-spin text-[#9A7248]" />
+          <p className="text-xs text-[#9E978E]">Fetching blogs from server...</p>
         </div>
       )}
 
@@ -215,15 +221,15 @@ export function BlogsTab() {
 
       {/* Empty State */}
       {!loading && !error && blogs.length === 0 && (
-        <div className="p-12 text-center border border-[#322F2C] bg-[#242321] rounded-3xl space-y-4">
-          <FileText className="mx-auto h-10 w-10 text-[#706B63]" />
-          <h3 className="font-serif text-lg text-[#FCFBF8]">No Blogs Created Yet</h3>
-          <p className="text-xs text-[#706B63]">
+        <div className="p-16 text-center border border-[#2D2A26] bg-[#191816] rounded-2xl space-y-4">
+          <FileText className="mx-auto h-10 w-10 text-[#7A746C]" />
+          <h3 className="font-serif text-lg text-white">No Blogs Created Yet</h3>
+          <p className="text-xs text-[#9E978E]">
             Start sharing spatial design insights by creating your first blog post.
           </p>
           <button
             onClick={openCreateModal}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#9A8060] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white"
+            className="inline-flex items-center gap-2 rounded-2xl bg-[#9A7248] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white"
           >
             <Plus className="h-4 w-4" />
             <span>Write First Blog</span>
@@ -237,11 +243,11 @@ export function BlogsTab() {
           {blogs.map((b) => (
             <div
               key={b.id}
-              className="rounded-3xl border border-[#322F2C] bg-[#242321] overflow-hidden flex flex-col justify-between space-y-4 shadow-lg transition-all hover:border-[#9A8060]/60"
+              className="rounded-2xl border border-[#2D2A26] bg-[#191816] overflow-hidden flex flex-col justify-between space-y-4 shadow-xl transition-all hover:border-[#9A7248]/60"
             >
               <div className="space-y-3">
                 {/* Cover Image */}
-                <div className="relative h-48 w-full bg-[#191816] overflow-hidden">
+                <div className="relative h-48 w-full bg-[#141312] overflow-hidden">
                   <BlogImage
                     src={b.coverImage}
                     alt={b.title}
@@ -252,7 +258,7 @@ export function BlogsTab() {
                   />
 
                   {/* Category Pill */}
-                  <span className="absolute top-3 left-3 rounded-full bg-[#191816]/80 backdrop-blur-sm border border-[#9A8060]/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#CAA05C]">
+                  <span className="absolute top-3 left-3 rounded-full bg-[#141312]/90 backdrop-blur-sm border border-[#9A7248]/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#9A7248]">
                     {b.category || "Architecture"}
                   </span>
 
@@ -260,7 +266,7 @@ export function BlogsTab() {
                   <span
                     className={`absolute top-3 right-3 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider border backdrop-blur-sm ${
                       b.published !== false
-                        ? "bg-emerald-950/80 border-emerald-500/50 text-emerald-400"
+                        ? "bg-[#132A1C]/90 border-[#1E4D30] text-[#4ADE80]"
                         : "bg-amber-950/80 border-amber-500/50 text-amber-400"
                     }`}
                   >
@@ -270,20 +276,20 @@ export function BlogsTab() {
 
                 {/* Content Details */}
                 <div className="p-5 space-y-2">
-                  <h3 className="font-serif text-base font-semibold text-[#FCFBF8] line-clamp-2">
+                  <h3 className="font-serif text-base font-semibold text-white line-clamp-2">
                     {b.title}
                   </h3>
-                  <p className="text-xs text-[#706B63] line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-[#9E978E] line-clamp-3 leading-relaxed">
                     {b.excerpt || b.content}
                   </p>
                 </div>
               </div>
 
               {/* Actions Footer */}
-              <div className="p-5 pt-0 flex items-center justify-between border-t border-[#322F2C] mt-auto">
+              <div className="p-5 pt-0 flex items-center justify-between border-t border-[#2D2A26] mt-auto">
                 <button
                   onClick={() => togglePublish(b)}
-                  className="inline-flex items-center gap-1.5 text-xs text-[#9A8060] hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs text-[#9A7248] hover:text-white transition-colors"
                 >
                   {b.published !== false ? (
                     <>
@@ -301,7 +307,7 @@ export function BlogsTab() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => openEditModal(b)}
-                    className="p-2 rounded-lg border border-[#322F2C] bg-[#191816] text-[#FCFBF8] hover:border-[#9A8060] hover:text-[#9A8060] transition-colors"
+                    className="p-2 rounded-xl border border-[#2D2A26] bg-[#141312] text-[#FCFBF8] hover:border-[#9A7248] hover:text-[#9A7248] transition-colors"
                     title="Edit Blog"
                   >
                     <PenSquare className="h-4 w-4" />
@@ -310,7 +316,7 @@ export function BlogsTab() {
                   <button
                     onClick={() => handleDelete(b.id)}
                     disabled={deletingId === b.id}
-                    className="p-2 rounded-lg border border-[#322F2C] bg-[#191816] text-[#706B63] hover:border-red-500/50 hover:text-red-400 transition-colors"
+                    className="p-2 rounded-xl border border-[#2D2A26] bg-[#141312] text-[#9E978E] hover:border-red-500/50 hover:text-red-400 transition-colors"
                     title="Delete Blog"
                   >
                     {deletingId === b.id ? (

@@ -9,7 +9,14 @@ export function buildOrganizationSchema() {
     url: siteConfig.url,
     logo: siteConfig.ogImage,
     description: siteConfig.description,
-    sameAs: [siteConfig.links.instagram, siteConfig.links.linkedin],
+    telephone: siteConfig.phone,
+    sameAs: [
+      siteConfig.links.facebook,
+      siteConfig.links.instagram,
+      siteConfig.links.pinterest,
+      siteConfig.links.linkedin,
+      siteConfig.links.youtube,
+    ],
   };
 }
 

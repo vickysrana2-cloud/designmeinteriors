@@ -322,15 +322,21 @@ export function Navbar() {
 
                       {/* Mobile details */}
                       <div className="flex flex-col gap-4 border-t border-[#D7D0C5] pt-6">
-                        <div className="flex items-center gap-3 text-xs text-[#706B63]">
+                        <a
+                          href="tel:+919579540206"
+                          className="flex items-center gap-3 text-xs text-[#706B63] hover:text-[#9A8060] transition-colors"
+                        >
                           <Phone className="h-4 w-4 text-[#9A8060]" />
-                          <span>+1 (212) 555-0198</span>
-                        </div>
+                          <span>+91 9579540206</span>
+                        </a>
 
-                        <div className="flex items-center gap-3 text-xs text-[#706B63]">
+                        <a
+                          href="mailto:contact@designmeinteriors.com"
+                          className="flex items-center gap-3 text-xs text-[#706B63] hover:text-[#9A8060] transition-colors"
+                        >
                           <Mail className="h-4 w-4 text-[#9A8060]" />
-                          <span>concierge@designmeinteriors.com</span>
-                        </div>
+                          <span>contact@designmeinteriors.com</span>
+                        </a>
 
                         <Button
                           asChild
