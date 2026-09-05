@@ -9,17 +9,17 @@ export const metadata: Metadata = {
 
 export default function BlogListingPage() {
   return (
-    <main className="pt-24 min-h-screen bg-[#F9F8F5]">
+    <main className="pt-24 min-h-screen bg-[#F5F2EC]">
       {/* Hero Banner for Journal */}
-      <section className="bg-[#1E1C1A] text-white py-20 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#C86D51] font-semibold block">
+      <section className="bg-[#191816] text-[#FCFBF8] py-20 px-6 md:px-12">
+        <div className="max-w-[1600px] mx-auto space-y-4">
+          <span className="text-xs uppercase tracking-[0.3em] text-[#9A8060] font-semibold block">
             DesignMeInteriors Studio Journal
           </span>
-          <h1 className="text-4xl sm:text-6xl font-serif leading-tight">
+          <h1 className="text-4xl sm:text-6xl font-serif leading-tight text-[#FCFBF8]">
             Architectural Insights & Essays
           </h1>
-          <p className="text-gray-300 text-sm sm:text-base font-light max-w-2xl leading-relaxed">
+          <p className="text-[#D7D0C5] text-sm sm:text-base font-light max-w-2xl leading-relaxed">
             Explorations into material harmony, spatial composition, modern structural innovations, and design practice.
           </p>
         </div>

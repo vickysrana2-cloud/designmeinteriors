@@ -1,7 +1,7 @@
 const getBaseUrl = (): string => {
   const url = process.env.NEXT_PUBLIC_API_URL;
   if (!url) {
-    return "https://68ece284eff9ad3b1403ae8f.mockapi.io";
+    return "https://6a9854f27160beda2292e746.mockapi.io";
   }
   return url.replace(/\/$/, "");
 };

@@ -58,20 +58,20 @@ export function BlogSection({
   const displayedBlogs = limit ? blogs.slice(0, limit) : blogs;
 
   return (
-    <section className="py-24 bg-[#F9F8F5] border-t border-[#E5DFD5]">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="py-24 bg-[#F5F2EC] border-t border-[#D7D0C5]">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12">
           <div className="space-y-3 max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#C86D51] font-semibold flex items-center gap-2">
+            <span className="text-xs uppercase tracking-[0.25em] text-[#9A8060] font-semibold flex items-center gap-2">
               <BookOpen className="h-4 w-4" />
               Journal & Thoughts
             </span>
-            <h2 className="text-3xl sm:text-5xl font-serif text-[#1E1C1A]">
+            <h2 className="text-3xl sm:text-5xl font-serif text-[#242321]">
               {title}
             </h2>
             {subtitle && (
-              <p className="text-sm sm:text-base text-muted-foreground font-light leading-relaxed">
+              <p className="text-sm sm:text-base text-[#706B63] font-light leading-relaxed">
                 {subtitle}
               </p>
             )}
@@ -79,10 +79,10 @@ export function BlogSection({
 
           {showViewAll && blogs.length > 0 && (
             <div className="hidden md:block">
-              <Button asChild variant="outline" size="sm" className="border-[#DCD5CB] hover:bg-white">
+              <Button asChild variant="outline" size="sm" className="border-[#242321] hover:bg-[#FCFBF8]">
                 <Link href="/blog" className="flex items-center gap-2">
                   <span>Explore All Articles</span>
-                  <ArrowUpRight className="h-3.5 w-3.5 text-[#C86D51]" />
+                  <ArrowUpRight className="h-3.5 w-3.5 text-[#9A8060]" />
                 </Link>
               </Button>
             </div>
@@ -95,12 +95,12 @@ export function BlogSection({
             {[1, 2, 3].map((idx) => (
               <div
                 key={idx}
-                className="animate-pulse border border-[#E5DFD5] bg-white p-6 space-y-4"
+                className="animate-pulse border border-[#D7D0C5] bg-[#FCFBF8] p-6 space-y-4"
               >
-                <div className="h-52 bg-[#F2EFE9] w-full" />
-                <div className="h-4 bg-[#F2EFE9] w-1/3" />
-                <div className="h-6 bg-[#F2EFE9] w-3/4" />
-                <div className="h-12 bg-[#F2EFE9] w-full" />
+                <div className="h-52 bg-[#E8E1D7] w-full" />
+                <div className="h-4 bg-[#E8E1D7] w-1/3" />
+                <div className="h-6 bg-[#E8E1D7] w-3/4" />
+                <div className="h-12 bg-[#E8E1D7] w-full" />
               </div>
             ))}
           </div>
@@ -116,10 +116,10 @@ export function BlogSection({
 
         {/* Empty Result State */}
         {!loading && !error && blogs.length === 0 && (
-          <div className="p-12 border border-[#E5DFD5] bg-white text-center space-y-4 max-w-lg mx-auto">
-            <BookOpen className="h-10 w-10 text-muted-foreground mx-auto" />
-            <h3 className="font-serif text-xl text-[#1E1C1A]">No Articles Published Yet</h3>
-            <p className="text-xs text-muted-foreground">
+          <div className="p-12 border border-[#D7D0C5] bg-[#FCFBF8] text-center space-y-4 max-w-lg mx-auto">
+            <BookOpen className="h-10 w-10 text-[#706B63] mx-auto" />
+            <h3 className="font-serif text-xl text-[#242321]">No Articles Published Yet</h3>
+            <p className="text-xs text-[#706B63]">
               Check back soon for new insights and design articles.
             </p>
           </div>
@@ -137,10 +137,10 @@ export function BlogSection({
         {/* Mobile View All Button */}
         {showViewAll && !loading && !error && blogs.length > 0 && (
           <div className="mt-12 text-center md:hidden">
-            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto border-[#242321]">
               <Link href="/blog" className="flex items-center justify-center gap-2">
                 <span>Explore All Articles</span>
-                <ArrowUpRight className="h-4 w-4 text-[#C86D51]" />
+                <ArrowUpRight className="h-4 w-4 text-[#9A8060]" />
               </Link>
             </Button>
           </div>

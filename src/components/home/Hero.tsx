@@ -103,7 +103,7 @@ export function Hero() {
               className="max-w-[1050px]"
             >
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.02] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.02em] text-white backdrop-blur-[2px]">
-                <span className="h-[6px] w-[6px] rounded-full bg-[#d9a441]" />
+                <span className="h-[6px] w-[6px] rounded-full bg-[#9A8060]" />
                 {slide.eyebrow}
               </div>
 
@@ -122,7 +122,7 @@ export function Hero() {
                 >
                   <span>Book Consultation</span>
 
-                  <span className="ml-4 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#d9a441] text-white transition-transform duration-300 group-hover:rotate-45">
+                  <span className="ml-4 flex h-9 w-9 shrink-0 items-center justify-center rounded-full wood-button text-[#FCFBF8] transition-transform duration-300 group-hover:rotate-45">
                     <ArrowUpRight size={18} strokeWidth={2} />
                   </span>
                 </Link>
@@ -175,7 +175,7 @@ export function Hero() {
           opacity: { duration: 0.5, delay: 0.8 },
           y: { duration: 2.4, repeat: Infinity, ease: [0.45, 0, 0.55, 1] },
         }}
-        className="absolute bottom-7 left-1/2 z-20 flex h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full bg-white text-[#d9a441] shadow-lg transition-transform hover:scale-105"
+        className="absolute bottom-7 left-1/2 z-20 flex h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full bg-[#FCFBF8] text-[#9A8060] shadow-lg transition-transform hover:scale-105"
       >
         <ArrowDown size={21} strokeWidth={1.8} />
       </motion.button>

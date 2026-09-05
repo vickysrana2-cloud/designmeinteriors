@@ -1,14 +1,18 @@
 import { Service } from "@/types/service";
-import { interiorArchitecture } from "./interior-architecture";
-import { residentialDesign } from "./residential-design";
-import { commercialSpaces } from "./commercial-spaces";
-import { turnkeyExecution } from "./turnkey-execution";
+import { residentialInteriorDesign } from "./residential-interior-design";
+import { commercialInteriorDesign } from "./commercial-interior-design";
+import { interiorDesignConsultation } from "./interior-design-consultation";
+import { outdoorLandscapeDesign } from "./outdoor-landscape-design";
+import { renovationAndRemodeling } from "./renovation-and-remodeling";
+import { interior2d3dLayouts } from "./interior-2d-3d-layouts";
 
 export const services: Service[] = [
-  interiorArchitecture,
-  residentialDesign,
-  commercialSpaces,
-  turnkeyExecution,
+  residentialInteriorDesign,
+  commercialInteriorDesign,
+  interiorDesignConsultation,
+  outdoorLandscapeDesign,
+  renovationAndRemodeling,
+  interior2d3dLayouts,
 ];
 
 export function getAllServices(): Service[] {

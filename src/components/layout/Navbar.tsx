@@ -21,7 +21,6 @@ const NAV_ITEMS = [
   { label: "About Studio", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -93,7 +92,7 @@ export function Navbar() {
         ease-out
         ${isHeroNavbar
           ? "bg-transparent py-5"
-          : "bg-white/90 backdrop-blur-md py-4 shadow-sm"
+          : "bg-[#F5F2EC]/90 backdrop-blur-md border-b border-[#D7D0C5] py-4 shadow-sm"
         }
       `}
     >
@@ -119,7 +118,7 @@ export function Navbar() {
           relative
           mx-auto
           flex
-          max-w-7xl
+          max-w-[1600px]
           items-center
           justify-between
           px-6
@@ -171,8 +170,8 @@ export function Navbar() {
                       ? "text-white"
                       : "text-white/85 hover:text-white"
                     : isActive
-                      ? "text-[#C86D51]"
-                      : "text-[#1E1C1A]/80 hover:text-[#C86D51]"
+                      ? "text-[#9A8060]"
+                      : "text-[#242321]/80 hover:text-[#9A8060]"
                   }
                 `}
               >
@@ -190,7 +189,7 @@ export function Navbar() {
                       duration-300
                       ${isHeroNavbar
                         ? "bg-white"
-                        : "bg-[#C86D51]"
+                        : "bg-[#9A8060]"
                       }
                     `}
                   />
@@ -206,13 +205,13 @@ export function Navbar() {
         <div className="hidden items-center gap-4 md:flex">
           <Button
             asChild
-            variant={isHeroNavbar ? "outline" : "default"}
+            variant={isHeroNavbar ? "outline" : "accent"}
             size="sm"
             className={`
               transition-all
               duration-300
               ${isHeroNavbar
-                ? "border-white/70 bg-white/5 text-white hover:bg-white hover:text-[#1E1C1A]"
+                ? "border-white/70 bg-white/5 text-white hover:bg-white hover:text-[#242321]"
                 : ""
               }
             `}
@@ -228,7 +227,7 @@ export function Navbar() {
         </div>
 
         {/* =====================================================
-            MOBILE MENU (FRAMER MOTION ANIMATED DRAWER)
+            MOBILE MENU (FRAMER MOTION ANIMATED PORTAL DRAWER)
         ====================================================== */}
         <div className="md:hidden">
           <Button
@@ -239,7 +238,7 @@ export function Navbar() {
             className={
               isHeroNavbar
                 ? "text-white hover:bg-white/10 hover:text-white"
-                : "text-[#1E1C1A]"
+                : "text-[#242321]"
             }
           >
             <Menu className="h-6 w-6" />
@@ -269,7 +268,7 @@ export function Navbar() {
                         duration: 0.3,
                         ease: [0.22, 1, 0.36, 1],
                       }}
-                      className="fixed inset-y-0 right-0 top-0 z-[9999] flex h-full w-3/4 max-w-sm flex-col justify-between overflow-y-auto border-l border-[#DCD5CB] bg-[#F9F8F5] p-6 pt-12 shadow-2xl"
+                      className="fixed inset-y-0 right-0 top-0 z-[9999] flex h-full w-3/4 max-w-sm flex-col justify-between overflow-y-auto border-l border-[#D7D0C5] bg-[#F5F2EC] p-6 pt-12 shadow-2xl"
                     >
                       {/* Close Button */}
                       <button
@@ -277,10 +276,10 @@ export function Navbar() {
                         className="absolute right-6 top-6 z-10 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none"
                         aria-label="Close menu"
                       >
-                        <X className="h-6 w-6 text-[#1E1C1A]" />
+                        <X className="h-6 w-6 text-[#242321]" />
                       </button>
 
-                      <div className="border-b border-[#DCD5CB] pb-6 text-left">
+                      <div className="border-b border-[#D7D0C5] pb-6 text-left">
                         <span className="sr-only">DesignMeInteriors</span>
                         <Image
                           src="/designMeLogo.svg"
@@ -290,7 +289,7 @@ export function Navbar() {
                           className="mb-1 h-10 w-auto object-contain"
                         />
 
-                        <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                        <p className="text-xs uppercase tracking-wider text-[#706B63]">
                           Architecture & Interior Design
                         </p>
                       </div>
@@ -310,8 +309,8 @@ export function Navbar() {
                                 text-xl
                                 transition-colors
                                 ${isActive
-                                  ? "text-[#C86D51]"
-                                  : "text-[#1E1C1A] hover:text-[#C86D51]"
+                                  ? "text-[#9A8060]"
+                                  : "text-[#242321] hover:text-[#9A8060]"
                                 }
                               `}
                             >
@@ -322,14 +321,14 @@ export function Navbar() {
                       </div>
 
                       {/* Mobile details */}
-                      <div className="flex flex-col gap-4 border-t border-[#DCD5CB] pt-6">
-                        <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                          <Phone className="h-4 w-4 text-[#C86D51]" />
+                      <div className="flex flex-col gap-4 border-t border-[#D7D0C5] pt-6">
+                        <div className="flex items-center gap-3 text-xs text-[#706B63]">
+                          <Phone className="h-4 w-4 text-[#9A8060]" />
                           <span>+1 (212) 555-0198</span>
                         </div>
 
-                        <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                          <Mail className="h-4 w-4 text-[#C86D51]" />
+                        <div className="flex items-center gap-3 text-xs text-[#706B63]">
+                          <Mail className="h-4 w-4 text-[#9A8060]" />
                           <span>concierge@designmeinteriors.com</span>
                         </div>
 

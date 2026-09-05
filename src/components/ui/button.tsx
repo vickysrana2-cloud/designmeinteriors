@@ -4,27 +4,37 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-none text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 cursor-pointer tracking-wider uppercase",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9A8060]/40 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer tracking-wider uppercase active:scale-[0.98]",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90 hover:scale-[1.01]",
+          "bg-[#3A2920] text-[#FCFBF8] shadow-[0_3px_10px_rgba(45,30,20,0.25)] hover:shadow-[0_6px_18px_rgba(45,30,20,0.35)]",
+
         accent:
-          "bg-[#C86D51] text-white hover:bg-[#B55C41] shadow-sm hover:shadow-md",
+          "wood-button text-[#FCFBF8]",
+
         outline:
-          "border border-primary/30 bg-transparent text-primary hover:border-primary hover:bg-primary/5",
-        ghost: "text-foreground hover:bg-secondary/80",
-        link: "text-primary underline-offset-4 hover:underline lowercase tracking-normal font-normal",
-        darkPill: "bg-[#1E1C1A] text-[#F9F8F5] hover:bg-[#322F2C] rounded-full px-6",
+          "border border-[#5A3A28]/40 bg-transparent text-[#3A2920] hover:border-[#5A3A28] hover:bg-[#5A3A28] hover:text-[#FCFBF8] hover:shadow-[0_4px_12px_rgba(65,40,25,0.25)]",
+
+        ghost:
+          "bg-transparent text-[#3A2920] hover:bg-[#E8E1D7]/60 hover:text-[#5A3A28]",
+
+        link:
+          "rounded-none bg-transparent p-0 text-[#3A2920] underline-offset-4 hover:text-[#8B5E3C] hover:underline lowercase tracking-normal font-normal",
+
+        darkPill:
+          "rounded-full bg-[#3A2920] text-[#FCFBF8] px-6 shadow-[0_3px_10px_rgba(45,30,20,0.3)] hover:bg-[#5A3A28] hover:shadow-[0_6px_18px_rgba(45,30,20,0.4)]",
       },
+
       size: {
         default: "h-11 px-7 py-3 text-xs",
         sm: "h-9 px-4 text-[11px]",
         lg: "h-14 px-9 text-xs font-semibold tracking-widest",
-        icon: "h-10 w-10 p-0",
+        icon: "h-10 w-10 p-0 rounded-full",
       },
     },
+
     defaultVariants: {
       variant: "default",
       size: "default",

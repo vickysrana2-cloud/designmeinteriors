@@ -52,18 +52,18 @@ export default async function SingleProjectPage({ params }: ProjectPageProps) {
   const related = getRelatedProjects(project.slug);
 
   return (
-    <div className="bg-[#F9F8F5]">
+    <div className="bg-[#F5F2EC]">
       {/* Hero */}
       <ProjectHero project={project} />
 
       {/* Main Content */}
       <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
             {/* Left: Content & Media */}
             <div className="space-y-12 lg:col-span-8">
               {/* Primary Main Image */}
-              <div className="relative h-[450px] w-full overflow-hidden border border-[#E5DFD5] shadow-md sm:h-[580px]">
+              <div className="relative h-[450px] w-full overflow-hidden rounded-3xl border border-[#D7D0C5] shadow-md sm:h-[580px]">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -75,22 +75,22 @@ export default async function SingleProjectPage({ params }: ProjectPageProps) {
               </div>
 
               {/* Narrative & Concept */}
-              <div className="space-y-6 text-[#1E1C1A]">
-                <h2 className="font-serif text-3xl sm:text-4xl">Design Concept & Architecture</h2>
-                <p className="font-light text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <div className="space-y-6 text-[#242321]">
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#242321]">Design Concept & Architecture</h2>
+                <p className="font-light text-base leading-relaxed text-[#706B63] sm:text-lg">
                   {project.description}
                 </p>
               </div>
 
               {/* Key Features */}
               {project.features && project.features.length > 0 && (
-                <div className="space-y-6 border-t border-[#DCD5CB] pt-10">
-                  <h3 className="font-serif text-2xl text-[#1E1C1A]">Architectural Highlights</h3>
+                <div className="space-y-6 border-t border-[#D7D0C5] pt-10">
+                  <h3 className="font-serif text-2xl text-[#242321]">Architectural Highlights</h3>
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {project.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3 border border-[#E5DFD5] bg-white p-4 shadow-sm">
-                        <CheckCircle2 className="h-5 w-5 shrink-0 text-[#C86D51] mt-0.5" />
-                        <span className="text-sm font-medium text-[#1E1C1A]">{feature}</span>
+                      <div key={idx} className="flex items-start gap-3 rounded-xl border border-[#D7D0C5] bg-[#FCFBF8] p-4 shadow-sm">
+                        <CheckCircle2 className="h-5 w-5 shrink-0 text-[#9A8060] mt-0.5" />
+                        <span className="text-sm font-medium text-[#242321]">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -99,11 +99,11 @@ export default async function SingleProjectPage({ params }: ProjectPageProps) {
 
               {/* Secondary Images Gallery */}
               {project.secondaryImages && project.secondaryImages.length > 0 && (
-                <div className="space-y-6 border-t border-[#DCD5CB] pt-10">
-                  <h3 className="font-serif text-2xl text-[#1E1C1A]">Spatial Documentation</h3>
+                <div className="space-y-6 border-t border-[#D7D0C5] pt-10">
+                  <h3 className="font-serif text-2xl text-[#242321]">Spatial Documentation</h3>
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     {project.secondaryImages.map((img, idx) => (
-                      <div key={idx} className="relative h-72 w-full overflow-hidden border border-[#E5DFD5]">
+                      <div key={idx} className="relative h-72 w-full overflow-hidden rounded-xl border border-[#D7D0C5]">
                         <Image
                           src={img}
                           alt={`${project.title} view ${idx + 1}`}
@@ -119,13 +119,13 @@ export default async function SingleProjectPage({ params }: ProjectPageProps) {
 
               {/* Technologies / Craftsmanship */}
               {project.technologies && project.technologies.length > 0 && (
-                <div className="space-y-6 border-t border-[#DCD5CB] pt-10">
-                  <h3 className="font-serif text-2xl text-[#1E1C1A]">Materials & Engineering</h3>
+                <div className="space-y-6 border-t border-[#D7D0C5] pt-10">
+                  <h3 className="font-serif text-2xl text-[#242321]">Materials & Engineering</h3>
                   <div className="flex flex-wrap gap-3">
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="border border-[#E5DFD5] bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#1E1C1A] shadow-sm"
+                        className="border border-[#D7D0C5] bg-[#FCFBF8] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#242321]"
                       >
                         {tech}
                       </span>
@@ -137,47 +137,47 @@ export default async function SingleProjectPage({ params }: ProjectPageProps) {
 
             {/* Right: Sidebar Specs */}
             <div className="lg:col-span-4">
-              <div className="sticky top-28 space-y-8 border border-[#E5DFD5] bg-white p-8 shadow-sm">
-                <div className="space-y-2 border-b border-[#F0ECE4] pb-6">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-[#C86D51]">
+              <div className="sticky top-28 space-y-8 border border-[#D7D0C5] bg-[#FCFBF8] p-8 shadow-sm">
+                <div className="space-y-2 border-b border-[#D7D0C5] pb-6">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-[#9A8060]">
                     Commission Specs
                   </span>
-                  <h3 className="font-serif text-2xl text-[#1E1C1A]">{project.title}</h3>
+                  <h3 className="font-serif text-2xl text-[#242321]">{project.title}</h3>
                 </div>
 
                 <div className="space-y-4 text-xs">
                   {project.category && (
-                    <div className="flex justify-between border-b border-[#F0ECE4] pb-3">
-                      <span className="text-muted-foreground uppercase tracking-wider font-medium">Category</span>
-                      <span className="font-semibold text-[#1E1C1A] uppercase">{project.category}</span>
+                    <div className="flex justify-between border-b border-[#D7D0C5] pb-3">
+                      <span className="text-[#706B63] uppercase tracking-wider font-medium">Category</span>
+                      <span className="font-semibold text-[#242321] uppercase">{project.category}</span>
                     </div>
                   )}
 
                   {project.location && (
-                    <div className="flex justify-between border-b border-[#F0ECE4] pb-3">
-                      <span className="text-muted-foreground uppercase tracking-wider font-medium">Location</span>
-                      <span className="font-semibold text-[#1E1C1A]">{project.location}</span>
+                    <div className="flex justify-between border-b border-[#D7D0C5] pb-3">
+                      <span className="text-[#706B63] uppercase tracking-wider font-medium">Location</span>
+                      <span className="font-semibold text-[#242321]">{project.location}</span>
                     </div>
                   )}
 
                   {project.year && (
-                    <div className="flex justify-between border-b border-[#F0ECE4] pb-3">
-                      <span className="text-muted-foreground uppercase tracking-wider font-medium">Completion</span>
-                      <span className="font-semibold text-[#1E1C1A]">{project.year}</span>
+                    <div className="flex justify-between border-b border-[#D7D0C5] pb-3">
+                      <span className="text-[#706B63] uppercase tracking-wider font-medium">Completion</span>
+                      <span className="font-semibold text-[#242321]">{project.year}</span>
                     </div>
                   )}
 
                   {project.area && (
-                    <div className="flex justify-between border-b border-[#F0ECE4] pb-3">
-                      <span className="text-muted-foreground uppercase tracking-wider font-medium">Footprint</span>
-                      <span className="font-semibold text-[#1E1C1A]">{project.area}</span>
+                    <div className="flex justify-between border-b border-[#D7D0C5] pb-3">
+                      <span className="text-[#706B63] uppercase tracking-wider font-medium">Footprint</span>
+                      <span className="font-semibold text-[#242321]">{project.area}</span>
                     </div>
                   )}
 
                   {project.architect && (
                     <div className="flex justify-between pb-1">
-                      <span className="text-muted-foreground uppercase tracking-wider font-medium">Lead Architect</span>
-                      <span className="font-semibold text-[#1E1C1A]">{project.architect}</span>
+                      <span className="text-[#706B63] uppercase tracking-wider font-medium">Lead Architect</span>
+                      <span className="font-semibold text-[#242321]">{project.architect}</span>
                     </div>
                   )}
                 </div>
