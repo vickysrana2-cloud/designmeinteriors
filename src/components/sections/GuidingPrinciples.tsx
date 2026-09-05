@@ -1,140 +1,281 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  Sparkles,
+  Ruler,
+  Palette,
+  ShieldCheck,
+  ArrowUpRight,
+} from "lucide-react";
 
-
-const PRINCIPLES = [
+const PHILOSOPHY = [
   {
     number: "01",
-    title: "Honesty of Materials",
-    description: "We honor the natural qualities of raw stone, patinated bronze, and unvarnished timber, allowing textures to mature gracefully over decades.",
+    title: "Designed Around You",
+    shortTitle: "Personal",
+    description:
+      "Every project begins with your lifestyle, preferences, needs, and budget.",
+    icon: Sparkles,
   },
   {
     number: "02",
-    title: "Sculpting with Light",
-    description: "Natural light is treated as a core building element. We study sun trajectories to create subtle shadow plays throughout every hour of the day.",
+    title: "Function Before Decoration",
+    shortTitle: "Functional",
+    description:
+      "Beautiful spaces should also work beautifully. Every layout is planned for everyday functionality.",
+    icon: Ruler,
   },
   {
     number: "03",
-    title: "Emotional Proportion",
-    description: "Spatial volumes are calibrated not just for efficiency, but to invoke a visceral sense of calm, sanctuary, and expansive quiet.",
+    title: "Thoughtful Design",
+    shortTitle: "Thoughtful",
+    description:
+      "Materials, colours, lighting, furniture, and detailing come together to create a cohesive interior.",
+    icon: Palette,
   },
   {
     number: "04",
-    title: "Uncompromising Precision",
-    description: "From invisible door hinges to perfectly aligned shadow gaps, our shop drawings leave zero room for ambiguity or compromise.",
+    title: "Quality That Lasts",
+    shortTitle: "Enduring",
+    description:
+      "Quality materials, reliable workmanship, and precise execution create spaces built to last.",
+    icon: ShieldCheck,
   },
 ];
 
 export function GuidingPrinciples() {
   return (
-    <section className="border-b border-[#D7D0C5] bg-[#E8E1D7] py-20 md:py-28">
-      <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+    <section className="relative overflow-hidden bg-[#F3EEE7]">
+      {/* Decorative circles */}
+      <div className="pointer-events-none absolute -right-32 top-10 h-[380px] w-[380px] rounded-full border border-[#D9CCBC]/40" />
+      <div className="pointer-events-none absolute -right-16 top-24 h-[260px] w-[260px] rounded-full border border-[#D9CCBC]/30" />
 
-        {/* Header */}
+      <div
+        className="
+          relative mx-auto flex max-w-[1600px] flex-col
+          px-6 py-8
+          sm:px-8 sm:py-10
+          md:px-12 md:py-12
+          lg:px-16 lg:py-14
+        "
+      >
+        {/* =====================================================
+            HEADER
+        ===================================================== */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="grid gap-8 border-b border-[#D7D0C5] pb-12 md:grid-cols-[0.8fr_1.2fr] md:items-end"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="
+            grid gap-4
+            border-b border-[#D5CEC3]
+            pb-5
+            md:grid-cols-[1.1fr_0.9fr]
+            md:items-end
+            md:pb-5
+          "
         >
+          {/* Heading */}
           <div>
-            <div className="mb-5 flex items-center gap-4">
-              <span className="h-px w-10 bg-[#9A8060]" />
+            <div className="mb-2.5 flex items-center gap-3">
+              <span className="h-px w-8 bg-[#9A8060]" />
 
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
-                Foundation
+              <span className="text-[9px] font-medium uppercase tracking-[0.28em] text-[#8B6F4E]">
+                The way we design
               </span>
             </div>
 
-            <h2 className="max-w-xl font-serif text-3xl leading-tight text-[#242321] sm:text-4xl md:text-5xl">
-              The principles behind every space we create.
+            <h2
+              className="
+                font-serif
+                text-[32px]
+                leading-[0.98]
+                tracking-[-0.035em]
+                text-[#201E1B]
+                sm:text-[38px]
+                md:text-[44px]
+                lg:text-[48px]
+              "
+            >
+              Our Design{" "}
+              <span className="italic text-[#8B6F4E]">
+                Philosophy
+              </span>
             </h2>
           </div>
-
-          <p className="max-w-xl text-sm font-light leading-relaxed text-[#706B63] md:ml-auto">
-            Our work begins with a clear understanding of people, place and
-            purpose. These principles guide every decision from the first
-            sketch to the final detail.
-          </p>
         </motion.div>
 
-        {/* Principles */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
-          {PRINCIPLES.map((item, index) => (
-            <motion.div
-              key={item.number}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: "easeOut",
-              }}
-              whileHover={{ y: -4 }}
-              className="group relative border-b border-[#D7D0C5] py-10 md:py-12"
-            >
-              {/* Hover accent */}
-              <div className="absolute left-0 top-0 h-px w-0 bg-[#9A8060] transition-all duration-500 group-hover:w-full" />
+        {/* =====================================================
+            PRINCIPLES GRID
+        ===================================================== */}
+        <div className="my-4 md:my-5">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {PHILOSOPHY.map((item, index) => {
+              const Icon = item.icon;
 
-              {/* Number */}
-              <div className="flex items-start justify-between">
-                <motion.span
-                  whileHover={{ x: 6 }}
-                  transition={{ duration: 0.3 }}
-                  className="font-serif text-5xl leading-none text-[#9A8060] sm:text-6xl"
+              return (
+                <motion.article
+                  key={item.number}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.05,
+                  }}
+                  className={`
+                    group relative
+                    overflow-hidden
+                    border-[#D5CEC3]
+                    ${
+                      index === 0
+                        ? "border-b md:border-r"
+                        : index === 1
+                          ? "border-b"
+                          : index === 2
+                            ? "border-b md:border-b-0 md:border-r"
+                            : ""
+                    }
+                  `}
                 >
-                  {item.number}
-                </motion.span>
+                  {/* Hover background */}
+                  <div className="absolute inset-0 origin-bottom scale-y-0 bg-[#E9E0D4] transition-transform duration-500 group-hover:scale-y-100" />
 
-                <span className="pt-2 text-[9px] uppercase tracking-[0.25em] text-[#706B63]">
-                  Principle
-                </span>
-              </div>
+                  <div
+                    className="
+                      relative flex h-full
+                      flex-col
+                      p-4
+                      sm:p-5
+                      md:p-6
+                      lg:p-7
+                    "
+                  >
+                    {/* Top */}
+                    <div className="flex items-start justify-between">
+                      <span
+                        className="
+                          font-serif
+                          text-[44px]
+                          leading-[0.85]
+                          tracking-[-0.05em]
+                          text-[#C7B7A3]
+                          transition-colors
+                          duration-500
+                          group-hover:text-[#9A8060]
+                          md:text-[50px]
+                          lg:text-[54px]
+                        "
+                      >
+                        {item.number}
+                      </span>
 
-              {/* Content */}
-              <div className="mt-8 grid gap-5 sm:grid-cols-[0.8fr_1.2fr]">
-                <h3 className="font-serif text-2xl leading-tight text-[#242321] sm:text-3xl">
-                  {item.title}
-                </h3>
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#CDBEAB] bg-[#F8F4EE] text-[#806344] transition-all duration-500 group-hover:rotate-6 group-hover:border-[#9A8060]">
+                        <Icon
+                          className="h-3.5 w-3.5"
+                          strokeWidth={1.4}
+                        />
+                      </div>
+                    </div>
 
-                <p className="max-w-md text-sm font-light leading-7 text-[#706B63]">
-                  {item.description}
-                </p>
-              </div>
+                    {/* Title */}
+                    <div className="mt-3.5 flex items-center justify-between gap-3">
+                      <h3
+                        className="
+                          font-serif
+                          text-[19px]
+                          leading-[1.08]
+                          tracking-[-0.02em]
+                          text-[#242321]
+                          md:text-[21px]
+                          lg:text-[22px]
+                        "
+                      >
+                        {item.title}
+                      </h3>
 
-              {/* Bottom label */}
-              <div className="mt-8 flex items-center gap-3">
-                <span className="h-px w-6 bg-[#9A8060] transition-all duration-500 group-hover:w-10" />
+                      <span className="shrink-0 text-[8px] font-medium uppercase tracking-[0.22em] text-[#9A8060]">
+                        {item.shortTitle}
+                      </span>
+                    </div>
 
-                <span className="text-[9px] uppercase tracking-[0.2em] text-[#706B63]">
-                  DesignMeInteriors Studio
-                </span>
-              </div>
-            </motion.div>
-          ))}
+                    {/* Description */}
+                    <p className="mt-2 max-w-[500px] text-[11px] font-light leading-[1.55] text-[#6F6961] md:text-[12px]">
+                      {item.description}
+                    </p>
+
+                    {/* Bottom */}
+                    <div className="mt-auto flex items-center justify-between pt-4">
+                      <div className="flex items-center gap-2">
+                        <span className="h-px w-5 bg-[#9A8060] transition-all duration-500 group-hover:w-8" />
+
+                        <span className="text-[7px] uppercase tracking-[0.22em] text-[#8A8177]">
+                          Design principle
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Closing Statement */}
+        {/* =====================================================
+            CLOSING STATEMENT
+        ===================================================== */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{
-            duration: 0.7,
-            delay: 0.15,
-          }}
-          className="pt-14 text-center"
+          transition={{ duration: 0.5 }}
+          className="
+            flex
+            flex-col
+            gap-3
+            border-t border-[#D5CEC3]
+            pt-5
+            md:flex-row
+            md:items-center
+            md:justify-between
+            md:pt-5
+          "
         >
-          <p className="mx-auto max-w-2xl font-serif text-xl italic leading-relaxed text-[#242321] sm:text-2xl">
-            Thoughtful spaces are not simply seen.
-            <br className="hidden sm:block" />
-            They are experienced.
-          </p>
-        </motion.div>
+          <div className="flex items-center gap-3">
+            <span className="h-px w-7 bg-[#9A8060]" />
 
+            <span className="text-[8px] font-medium uppercase tracking-[0.25em] text-[#8B6F4E]">
+              Our belief
+            </span>
+          </div>
+
+          <p
+            className="
+              max-w-[700px]
+              font-serif
+              text-[16px]
+              leading-tight
+              tracking-[-0.015em]
+              text-[#242321]
+              sm:text-[18px]
+              md:text-[20px]
+            "
+          >
+            A thoughtfully designed space should not only look beautiful.
+            <span className="italic text-[#8B6F4E]">
+              {" "}
+              It should feel like home.
+            </span>
+          </p>
+
+          <div className="hidden h-9 w-9 items-center justify-center rounded-full border border-[#CDBEAB] md:flex">
+            <span className="font-serif text-[11px] text-[#806344]">
+              DMI
+            </span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

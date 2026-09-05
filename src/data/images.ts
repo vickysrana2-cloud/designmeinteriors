@@ -199,23 +199,35 @@ export const PROCESS_STEPS = [
   {
     step: "01",
     title: "Discovery & Architectural Intent",
-    description: "We initiate with an immersive consultation to uncover your lifestyle, spatial aspirations, site orientation, and aesthetic sensibilities."
+    description:
+      "We initiate with an immersive consultation to uncover your lifestyle, spatial aspirations, site orientation, and aesthetic sensibilities.",
+    image:
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=90",
   },
   {
     step: "02",
     title: "Spatial Blueprint & Concept Creation",
-    description: "Translating concepts into precise spatial layouts, 3D photorealistic visualisations, material palettes, and lighting strategies."
+    description:
+      "Translating concepts into precise spatial layouts, 3D photorealistic visualisations, material palettes, and lighting strategies.",
+    image:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=90",
   },
   {
     step: "03",
     title: "Detailed Crafting & Procurement",
-    description: "Fleshing out technical shop drawings, custom joinery specs, sourcing rare stone & sustainable timbers, and coordinating specialist artisans."
+    description:
+      "Fleshing out technical shop drawings, custom joinery specs, sourcing rare stone & sustainable timbers, and coordinating specialist artisans.",
+    image:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=90",
   },
   {
     step: "04",
     title: "Turnkey Realisation & Styling",
-    description: "Meticulous on-site management through construction, custom furniture installation, art placement, and final white-glove reveal."
-  }
+    description:
+      "Meticulous on-site management through construction, custom furniture installation, art placement, and final white-glove reveal.",
+    image:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=90",
+  },
 ];
 export interface HeroSlide {
   id: number;
