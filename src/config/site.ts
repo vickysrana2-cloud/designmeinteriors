@@ -7,6 +7,7 @@ export const siteConfig = {
   ogImage: "https://designmeinteriors.com/og.jpg",
   phone: "+91 9579540206",
   phoneFormatted: "+91 95795 40206",
+  whatsappNumber: "919579540206",
   email: "contact@designmeinteriors.com",
   links: {
     facebook: "https://www.facebook.com/people/Design-Me/61563517471577/",
