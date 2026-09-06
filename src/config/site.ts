@@ -14,7 +14,7 @@ export const siteConfig = {
     pinterest: "https://in.pinterest.com/designmeinteriors/",
     linkedin: "https://www.linkedin.com/in/design-me-interiors-055577340/",
     youtube: "http://www.youtube.com/@DesignMeInteriors",
-    instagram: "https://www.instagram.com/design_me06",
+    instagram: "https://www.instagram.com/designme_06/",
   },
 };
 

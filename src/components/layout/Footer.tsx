@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 import { Globe, Share2, ExternalLink } from "lucide-react";
 
 export function Footer() {
@@ -28,7 +29,7 @@ export function Footer() {
             <div className="flex items-center gap-3 flex-wrap">
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/people/Design-Me/61563517471577/"
+                href={siteConfig.links.facebook}
                 target="_blank"
                 rel="noreferrer"
                 className="group p-2.5 bg-[#1877F2]/10 border border-[#1877F2]/30 hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-300 rounded-xl"
@@ -42,7 +43,7 @@ export function Footer() {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/design_me06"
+                href={siteConfig.links.instagram}
                 target="_blank"
                 rel="noreferrer"
                 className="group p-2.5 bg-[#E4405F]/10 border border-[#E4405F]/30 hover:bg-gradient-to-tr hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045] hover:border-transparent transition-all duration-300 rounded-xl"
