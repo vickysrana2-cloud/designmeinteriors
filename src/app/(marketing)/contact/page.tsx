@@ -357,12 +357,18 @@ export default function ContactPage() {
                       {office.city}
                     </h3>
                     <div className="space-y-1.5 text-xs text-[#706B63]">
-                      <p className="flex items-center gap-2">
+                      <a
+                        href="https://share.google/euMVYDVH6dGXc1s87"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 hover:text-[#9A8060] transition-colors group"
+                        title="Open location in Google Maps"
+                      >
                         <MapPin className="w-3.5 h-3.5 text-[#9A8060] shrink-0" />
-                        <span>
-                          {office.address}, {office.district}
+                        <span className="group-hover:underline">
+                          {office.address}, {office.district} ↗
                         </span>
-                      </p>
+                      </a>
                       <p className="flex items-center gap-2">
                         <Phone className="w-3.5 h-3.5 text-[#9A8060] shrink-0" />
                         <span>{office.phone}</span>

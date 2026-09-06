@@ -92,20 +92,19 @@ export function ProcessAccordion() {
             <div className="space-y-5">
               <span className="flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#D4B993]">
                 <span className="h-px w-10 bg-[#D4B993]" />
-                Work Methodology
+                How We Work
               </span>
 
               <h2 className="max-w-xl font-serif text-4xl leading-[1.05] tracking-[-0.02em] text-white sm:text-5xl md:text-6xl">
-                Our 4-Phase
+                Our 4-Step
                 <br />
                 <span className="italic text-[#D4B993]">
-                  Architectural Process.
+                  Design Process.
                 </span>
               </h2>
 
               <p className="max-w-md text-sm font-light leading-7 text-white/75">
-                From foundational spatial discovery to white-glove site
-                delivery, every commission follows a disciplined workflow.
+                From initial ideas to final setup, we follow a simple step-by-step process to bring your dream space to life.
               </p>
 
               {/* Active phase indicator */}

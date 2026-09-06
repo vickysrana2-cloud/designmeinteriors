@@ -59,10 +59,10 @@ export function AboutPreview() {
               className="space-y-3"
             >
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A8060]">
-                Philosophy & Studio
+                About Our Studio
               </span>
               <h2 className="font-serif text-3xl text-[#242321] sm:text-4xl md:text-5xl leading-tight">
-                Architectural harmony, tactile materials & purposeful luxury.
+                Thoughtful design, natural materials & everyday comfort.
               </h2>
             </motion.div>
 
@@ -73,7 +73,7 @@ export function AboutPreview() {
               transition={{ duration: 0.7, delay: 0.1, ease }}
               className="font-sans text-sm leading-relaxed text-[#706B63] md:text-base"
             >
-              DesignMeInteriors is an international architectural practice specializing in bespoke luxury residences, biophilic corporate environments, and hospitality spaces. We unite structural precision with natural materials—creating spaces that inspire peace and endure over generations.
+              DesignMeInteriors is a Nagpur-based interior design studio. We specialize in custom residential homes, modern office spaces, and commercial interiors. We combine smart space planning with quality natural materials—creating spaces where you love to live and work.
             </motion.p>
 
             {/* Core Values */}
@@ -87,25 +87,25 @@ export function AboutPreview() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-[#9A8060]">
                   <Compass className="h-4 w-4" />
-                  <span className="font-serif text-sm font-semibold text-[#242321]">Spatial Intent</span>
+                  <span className="font-serif text-sm font-semibold text-[#242321]">Smart Layouts</span>
                 </div>
-                <p className="text-xs text-[#706B63] leading-normal">Proportion and lighting aligned with human emotion.</p>
+                <p className="text-xs text-[#706B63] leading-normal">Space planning and lighting designed for daily comfort.</p>
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-[#9A8060]">
                   <Layers className="h-4 w-4" />
-                  <span className="font-serif text-sm font-semibold text-[#242321]">Authentic Materials</span>
+                  <span className="font-serif text-sm font-semibold text-[#242321]">Quality Materials</span>
                 </div>
-                <p className="text-xs text-[#706B63] leading-normal">Travertine, teak, linen, and micro-cement.</p>
+                <p className="text-xs text-[#706B63] leading-normal">Real teak wood, natural stone, marble, and fine fabrics.</p>
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-[#9A8060]">
                   <ShieldCheck className="h-4 w-4" />
-                  <span className="font-serif text-sm font-semibold text-[#242321]">Turnkey Precision</span>
+                  <span className="font-serif text-sm font-semibold text-[#242321]">Complete Project Care</span>
                 </div>
-                <p className="text-xs text-[#706B63] leading-normal">Flawless on-site supervision and white-glove delivery.</p>
+                <p className="text-xs text-[#706B63] leading-normal">Dedicated on-site supervision and hassle-free handover.</p>
               </div>
             </motion.div>
 

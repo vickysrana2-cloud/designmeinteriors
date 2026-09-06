@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
     ],
-    description: "A coastal residence crafted with raw travertine, natural teak, and expansive floor-to-ceiling glass paneling framing sweeping ocean horizons.",
+    description: "A coastal home crafted with natural stone, warm teak wood, and large glass windows overlooking beautiful ocean views.",
     architect: "Aarav Sharma & Team",
     featured: true,
   },
@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
     secondaryImages: [
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
     ],
-    description: "Minimalist urban luxury penthouse uniting polished micro-cement, custom dark walnut cabinetry, and tactile linen furnishings.",
+    description: "A modern luxury city penthouse featuring smooth micro-cement finishes, dark walnut woodwork, and soft linen furniture.",
     architect: "Aarav Sharma",
     featured: true,
   },
@@ -82,7 +82,7 @@ export const PROJECTS: Project[] = [
     secondaryImages: [
       "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80"
     ],
-    description: "Biophilic workplace design incorporating indoor zen gardens, modular acoustic wood louvers, and indirect warm light scapes.",
+    description: "A modern green workplace featuring indoor plant gardens, soundproof wooden panels, and warm ambient lighting.",
     architect: "Elena Rostova",
     featured: true,
   },
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     secondaryImages: [
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80"
     ],
-    description: "A serene spa hotel inspired by Japanese wabi-sabi philosophy, featuring cedar soak tubs, clay plaster walls, and raked gravel courtyards.",
+    description: "A peaceful spa hotel inspired by traditional Japanese design, featuring natural wood tubs, clay walls, and stone garden courtyards.",
     architect: "Aarav Sharma & Kenji Sato",
     featured: true,
   },
@@ -112,7 +112,7 @@ export const PROJECTS: Project[] = [
     secondaryImages: [
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
     ],
-    description: "Reimagined Italian countryside villa celebrating earthy terracotta tiles, stone archways, and sculpted interior lighting.",
+    description: "A modern Italian countryside villa highlighting terracotta floor tiles, classic stone archways, and warm custom lighting.",
     architect: "Elena Rostova",
     featured: false,
   },
@@ -124,7 +124,7 @@ export const PROJECTS: Project[] = [
     year: "2025 Concept",
     area: "400 m²",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
-    description: "An experimental architectural study exploring cantilevered steel frames suspended over calm waters with integrated solar glass.",
+    description: "An innovative design concept featuring steel frames suspended over calm water with integrated solar glass panels.",
     architect: "DesignMeInteriors Design Lab",
     featured: false,
   }
@@ -135,32 +135,32 @@ export const SERVICES: Service[] = [
     id: "interior-architecture",
     number: "01",
     title: "Interior Architecture",
-    description: "Full spatial restructuring, floorplan engineering, and structural refinement tailored to optimize light flow, proportion, and human experience.",
-    features: ["Space Planning & Layouts", "Structural Alterations", "3D Photorealistic Renderings", "Lighting Architecture"],
+    description: "Complete floor plan design, space planning, and structural layouts to maximize natural light and overall room comfort.",
+    features: ["Space Planning & Layouts", "Wall & Room Alterations", "3D Photorealistic Views", "Custom Lighting Plans"],
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "residential-design",
     number: "02",
-    title: "Bespoke Residential Design",
-    description: "End-to-end luxury residence crafting—from private coastal estates to high-rise city lofts—balancing timeless elegance with daily comfort.",
-    features: ["Custom Cabinetry & Joinery", "Material Specification", "Bespoke Furniture Curation", "Art & Artifact Sourcing"],
+    title: "Residential Interior Design",
+    description: "Complete home interior design—from private villas to modern apartments—combining beauty, function, and everyday comfort.",
+    features: ["Custom Furniture & Cabinets", "Material & Finish Selection", "Curated Furniture Sourcing", "Decor & Lighting Setup"],
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "commercial-spaces",
     number: "03",
-    title: "Commercial & Workspace",
-    description: "Brand-defining commercial environments, boutique retail flagship stores, and inspiring corporate headquarters engineered for productivity and distinction.",
-    features: ["Brand Space Identity", "Acoustic Engineering", "Modular Spatial Solutions", "Sustainable Certifications"],
+    title: "Commercial & Office Design",
+    description: "Professional office spaces, retail stores, and commercial interiors designed to boost productivity and showcase your brand.",
+    features: ["Brand Space Design", "Soundproofing Solutions", "Flexible Office Layouts", "Eco-Friendly Materials"],
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "turnkey-execution",
     number: "04",
     title: "Turnkey Project Management",
-    description: "Comprehensive site supervision, contractor management, procurement, and seamless white-glove installation with rigorous quality standards.",
-    features: ["Vendor Management", "Budget & Timeline Control", "On-site Supervision", "White-glove Handover"],
+    description: "Complete project management from start to finish, including contractor supervision, material buying, and final hassle-free handover.",
+    features: ["Contractor Management", "Budget & Schedule Tracking", "On-site Quality Supervision", "Complete Ready-to-Move Handover"],
     image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80",
   }
 ];
@@ -168,16 +168,16 @@ export const SERVICES: Service[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: "1",
-    quote: "DesignMeInteriors transformed our coastal villa into a living masterwork. Their mastery of natural light, warm textures, and spatial flow exceeded every expectation.",
+    quote: "DesignMeInteriors transformed our home into a beautiful, comfortable space. Their mastery of natural light and warm textures exceeded our expectations.",
     author: "Marcus & Sophia Vance",
-    role: "Private Homeowners",
+    role: "Homeowners",
     company: "Dune Sanctuary Project",
     location: "Malibu, CA",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
   },
   {
     id: "2",
-    quote: "Working with DesignMeInteriors on our Tokyo headquarters brought fresh biophilic energy to our company culture. The attention to custom joinery is unmatched.",
+    quote: "Working with DesignMeInteriors on our office design brought great energy to our workplace. The quality of custom woodwork and layout design is outstanding.",
     author: "Hiroshi Tanaka",
     role: "Chief Operating Officer",
     company: "Komorebi Tech",
@@ -186,7 +186,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: "3",
-    quote: "From the initial mood boards to turnkey delivery, the process was serene and flawlessly executed. They truly understand luxury minimalism.",
+    quote: "From initial design ideas to final delivery, the whole experience was smooth and hassle-free. They truly know how to create timeless, functional spaces.",
     author: "Clara Dupont",
     role: "Founder",
     company: "Maison Dupont Hospitality",
@@ -198,33 +198,33 @@ export const TESTIMONIALS: Testimonial[] = [
 export const PROCESS_STEPS = [
   {
     step: "01",
-    title: "Discovery & Architectural Intent",
+    title: "Initial Consultation",
     description:
-      "We initiate with an immersive consultation to uncover your lifestyle, spatial aspirations, site orientation, and aesthetic sensibilities.",
+      "We start with a friendly discussion to understand your ideas, lifestyle, space requirements, and budget.",
     image:
       "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=90",
   },
   {
     step: "02",
-    title: "Spatial Blueprint & Concept Creation",
+    title: "Concept & Layout Planning",
     description:
-      "Translating concepts into precise spatial layouts, 3D photorealistic visualisations, material palettes, and lighting strategies.",
+      "We convert your ideas into detailed floor plans, 3D visual designs, material options, and lighting ideas.",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=90",
   },
   {
     step: "03",
-    title: "Detailed Crafting & Procurement",
+    title: "Material Selection & Crafting",
     description:
-      "Fleshing out technical shop drawings, custom joinery specs, sourcing rare stone & sustainable timbers, and coordinating specialist artisans.",
+      "We finalize technical drawings, select quality materials, custom furniture pieces, and work with skilled craftspeople.",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=90",
   },
   {
     step: "04",
-    title: "Turnkey Realisation & Styling",
+    title: "Execution & Final Handover",
     description:
-      "Meticulous on-site management through construction, custom furniture installation, art placement, and final white-glove reveal.",
+      "We manage site work, install custom furniture, complete finishing touches, and deliver your fully completed space.",
     image:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=90",
   },

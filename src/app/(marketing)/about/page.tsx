@@ -6,7 +6,7 @@ import { services } from "@/data/services";
 import { GuidingPrinciples } from "@/components/sections/GuidingPrinciples";
 import { LeadershipTeam } from "@/components/sections/LeadershipTeam";
 import { CoreValuesSection } from "@/components/sections/CoreValuesSection";
-import WorkProcess from "@/components/sections/WorkProcess";
+import { ProcessAccordion } from "@/components/home/ProcessAccordion";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
@@ -139,9 +139,16 @@ export default function AboutPage() {
                   <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[#706B63]">
                     Location
                   </span>
-                  <span className="mt-1.5 block font-serif text-lg font-medium text-[#242321]">
-                    Nagpur, MH
-                  </span>
+                  <a
+                    href="https://share.google/euMVYDVH6dGXc1s87"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1.5 flex items-center gap-1 font-serif text-lg font-medium text-[#242321] hover:text-[#9A8060] transition-colors group"
+                    title="Open location in Google Maps"
+                  >
+                    <span className="group-hover:underline">Nagpur, MH</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 text-[#9A8060]" />
+                  </a>
                 </div>
               </div>
 
@@ -341,7 +348,7 @@ export default function AboutPage() {
       <CoreValuesSection />
 
       {/* 9. HOW WE WORK (PROCESS) */}
-      <WorkProcess />
+      <ProcessAccordion />
 
       {/* 10. OUR EXPERTISE */}
       <section className="py-20 md:py-28 border-b border-[#D7D0C5] bg-[#F5F2EC]">

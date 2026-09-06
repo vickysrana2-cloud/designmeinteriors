@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 import { Globe, Share2, ExternalLink } from "lucide-react";
 
 export function Footer() {
@@ -28,7 +29,7 @@ export function Footer() {
             <div className="flex items-center gap-3 flex-wrap">
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/people/Design-Me/61563517471577/"
+                href={siteConfig.links.facebook}
                 target="_blank"
                 rel="noreferrer"
                 className="group p-2.5 bg-[#1877F2]/10 border border-[#1877F2]/30 hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-300 rounded-xl"
@@ -42,7 +43,7 @@ export function Footer() {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/design_me06"
+                href={siteConfig.links.instagram}
                 target="_blank"
                 rel="noreferrer"
                 className="group p-2.5 bg-[#E4405F]/10 border border-[#E4405F]/30 hover:bg-gradient-to-tr hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045] hover:border-transparent transition-all duration-300 rounded-xl"
@@ -134,8 +135,20 @@ export function Footer() {
             </h4>
             <div className="space-y-4 text-xs text-[#D7D0C5]">
               <div>
-                <span className="text-[#FCFBF8] font-medium block">Nagpur Studio (Main Office)</span>
-                <span className="block text-[#706B63]">Nagpur, Maharashtra, India</span>
+                <a
+                  href={siteConfig.googleMapsUrl || "https://share.google/euMVYDVH6dGXc1s87"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                  title="Open location in Google Maps"
+                >
+                  <span className="text-[#FCFBF8] font-medium block group-hover:text-[#CAA05C] transition-colors">
+                    Nagpur Studio (Main Office)
+                  </span>
+                  <span className="block text-[#706B63] group-hover:underline">
+                    Nagpur, Maharashtra, India ↗
+                  </span>
+                </a>
                 <a
                   href="tel:+919579540206"
                   className="block text-[#CAA05C] hover:underline font-medium mt-1"

@@ -9,12 +9,13 @@ export const siteConfig = {
   phoneFormatted: "+91 95795 40206",
   whatsappNumber: "919579540206",
   email: "contact@designmeinteriors.com",
+  googleMapsUrl: "https://share.google/euMVYDVH6dGXc1s87",
   links: {
     facebook: "https://www.facebook.com/people/Design-Me/61563517471577/",
     pinterest: "https://in.pinterest.com/designmeinteriors/",
     linkedin: "https://www.linkedin.com/in/design-me-interiors-055577340/",
     youtube: "http://www.youtube.com/@DesignMeInteriors",
-    instagram: "https://www.instagram.com/design_me06",
+    instagram: "https://www.instagram.com/designme_06/",
   },
 };
 

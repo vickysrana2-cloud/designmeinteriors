@@ -130,6 +130,11 @@ export function ServiceCard({ service }: ServiceCardProps) {
             {service.category}
           </div>
         )}
+
+        {/* Mobile-Only Arrow Badge (Bottom-Right) */}
+        <div className="absolute right-4 bottom-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-[#191816]/85 text-white backdrop-blur-md border border-white/30 shadow-md sm:hidden">
+          <ArrowUpRight className="h-4.5 w-4.5 text-[#D4B993]" />
+        </div>
       </div>
 
       {/* Service Content Loop Area */}

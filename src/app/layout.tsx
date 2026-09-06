@@ -18,14 +18,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "DesignMeInteriors — Architecture & Interior Design Studio",
   description:
-    "International luxury architecture and interior design studio. Specializing in bespoke residential sanctuaries, commercial spaces, and spatial interventions across New York, London, and Tokyo.",
+    "Nagpur-based interior design studio. We specialize in custom residential homes, commercial office spaces, and turnkey interior design with 6+ years of experience.",
   keywords: [
-    "Architecture Studio",
-    "Interior Design",
-    "Luxury Residential Design",
-    "Commercial Architecture",
-    "Bespoke Furniture",
+    "Interior Design Firm",
+    "Home Interior Design",
+    "Residential Interiors",
+    "Commercial Interiors",
     "Turnkey Interior Design",
+    "Nagpur Interior Designer",
   ],
   icons: {
     icon: "/designMeLogo.svg",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DesignMeInteriors — Architecture & Interior Design Studio",
     description:
-      "Crafting spatial elegance through tactile materials and deliberate proportion.",
+      "Creating thoughtful, functional, and beautiful interior spaces for homes and businesses.",
     url: "https://designmeinteriors.com",
     siteName: "DesignMeInteriors",
     locale: "en_US",
