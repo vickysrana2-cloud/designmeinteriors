@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { getAllServices } from "@/data/services";
@@ -99,6 +100,11 @@ export function ServicesPreview() {
                       <span className="absolute left-6 top-6 z-10 font-mono text-[28px] font-bold leading-none text-white drop-shadow-lg lg:left-8 lg:top-8 lg:text-[32px]">
                         {service.number}
                       </span>
+
+                      {/* MOBILE ONLY UP-RIGHT ARROW BADGE (BOTTOM RIGHT) */}
+                      <div className="absolute right-4 bottom-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-[#191816]/85 text-white backdrop-blur-md border border-white/30 shadow-md sm:hidden">
+                        <ArrowUpRight className="h-4.5 w-4.5 text-[#D4B993]" />
+                      </div>
 
                       {/* DARK GRADIENT OVERLAY */}
                       <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 opacity-50 transition-opacity duration-500 group-hover:opacity-70" />

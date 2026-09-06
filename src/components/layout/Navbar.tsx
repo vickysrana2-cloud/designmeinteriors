@@ -318,18 +318,24 @@ export function Navbar() {
                       <div className="flex flex-col gap-4 border-t border-[#D7D0C5] pt-6">
                         <a
                           href="tel:+919579540206"
-                          className="flex items-center gap-3 text-xs text-[#706B63] hover:text-[#9A8060] transition-colors"
+                          className="group flex items-center justify-between text-xs text-[#706B63] hover:text-[#9A8060] transition-colors py-0.5"
                         >
-                          <Phone className="h-4 w-4 text-[#9A8060]" />
-                          <span>+91 9579540206</span>
+                          <div className="flex items-center gap-3">
+                            <Phone className="h-4 w-4 text-[#9A8060]" />
+                            <span>+91 9579540206</span>
+                          </div>
+                          <ArrowUpRight className="h-3.5 w-3.5 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#9A8060]" />
                         </a>
 
                         <a
                           href="mailto:contact@designmeinteriors.com"
-                          className="flex items-center gap-3 text-xs text-[#706B63] hover:text-[#9A8060] transition-colors"
+                          className="group flex items-center justify-between text-xs text-[#706B63] hover:text-[#9A8060] transition-colors py-0.5"
                         >
-                          <Mail className="h-4 w-4 text-[#9A8060]" />
-                          <span>contact@designmeinteriors.com</span>
+                          <div className="flex items-center gap-3">
+                            <Mail className="h-4 w-4 text-[#9A8060]" />
+                            <span>contact@designmeinteriors.com</span>
+                          </div>
+                          <ArrowUpRight className="h-3.5 w-3.5 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#9A8060]" />
                         </a>
 
                         {/* Social Media Icons inside Mobile Drawer */}
