@@ -5,7 +5,7 @@ import WorkProcess from "@/components/sections/WorkProcess";
 import { ProjectsPreview } from "@/components/home/ProjectsPreview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { CtaBanner } from "@/components/home/CtaBanner";
-import { ProcessAccordion } from "@/components/home/ProcessAccordion";
+
 
 
 
@@ -17,7 +17,6 @@ export default function HomePage() {
       <ServicesPreview />
       <WorkProcess />
       <ProjectsPreview />
-      <ProcessAccordion />
       <Testimonials />
       <CtaBanner />
     </>

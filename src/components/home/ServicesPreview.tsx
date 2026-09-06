@@ -38,7 +38,7 @@ export function ServicesPreview() {
             <h2 className="max-w-[850px] font-serif text-[clamp(28px,5vw,56px)] font-semibold leading-[1.1] tracking-[-0.03em] text-[#242321] sm:leading-[1.05]">
               Explore Our{" "}
               <span className="italic text-[#9A8060]">
-                Comprehensive Interior Design
+                Interior Design
               </span>{" "}
               Services
             </h2>

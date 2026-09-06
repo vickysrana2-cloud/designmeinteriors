@@ -135,8 +135,20 @@ export function Footer() {
             </h4>
             <div className="space-y-4 text-xs text-[#D7D0C5]">
               <div>
-                <span className="text-[#FCFBF8] font-medium block">Nagpur Studio (Main Office)</span>
-                <span className="block text-[#706B63]">Nagpur, Maharashtra, India</span>
+                <a
+                  href={siteConfig.googleMapsUrl || "https://share.google/euMVYDVH6dGXc1s87"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                  title="Open location in Google Maps"
+                >
+                  <span className="text-[#FCFBF8] font-medium block group-hover:text-[#CAA05C] transition-colors">
+                    Nagpur Studio (Main Office)
+                  </span>
+                  <span className="block text-[#706B63] group-hover:underline">
+                    Nagpur, Maharashtra, India ↗
+                  </span>
+                </a>
                 <a
                   href="tel:+919579540206"
                   className="block text-[#CAA05C] hover:underline font-medium mt-1"
