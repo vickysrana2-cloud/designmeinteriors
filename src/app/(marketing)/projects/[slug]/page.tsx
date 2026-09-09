@@ -8,6 +8,9 @@ import { ProjectHero } from "@/components/projects/ProjectHero";
 import { RelatedProjects } from "@/components/projects/RelatedProjects";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { Button } from "@/components/ui/button";
+import { generateSiteMetadata } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildProjectSchema, buildBreadcrumbSchema } from "@/lib/seo/structured-data";
 
 interface ProjectPageProps {
   params: Promise<{
@@ -28,17 +31,22 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   if (!project) {
     return {
-      title: "Project Not Found | DesignMeInteriors Studio",
+      title: "Project Not Found",
     };
   }
 
-  return {
-    title: project.seo?.title || `${project.title} — Portfolio | DesignMeInteriors Studio`,
-    description: project.seo?.description || project.shortDescription || project.description,
-    alternates: {
-      canonical: `/projects/${project.slug}`,
-    },
-  };
+  const title = project.seo?.title || `${project.title} — ${project.location || "Nagpur"} | DesignMe Interiors`;
+  const description =
+    project.seo?.description ||
+    project.shortDescription ||
+    project.description;
+
+  return generateSiteMetadata({
+    title,
+    description,
+    image: project.image,
+    canonicalUrl: `/projects/${project.slug}`,
+  });
 }
 
 export default async function SingleProjectPage({ params }: ProjectPageProps) {
@@ -50,9 +58,17 @@ export default async function SingleProjectPage({ params }: ProjectPageProps) {
   }
 
   const related = getRelatedProjects(project.slug);
+  const projectSchema = buildProjectSchema(project);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Projects", item: "/projects" },
+    { name: project.title, item: `/projects/${project.slug}` },
+  ]);
 
   return (
     <div className="bg-[#F5F2EC]">
+      <JsonLd data={[projectSchema, breadcrumbSchema]} />
+
       {/* Hero */}
       <ProjectHero project={project} />
 
@@ -66,7 +82,7 @@ export default async function SingleProjectPage({ params }: ProjectPageProps) {
               <div className="relative h-[450px] w-full overflow-hidden rounded-3xl border border-[#D7D0C5] shadow-md sm:h-[580px]">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} interior design project in ${project.location || "Nagpur"}`}
                   fill
                   sizes="(max-width: 1023px) 100vw, 66vw"
                   className="object-cover"
@@ -106,7 +122,7 @@ export default async function SingleProjectPage({ params }: ProjectPageProps) {
                       <div key={idx} className="relative h-72 w-full overflow-hidden rounded-xl border border-[#D7D0C5]">
                         <Image
                           src={img}
-                          alt={`${project.title} view ${idx + 1}`}
+                          alt={`${project.title} view ${idx + 1} - Nagpur Interior`}
                           fill
                           sizes="(max-width: 767px) 100vw, 33vw"
                           className="object-cover hover:scale-105 transition-transform duration-500"

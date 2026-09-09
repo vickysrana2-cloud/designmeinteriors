@@ -244,48 +244,35 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 1,
     image:
-      "https://demo2.themelexus.com/antra/wp-content/uploads/2025/06/h1-slider1.jpg",
-
-    eyebrow: "FAST AND RELIABLE",
-
-    title: "The Art of Stunning Interior Design",
-
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85",
+    eyebrow: "NAGPUR INTERIOR DESIGN STUDIO",
+    title: "Bespoke Interior Design Studio in Nagpur",
     description:
-      "Whether it’s your home, office, or a commercial project, we are always dedicated to bringing your vision to life.",
-
-    projects: "260+",
-
+      "Crafting thoughtful, functional, and luxury interiors for residential homes, apartments, private villas, and commercial offices across Nagpur.",
+    projects: "6+",
     features: [
-      "Tech Specifications",
-      "Design Project",
-      "3D Visualisation",
+      "2D/3D Floor Layouts",
+      "Turnkey Execution",
+      "Residential & Commercial",
     ],
-
     previewImage:
-      "https://demo2.themelexus.com/antra/wp-content/uploads/2025/06/h1-slider1-280x300.jpg",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80",
   },
-
   {
     id: 2,
     image:
-      "https://demo2.themelexus.com/antra/wp-content/uploads/2025/06/h1-slider2.jpg",
-
-    eyebrow: "FAST AND RELIABLE",
-
-    title: "Find Your Inspired Interior Design",
-
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=85",
+    eyebrow: "RESIDENTIAL & COMMERCIAL INTERIORS",
+    title: "Transforming Spaces with Quality & Purpose",
     description:
-      "Whether it’s your home, office, or a commercial project, we are always dedicated to bringing your vision to life.",
-
-    projects: "360+",
-
+      "From custom teak joinery in Civil Lines to biophilic offices in MIHAN, we bring clarity, beauty, and long-lasting comfort to every space.",
+    projects: "100%",
     features: [
-      "Tech Specifications",
-      "Design Project",
-      "3D Visualisation",
+      "Modular Kitchen & Millwork",
+      "Space Ergonomics",
+      "Quality Craftsmanship",
     ],
-
     previewImage:
-      "https://demo2.themelexus.com/antra/wp-content/uploads/2025/06/h1-slider2-280x300.jpg",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=400&q=80",
   },
 ];

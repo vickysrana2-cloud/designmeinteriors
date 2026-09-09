@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Star, MessageSquarePlus, X, Loader2, CheckCircle2, User } from "lucide-react";
+import { Star, MessageSquarePlus, X, Loader2, CheckCircle2 } from "lucide-react";
 import { getReviews, createReview } from "@/lib/api/reviews";
 import { ReviewRecord } from "@/types/api";
 

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
-import { Globe, Share2, ExternalLink } from "lucide-react";
 
 export function Footer() {
   return (

@@ -60,7 +60,25 @@ export function BlogsTab() {
   };
 
   useEffect(() => {
-    fetchBlogs();
+    let active = true;
+    getAllBlogsForAdmin()
+      .then((data) => {
+        if (active) {
+          setBlogs(data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to load blogs:", err);
+        if (active) {
+          setError("Unable to load blogs from server.");
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   const openCreateModal = () => {

@@ -11,7 +11,7 @@ export function ReviewsTab() {
   const [error, setError] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
-  const fetchReviews = async () => {
+  const fetchReviews = React.useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -23,10 +23,28 @@ export function ReviewsTab() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    fetchReviews();
+    let active = true;
+    getReviews()
+      .then((data) => {
+        if (active) {
+          setReviews(data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to load reviews:", err);
+        if (active) {
+          setError("Unable to load reviews from server.");
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   const handleDelete = async (id?: string) => {

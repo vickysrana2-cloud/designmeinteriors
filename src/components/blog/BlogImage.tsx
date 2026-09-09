@@ -15,7 +15,7 @@ interface BlogImageProps extends Omit<ImageProps, "src"> {
 
 export function BlogImage({
   src,
-  fallbackSrc = DEFAULT_FALLBACK_IMAGE,
+  fallbackSrc: _fallbackSrc = DEFAULT_FALLBACK_IMAGE,
   alt = "Blog article cover",
   className,
   category,

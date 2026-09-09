@@ -3,28 +3,38 @@ import { getAllServices } from "@/data/services";
 import { ServiceHero } from "@/components/services/ServiceHero";
 import { ServiceGrid } from "@/components/services/ServiceGrid";
 import { CtaBanner } from "@/components/home/CtaBanner";
+import { generateSiteMetadata } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildBreadcrumbSchema } from "@/lib/seo/structured-data";
 
-export const metadata: Metadata = {
-  title: "Explore Our Comprehensive Interior Design Services | DesignMeInteriors Studio",
-  description: "We specialize in transforming visions into reality. Explore our portfolio of innovative architectural and interior design projects crafted with precision.",
-};
+export const metadata: Metadata = generateSiteMetadata({
+  title: "Interior Design Services in Nagpur | DesignMe Interiors",
+  description:
+    "Explore end-to-end interior design services in Nagpur. From residential homes and luxury villas to commercial offices, 2D/3D layouts, and turnkey execution.",
+  canonicalUrl: "/services",
+});
 
 export default function ServicesPage() {
   const services = getAllServices();
+  const breadcrumbs = buildBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/services" },
+  ]);
 
   return (
     <div className="bg-[#F5F2EC] min-h-screen">
-      {/* Antra Services 03 Header Hero */}
+      <JsonLd data={breadcrumbs} />
+      {/* Services Header Hero */}
       <ServiceHero />
 
-      {/* Main 6-Service Grid (3 Columns) */}
+      {/* Main Service Grid */}
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <ServiceGrid services={services} />
         </div>
       </section>
 
-      {/* Initiation Call to Action Banner */}
+      {/* Call to Action Banner */}
       <CtaBanner />
     </div>
   );

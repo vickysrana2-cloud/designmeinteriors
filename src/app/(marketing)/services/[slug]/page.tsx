@@ -10,6 +10,9 @@ import { ServiceContent } from "@/components/services/ServiceContent";
 import { ServiceFAQ } from "@/components/services/ServiceFAQ";
 import { RelatedServices } from "@/components/services/RelatedServices";
 import { CtaBanner } from "@/components/home/CtaBanner";
+import { generateSiteMetadata } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildServiceSchema, buildBreadcrumbSchema } from "@/lib/seo/structured-data";
 
 interface ServicePageProps {
   params: Promise<{
@@ -30,17 +33,22 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   if (!service) {
     return {
-      title: "Service Not Found | DesignMeInteriors Studio",
+      title: "Service Not Found",
     };
   }
 
-  return {
-    title: service.seo?.title || `${service.title} | DesignMeInteriors Studio Services`,
-    description: service.seo?.description || service.shortDescription,
-    alternates: {
-      canonical: `/services/${service.slug}`,
-    },
-  };
+  const rawTitle = service.seo?.title || `${service.title} in Nagpur`;
+  const title = rawTitle.includes("Nagpur") ? rawTitle : `${rawTitle} in Nagpur`;
+  const description =
+    service.seo?.description ||
+    `${service.shortDescription || service.description} Dedicated interior design services in Nagpur by DesignMe Interiors.`;
+
+  return generateSiteMetadata({
+    title,
+    description,
+    image: service.image,
+    canonicalUrl: `/services/${service.slug}`,
+  });
 }
 
 export default async function SingleServicePage({ params }: ServicePageProps) {
@@ -52,9 +60,17 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
   }
 
   const related = getRelatedServices(service.slug);
+  const serviceSchema = buildServiceSchema(service);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/services" },
+    { name: service.title, item: `/services/${service.slug}` },
+  ]);
 
   return (
     <div className="bg-[#F5F2EC]">
+      <JsonLd data={[serviceSchema, breadcrumbSchema]} />
+
       {/* Page Hero Header */}
       <ServiceHero service={service} />
 
@@ -73,7 +89,7 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
               <div className="relative aspect-[16/9] sm:aspect-[16/8] w-full overflow-hidden rounded-3xl border border-[#D7D0C5] shadow-md">
                 <Image
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} by DesignMe Interiors in Nagpur`}
                   fill
                   sizes="(max-width: 1023px) 100vw, 66vw"
                   className="object-cover"
@@ -84,7 +100,7 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
               {/* About The Service Section */}
               <div className="space-y-4">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9A8060]">
-                  About The Service
+                  About The Service · Nagpur
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl text-[#242321]">
                   {service.title}

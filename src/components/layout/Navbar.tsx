@@ -23,15 +23,22 @@ export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
   const [visible, setVisible] = React.useState(true);
   const [isOpen, setIsOpen] = React.useState(false);
-  const [mounted, setMounted] = React.useState(false);
+  const [prevPathname, setPrevPathname] = React.useState(pathname);
   const lastScrollY = React.useRef(0);
+
+  const mounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setIsOpen(false);
+  }
 
   const isHomePage = pathname === "/";
   const isHeroNavbar = isHomePage && !scrolled;
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -78,11 +85,6 @@ export function Navbar() {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
-
-  // Close drawer when navigating to a new path
-  React.useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
 
   // Close drawer on Escape key press
   React.useEffect(() => {

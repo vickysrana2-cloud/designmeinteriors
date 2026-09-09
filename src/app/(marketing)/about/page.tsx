@@ -9,11 +9,16 @@ import { CoreValuesSection } from "@/components/sections/CoreValuesSection";
 import { ProcessAccordion } from "@/components/home/ProcessAccordion";
 import { Button } from "@/components/ui/button";
 
-export const metadata = {
-  title: "About DesignMeInteriors | Interior Design Studio in Nagpur",
+import { generateSiteMetadata } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildBreadcrumbSchema } from "@/lib/seo/structured-data";
+
+export const metadata = generateSiteMetadata({
+  title: "About DesignMe Interiors | Interior Design Studio in Nagpur",
   description:
-    "Learn about DesignMeInteriors, a Nagpur-based interior design firm founded in 2021, our design philosophy, founder, mission, vision, and approach to creating thoughtful and functional interiors.",
-};
+    "Learn about DesignMe Interiors, a premier Nagpur-based interior design firm founded in 2021. Discover our design philosophy, mission, vision, and approach to residential and commercial spaces.",
+  canonicalUrl: "/about",
+});
 
 const STATS = [
   { value: "6+", label: "Years of Experience", icon: Clock },
@@ -88,9 +93,14 @@ const PROCESS_STEPS = [
 
 export default function AboutPage() {
   const featuredProjects = PROJECTS.slice(0, 4);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "About", item: "/about" },
+  ]);
 
   return (
     <div className="pt-14 bg-[#F5F2EC] text-[#242321]">
+      <JsonLd data={breadcrumbSchema} />
       {/* 1. HERO SECTION */}
       <section className="border-b border-[#D7D0C5] bg-[#F5F2EC] py-16 md:py-24">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
