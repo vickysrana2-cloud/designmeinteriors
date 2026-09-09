@@ -35,19 +35,19 @@ const OFFICES = [
 const FAQS = [
   {
     q: "What is your typical project scope?",
-    a: "We accept full-scale interior architecture, bespoke residential builds, luxury farmhouses, and commercial flagship spaces. We tailor complete design and turn-key execution packages.",
+    a: "We accept full-scale interior architecture, bespoke residential builds, luxury apartments, villas, and commercial flagship spaces across Nagpur and Central India.",
   },
   {
-    q: "Do you undertake commissions across India outside of Delhi, Mumbai, and Bengaluru?",
-    a: "Yes. Over 40% of our portfolio consists of pan-India commissions in Goa, Hyderabad, Pune, Jaipur, Chandigarh, as well as international projects in Dubai and Singapore.",
+    q: "Do you undertake interior design projects across Nagpur and surrounding regions?",
+    a: "Yes. While our primary focus is Nagpur (Civil Lines, Dharampeth, Ramdaspeth, Wardha Road, MIHAN, etc.), we also take up select residential and commercial projects across Central India and Maharashtra.",
   },
   {
     q: "How long does a full architectural or interior design project take?",
-    a: "Concept design and spatial blueprinting generally spans 4 to 8 weeks. Execution and procurement timelines range from 3 months for luxury apartments to 12+ months for custom private villas.",
+    a: "Concept design and spatial blueprinting generally spans 3 to 6 weeks. Execution and procurement timelines range from 2 to 4 months for luxury apartments to 6+ months for custom private villas.",
   },
   {
     q: "Can DesignMeInteriors work alongside our chosen general contractor?",
-    a: "Absolutely. We provide detailed technical shop drawings, material schedules, and regular site audits to ensure your contractor executes every architectural detail according to specification.",
+    a: "Absolutely. We provide detailed technical shop drawings, material schedules, and regular site audits to ensure your contractor executes every interior detail according to specification.",
   },
 ];
 
@@ -193,7 +193,7 @@ function ContactForm() {
                 Project Location
               </label>
               <Input
-                placeholder="e.g. Bandra, Mumbai / Gurugram"
+                placeholder="e.g. Civil Lines, Nagpur / Wardha Road"
                 value={formData.location}
                 onChange={(e) =>
                   setFormData({ ...formData, location: e.target.value })
@@ -250,11 +250,10 @@ function ContactForm() {
                 }
               >
                 <option value="">Select Estimated Budget (Optional)</option>
-                <option value="Under ₹25 Lakhs">Under ₹25 Lakhs</option>
+                <option value="Under ₹10 Lakhs">Under ₹10 Lakhs</option>
+                <option value="₹10 Lakhs – ₹25 Lakhs">₹10 Lakhs – ₹25 Lakhs</option>
                 <option value="₹25 Lakhs – ₹50 Lakhs">₹25 Lakhs – ₹50 Lakhs</option>
-                <option value="₹50 Lakhs – ₹1 Crore">₹50 Lakhs – ₹1 Crore</option>
-                <option value="₹1 Crore – ₹2.5 Crores">₹1 Crore – ₹2.5 Crores</option>
-                <option value="₹2.5 Crores +">₹2.5 Crores +</option>
+                <option value="₹50 Lakhs +">₹50 Lakhs +</option>
                 <option value="Flexible / Undecided">Flexible / Undecided</option>
               </select>
             </div>
@@ -315,9 +314,7 @@ export default function ContactPage() {
               Let&apos;s shape your space together.
             </h1>
             <p className="text-base sm:text-lg text-[#706B63] font-light leading-relaxed">
-              Whether you are planning a private coastal sanctuary, an urban
-              loft, or a commercial flagship, we invite you to start a
-              conversation with our studio.
+              Whether you are planning a private villa, an apartment renovation, or a commercial space in Nagpur, we invite you to start a conversation with our studio.
             </p>
           </div>
         </div>
@@ -337,13 +334,13 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-8">
               <div className="space-y-3">
                 <span className="text-xs uppercase tracking-[0.25em] text-[#9A8060] font-semibold">
-                  Global Presence
+                  STUDIO LOCATION
                 </span>
                 <h2 className="text-3xl font-serif text-[#242321]">
-                  Our Studio Offices
+                  Our Studio Office
                 </h2>
                 <p className="text-xs text-[#706B63] leading-relaxed">
-                  Visit our studios by appointment for material inspections and spatial blueprint reviews.
+                  Visit our studio in Nagpur by appointment for material inspections and spatial layout reviews.
                 </p>
               </div>
 

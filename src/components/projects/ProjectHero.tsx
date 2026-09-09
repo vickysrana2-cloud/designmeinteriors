@@ -12,7 +12,7 @@ interface ProjectHeroProps {
 export function ProjectHero({ project, title, subtitle, description }: ProjectHeroProps) {
   const displayTitle = project?.title || title || "Curated Commissions & Portfolio";
   const displaySubtitle = subtitle || (project?.category ? `Portfolio / ${project.category}` : "Curated Commissions");
-  const displayDesc = project?.shortDescription || project?.description || description || "Explore our global portfolio spanning private oceanfront estates, penthouse lofts, tech headquarters, and Japanese wellness retreats.";
+  const displayDesc = project?.shortDescription || project?.description || description || "Explore our portfolio of luxury residential villas, urban penthouses, corporate offices, and boutique hospitality interiors across Nagpur and Central India.";
 
   return (
     <section className="border-b border-[#D7D0C5] bg-[#F5F2EC] pb-16 pt-32 md:pb-20">

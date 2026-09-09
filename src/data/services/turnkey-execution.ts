@@ -16,8 +16,8 @@ export const turnkeyExecution: Service = {
   ],
   features: [
     {
-      title: "Global Procurement & Logistics",
-      description: "Direct import management for Italian natural stone, German appliances, and bespoke lighting.",
+      title: "Material Sourcing & Procurement",
+      description: "Direct sourcing management for premium natural stone, quality finishes, and bespoke lighting.",
       icon: "Compass"
     },
     {

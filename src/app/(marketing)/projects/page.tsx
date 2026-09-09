@@ -6,7 +6,7 @@ import { CtaBanner } from "@/components/home/CtaBanner";
 
 export const metadata: Metadata = {
   title: "Projects Showcase — DesignMeInteriors",
-  description: "Browse DesignMeInteriors portfolio of luxury residential villas, urban sky lofts, biophilic commercial headquarters, and hospitality retreats.",
+  description: "Browse DesignMeInteriors portfolio of luxury residential villas, urban high-rise penthouses, corporate offices, and boutique hospitality interiors in Nagpur.",
 };
 
 export default function ProjectsPage() {
@@ -15,9 +15,9 @@ export default function ProjectsPage() {
   return (
     <div className="bg-[#F9F8F5]">
       <ProjectHero
-        title="Selected Architectural & Interior Works."
-        subtitle="Curated Commissions"
-        description="Explore our global portfolio spanning private oceanfront estates, penthouse lofts, tech headquarters, and Japanese wellness retreats."
+        title="Selected Interior Works & Architecture."
+        subtitle="Curated Portfolio"
+        description="Explore our portfolio of luxury residential villas, urban penthouses, corporate office spaces, and boutique hospitality interiors across Nagpur and Central India."
       />
 
       <section className="py-20">
