@@ -1,129 +1,96 @@
 import { Blog } from "@/types/blog";
+import {
+  getBloggerPosts,
+  getBloggerPostBySlug,
+  getBloggerPostById,
+  getBloggerCategories,
+} from "@/lib/blogger/blogger";
+import { FALLBACK_BLOGS } from "./blog-fallbacks";
 
-const BLOG_API_URL = "https://68ece284eff9ad3b1403ae8f.mockapi.io/blog";
+export { FALLBACK_BLOGS };
 
 /**
- * Fetch all published blogs from MockAPI
+ * Helper to determine published status
+ */
+export function isPublished(b: Blog): boolean {
+  if (!b) return false;
+  const p = b.published;
+  if (p === true || p === (true as unknown)) return true;
+  if (typeof p === "string" && (p as string).toLowerCase() === "true") return true;
+  if (p === false || p === (false as unknown)) return false;
+  if (typeof p === "string" && (p as string).toLowerCase() === "false") return false;
+  return true;
+}
+
+/**
+ * Fetch all published blogs from Blogger API v3 (Server or Client via API route)
  */
 export async function getBlogs(): Promise<Blog[]> {
+  // If running in browser, fetch through server API route to protect API key
+  if (typeof window !== "undefined") {
+    try {
+      const res = await fetch("/api/blogs");
+      if (res.ok) {
+        const blogs: Blog[] = await res.json();
+        if (Array.isArray(blogs) && blogs.length > 0) {
+          return blogs;
+        }
+      }
+      return FALLBACK_BLOGS;
+    } catch (err) {
+      console.warn("Client fetch /api/blogs failed, returning fallback blogs:", err);
+      return FALLBACK_BLOGS;
+    }
+  }
+
+  // Server-side execution
   try {
-    const res = await fetch(BLOG_API_URL, { cache: "no-store" });
-    if (!res.ok) {
-      throw new Error(`Failed to fetch blogs: ${res.statusText}`);
-    }
-    const blogs: Blog[] = await res.json();
-    if (!Array.isArray(blogs)) {
-      return [];
-    }
-    return blogs.filter((b) => b && b.published !== false);
+    const { blogs } = await getBloggerPosts({ maxResults: 50 });
+    return blogs && blogs.length > 0 ? blogs : FALLBACK_BLOGS;
   } catch (error) {
-    console.warn("API request failed:", error);
-    return [];
+    console.warn("Blogger API server fetch failed, returning fallback blogs:", error);
+    return FALLBACK_BLOGS;
   }
 }
 
 /**
- * Fetch all blogs for admin dashboard (including unpublished draft blogs)
+ * Fetch all blogs for admin dashboard
  */
 export async function getAllBlogsForAdmin(): Promise<Blog[]> {
-  try {
-    const res = await fetch(BLOG_API_URL, { cache: "no-store" });
-    if (!res.ok) {
-      throw new Error(`Failed to fetch blogs: ${res.statusText}`);
-    }
-    const blogs: Blog[] = await res.json();
-    return Array.isArray(blogs) ? blogs : [];
-  } catch (error) {
-    console.warn("API request failed:", error);
-    return [];
-  }
+  return await getBlogs();
 }
 
 /**
- * Fetch a single blog by slug from MockAPI
+ * Fetch a single blog post by slug
  */
 export async function getBlogBySlug(slug: string): Promise<Blog | null> {
   if (!slug) return null;
 
-  try {
-    const res = await fetch(`${BLOG_API_URL}?slug=${encodeURIComponent(slug)}`, {
-      cache: "no-store",
-    });
-    if (res.ok) {
-      const results: Blog[] = await res.json();
-      if (Array.isArray(results) && results.length > 0) {
-        const match = results.find((b) => b.slug === slug);
-        if (match) return match;
+  if (typeof window !== "undefined") {
+    try {
+      const res = await fetch(`/api/blogs/${encodeURIComponent(slug)}`);
+      if (res.ok) {
+        return await res.json();
       }
+    } catch (err) {
+      console.warn(`Client fetch /api/blogs/${slug} failed:`, err);
     }
-
-    const allBlogs = await getBlogs();
-    return allBlogs.find((b) => b.slug === slug) || null;
-  } catch (error) {
-    console.warn(`API request for slug "${slug}" failed:`, error);
-    return null;
   }
+
+  return await getBloggerPostBySlug(slug);
 }
 
 /**
- * Create a new blog post on MockAPI
+ * Fetch a single blog post by ID
  */
-export async function createBlog(
-  blogData: Omit<Blog, "id" | "createdAt">
-): Promise<Blog> {
-  const payload = {
-    ...blogData,
-    createdAt: new Date().toISOString(),
-  };
-
-  const res = await fetch(BLOG_API_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!res.ok) {
-    throw new Error(`Failed to create blog post. Status: ${res.status}`);
-  }
-
-  return await res.json();
+export async function getBlogById(id: string): Promise<Blog | null> {
+  if (!id) return null;
+  return await getBloggerPostById(id);
 }
 
 /**
- * Update an existing blog post on MockAPI
+ * Fetch all categories/labels available across blogs
  */
-export async function updateBlog(
-  id: string,
-  blogData: Partial<Blog>
-): Promise<Blog> {
-  const res = await fetch(`${BLOG_API_URL}/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(blogData),
-  });
-
-  if (!res.ok) {
-    throw new Error(`Failed to update blog post #${id}. Status: ${res.status}`);
-  }
-
-  return await res.json();
-}
-
-/**
- * Delete a blog post from MockAPI
- */
-export async function deleteBlog(id: string): Promise<boolean> {
-  const res = await fetch(`${BLOG_API_URL}/${id}`, {
-    method: "DELETE",
-  });
-
-  if (!res.ok) {
-    throw new Error(`Failed to delete blog post #${id}. Status: ${res.status}`);
-  }
-
-  return true;
+export async function getCategories(): Promise<string[]> {
+  return await getBloggerCategories();
 }

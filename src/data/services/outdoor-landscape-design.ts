@@ -6,7 +6,7 @@ export const outdoorLandscapeDesign: Service = {
   title: "Outdoor & Landscape Design",
   category: "Landscape",
   shortDescription: "Extending design services to outdoor spaces such as gardens, patios, and decks.",
-  description: "Crafting seamlessly integrated outdoor living sanctuaries—from tranquil Japanese courtyard gardens to oceanfront infinity pools, stone terraces, and luxury pergolas.",
+  description: "Crafting seamlessly integrated outdoor living sanctuaries—from tranquil courtyard gardens to swimming pools, stone terraces, and luxury pergolas.",
   additionalDescription: "We believe architectural design should blur the boundaries between indoors and outdoors. Our landscape studio creates outdoor rooms, custom fire features, native plant schemes, and weather-resistant material selections that age gracefully.",
   image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
   secondaryImages: [

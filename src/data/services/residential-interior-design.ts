@@ -59,7 +59,7 @@ export const residentialInteriorDesign: Service = {
     },
     {
       question: "How long does a full luxury residential interior project take?",
-      answer: "Timelines range from 4 to 10 months depending on square footage, level of custom millwork, and international material sourcing lead times."
+      answer: "Timelines range from 3 to 8 months depending on square footage, level of custom millwork, and material sourcing lead times."
     },
     {
       question: "Do you supply custom furniture items designed by your studio?",

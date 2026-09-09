@@ -6,7 +6,6 @@ import {
   Ruler,
   Palette,
   ShieldCheck,
-  ArrowUpRight,
 } from "lucide-react";
 
 const PHILOSOPHY = [

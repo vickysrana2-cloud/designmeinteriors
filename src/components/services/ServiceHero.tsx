@@ -10,6 +10,7 @@ interface ServiceHeroProps {
 }
 
 export function ServiceHero({ service, title, subtitle, description }: ServiceHeroProps) {
+  const displayTitle = title || service?.title || "Explore Our Comprehensive Interior Design Services.";
   const displaySubtitle = subtitle || (service?.number ? `Capabilities / ${service.number}` : "OUR SERVICES");
   const displayDesc = service?.shortDescription || service?.description || description || "We specialize in transforming visions into reality. Explore our portfolio of innovative architectural and interior design projects crafted with precision.";
 
@@ -37,7 +38,7 @@ export function ServiceHero({ service, title, subtitle, description }: ServiceHe
               <span className="text-[#242321]">{service.title}</span>
             </>
           ) : (
-            <span className="text-[#242321]">Services 03</span>
+            <span className="text-[#242321]">Services</span>
           )}
         </div>
 
@@ -60,18 +61,10 @@ export function ServiceHero({ service, title, subtitle, description }: ServiceHe
             </span>
           </div>
 
-          {/* Main Title (Antra Services 03 Style) */}
-          {service ? (
-            <h1 className="font-serif text-4xl text-[#242321] leading-tight sm:text-6xl lg:text-7xl">
-              {service.title}
-            </h1>
-          ) : (
-            <h1 className="font-serif text-4xl text-[#242321] leading-[1.1] sm:text-6xl lg:text-[68px]">
-              Explore our{" "}
-              <span className="italic text-[#9A8060]">comprehensive</span>{" "}
-              interior design services
-            </h1>
-          )}
+          {/* Main Title */}
+          <h1 className="font-serif text-4xl text-[#242321] leading-tight sm:text-6xl lg:text-7xl">
+            {displayTitle}
+          </h1>
 
           {/* Intro Description */}
           <p className="font-light text-base leading-relaxed text-[#706B63] sm:text-xl max-w-2xl pt-2">

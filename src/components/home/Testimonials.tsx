@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Star, MessageSquarePlus, X, Loader2, CheckCircle2, User } from "lucide-react";
+import { Star, MessageSquarePlus, X, Loader2, CheckCircle2 } from "lucide-react";
 import { getReviews, createReview } from "@/lib/api/reviews";
 import { ReviewRecord } from "@/types/api";
 
@@ -395,7 +395,7 @@ export function Testimonials() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                    placeholder="e.g. Marcus Vance"
+                    placeholder="e.g. Rajesh Kulkarni"
                     className="w-full rounded-xl border border-[#322F2C] bg-[#191816] px-4 py-3 text-sm text-[#FCFBF8] placeholder-[#706B63] focus:border-[#9A8060] focus:outline-none"
                   />
                 </div>
@@ -410,7 +410,7 @@ export function Testimonials() {
                     required
                     value={formData.location}
                     onChange={(e) => setFormData((prev) => ({ ...prev, location: e.target.value }))}
-                    placeholder="e.g. New Delhi / London"
+                    placeholder="e.g. Nagpur / Pune"
                     className="w-full rounded-xl border border-[#322F2C] bg-[#191816] px-4 py-3 text-sm text-[#FCFBF8] placeholder-[#706B63] focus:border-[#9A8060] focus:outline-none"
                   />
                 </div>

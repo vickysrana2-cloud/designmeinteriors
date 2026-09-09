@@ -2,23 +2,23 @@ import { Project } from "@/types/project";
 
 export const terracottaPavilion: Project = {
   slug: "terracotta-pavilion",
-  title: "Monolith Terracotta Villa",
+  title: "Ramdaspeth Heritage Residence",
   category: "residential",
-  location: "Tuscany, Italy",
+  location: "Ramdaspeth, Nagpur",
   year: "2023",
-  area: "620 m²",
-  shortDescription: "Reimagined Italian countryside villa celebrating earthy terracotta tiles, stone archways, and sculpted interior lighting.",
-  description: "A dialogue between heritage Tuscan masonry and contemporary spatial openness. Monolith Terracotta Villa preserves restored 18th-century stone arches while infusing custom Italian terracotta tiles, sunken seating pits, and minimal bronze window frames.",
-  architect: "Elena Rostova",
+  area: "480 m²",
+  shortDescription: "A refined residential transformation blending custom terracotta wall cladding, brass joinery details, and modern open-plan living spaces.",
+  description: "Located in Ramdaspeth, Nagpur, this residential remodeling project blends traditional Central Indian craftsmanship with modern open-concept spatial design. Custom hand-finished terracotta wall tiles, warm brass joinery accents, and subtle ambient lighting establish a serene atmosphere.",
+  architect: "DesignMeInteriors Studio",
   featured: false,
   image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
   secondaryImages: [
     "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
   ],
-  technologies: ["Handmade Tuscan Terracotta", "Restored Stone Masonry", "Custom Bronze Joinery", "Underfloor Radiant Heating"],
-  features: ["Olive Grove Courtyard", "Outdoor Kitchen & Pergola", "Vaulted Wine Cellar", "Infiniti Pool with Hilltop Views"],
+  technologies: ["Handcrafted Terracotta Cladding", "Custom Brass Joinery", "Concealed Warm Lighting", "Integrated Climate Control"],
+  features: ["Shaded Verandah Dining", "Custom Kitchen Pantry", "Vaulted Living Room Ceiling", "Courtyard Water Feature"],
   seo: {
-    title: "Monolith Terracotta Villa - Tuscan Estate | DesignMeInteriors",
-    description: "Reimagined Italian countryside villa celebrating earthy terracotta tiles, stone archways, and sculpted interior lighting."
+    title: "Ramdaspeth Heritage Residence - Interior Design Nagpur | DesignMeInteriors",
+    description: "A refined residential transformation blending custom terracotta wall cladding, brass joinery details, and modern open-plan living spaces."
   }
 };

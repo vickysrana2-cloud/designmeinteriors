@@ -5,10 +5,13 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar } from "lucide-react";
 import { getBlogBySlug } from "@/lib/api/blog";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { BlogContent } from "@/components/blog/BlogContent";
 import { BlogImage } from "@/components/blog/BlogImage";
+import { DEFAULT_FALLBACK_IMAGE } from "@/lib/constants/images";
 import { JsonLd } from "@/components/seo/JsonLd";
+
 import { buildArticleSchema } from "@/lib/seo/structured-data";
+import { generateSiteMetadata } from "@/lib/seo/metadata";
 
 interface PageProps {
   params: Promise<{
@@ -21,24 +24,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const blog = await getBlogBySlug(slug);
 
   if (!blog) {
-    return {
+    return generateSiteMetadata({
       title: "Article Not Found | DesignMeInteriors Studio",
       description: "The requested blog article could not be found.",
-    };
+    });
   }
 
-  return {
+  const validCoverImage =
+    typeof blog.coverImage === "string" &&
+    (/^https?:\/\//.test(blog.coverImage) || blog.coverImage.startsWith("/"))
+      ? blog.coverImage
+      : DEFAULT_FALLBACK_IMAGE;
+
+
+  return generateSiteMetadata({
     title: `${blog.title} | DesignMeInteriors Studio Journal`,
     description: blog.excerpt || blog.title,
-    openGraph: {
-      title: blog.title,
-      description: blog.excerpt || blog.title,
-      type: "article",
-      publishedTime: blog.createdAt,
-      authors: [blog.author || "DesignMeInteriors Editorial"],
-      images: blog.coverImage ? [{ url: blog.coverImage }] : undefined,
-    },
-  };
+    image: validCoverImage,
+    canonicalUrl: `/blog/${blog.slug}`,
+    type: "article",
+  });
 }
 
 export default async function BlogDetailPage({ params }: PageProps) {
@@ -77,11 +82,6 @@ export default async function BlogDetailPage({ params }: PageProps) {
       formattedDate = "Published Recently";
     }
   }
-
-  // Render paragraphs safely
-  const paragraphs = content
-    ? content.split(/\n\n+/).filter((p) => p.trim().length > 0)
-    : [excerpt || ""];
 
   return (
     <main className="min-h-screen bg-[#F5F2EC] pt-32 pb-24">
@@ -153,29 +153,27 @@ export default async function BlogDetailPage({ params }: PageProps) {
           />
         </div>
 
-        {/* Article Body Content */}
-        <div className="prose prose-stone max-w-none space-y-6 pt-4 text-base sm:text-lg leading-relaxed text-[#242321] font-light">
-          {paragraphs.map((paragraph, index) => (
-            <p key={index} className="leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
+        {/* Article Body Content (Rendered Blogger HTML) */}
+        <div className="pt-4">
+          <BlogContent content={content} />
         </div>
 
         {/* Footer Actions / Navigation */}
         <div className="mt-16 pt-10 border-t border-[#D7D0C5] flex flex-col sm:flex-row items-center justify-between gap-6">
-          <Button asChild variant="outline" className="w-full sm:w-auto border-[#242321]">
-            <Link href="/blog" className="flex items-center gap-2">
-              <ArrowLeft className="h-4 w-4" />
-              <span>Explore All Articles</span>
-            </Link>
-          </Button>
+          <Link
+            href="/blog"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#242321] px-7 py-3 text-xs font-medium uppercase tracking-wider text-[#242321] hover:bg-[#242321] hover:text-[#FCFBF8] transition-all"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            <span>Explore All Articles</span>
+          </Link>
 
-          <Button asChild variant="accent" className="w-full sm:w-auto">
-            <Link href="/contact">
-              Inquire Architecture Services
-            </Link>
-          </Button>
+          <Link
+            href="/contact"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full wood-button text-[#FCFBF8] px-7 py-3 text-xs font-medium uppercase tracking-wider transition-all"
+          >
+            Inquire Architecture Services
+          </Link>
         </div>
       </article>
     </main>

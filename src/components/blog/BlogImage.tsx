@@ -3,9 +3,9 @@
 import * as React from "react";
 import Image, { ImageProps } from "next/image";
 import { Building2 } from "lucide-react";
+import { DEFAULT_FALLBACK_IMAGE } from "@/lib/constants/images";
 
-export const DEFAULT_FALLBACK_IMAGE =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80";
+
 
 interface BlogImageProps extends Omit<ImageProps, "src"> {
   src?: string | null;
@@ -15,7 +15,7 @@ interface BlogImageProps extends Omit<ImageProps, "src"> {
 
 export function BlogImage({
   src,
-  fallbackSrc = DEFAULT_FALLBACK_IMAGE,
+  fallbackSrc: _fallbackSrc = DEFAULT_FALLBACK_IMAGE,
   alt = "Blog article cover",
   className,
   category,

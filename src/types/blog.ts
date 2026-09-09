@@ -7,7 +7,10 @@ export interface Blog {
   coverImage: string;
   author: string;
   category: string;
+  labels?: string[];
   published: boolean;
   createdAt: string;
   updatedAt?: string;
+  bloggerUrl?: string;
 }
+

@@ -299,11 +299,6 @@ export default function WorkProcess() {
                           <h3 className="font-serif text-[17px] leading-tight text-[#1C1A17]">
                             {proc.title}
                           </h3>
-
-                          <ArrowRight
-                            className="mt-0.5 h-4 w-4 shrink-0 text-[#9A8060]"
-                            strokeWidth={1.4}
-                          />
                         </div>
 
                         <p className="mt-2 text-[11px] font-light leading-[1.55] text-[#6E6A62]">

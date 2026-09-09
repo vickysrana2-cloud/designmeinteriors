@@ -62,7 +62,30 @@ export function EnquiriesTab() {
   };
 
   useEffect(() => {
-    fetchEnquiries();
+    let active = true;
+    apiFetch<EnquiryRecord[]>("/Enquires")
+      .then((data) => {
+        if (active && Array.isArray(data)) {
+          const sorted = [...data].sort(
+            (a, b) =>
+              new Date(b.createdAt || 0).getTime() -
+              new Date(a.createdAt || 0).getTime()
+          );
+          setEnquiries(sorted);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to load enquiries:", err);
+        if (active) {
+          setError("Unable to fetch enquiry records from server.");
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   const handleDelete = async (id?: string) => {
@@ -117,7 +140,7 @@ export function EnquiriesTab() {
     const body = encodeURIComponent(
       `Dear ${item.fullName},\n\nThank you for reaching out to DesignMeInteriors Studio regarding your ${item.serviceCategory || "interior design"} project.\n\nBest regards,\nDesignMeInteriors Studio\n+91 9579540206`
     );
-    window.location.href = `mailto:${item.email}?subject=${subject}&body=${body}`;
+    window.open(`mailto:${item.email}?subject=${subject}&body=${body}`, "_self");
   };
 
   const handleOpenGmail = (item: EnquiryRecord, e?: React.MouseEvent) => {
