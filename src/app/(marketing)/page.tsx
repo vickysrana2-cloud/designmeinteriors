@@ -4,6 +4,7 @@ import { AboutPreview } from "@/components/home/AboutPreview";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import WorkProcess from "@/components/sections/WorkProcess";
 import { ProjectsPreview } from "@/components/home/ProjectsPreview";
+import { BlogSection } from "@/components/blog/BlogSection";
 import { Testimonials } from "@/components/home/Testimonials";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { generateSiteMetadata } from "@/lib/seo/metadata";
@@ -23,6 +24,7 @@ export default function HomePage() {
       <ServicesPreview />
       <WorkProcess />
       <ProjectsPreview />
+      <BlogSection limit={4} isLandingPage={true} />
       <Testimonials />
       <CtaBanner />
     </>

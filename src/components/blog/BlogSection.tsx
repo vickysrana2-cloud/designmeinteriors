@@ -13,13 +13,15 @@ interface BlogSectionProps {
   subtitle?: string;
   limit?: number;
   showViewAll?: boolean;
+  isLandingPage?: boolean;
 }
 
 export function BlogSection({
   title = "Insights & Journal",
-  subtitle = "Perspectives on architecture, design philosophy, and spatial experience.",
-  limit = 3,
+  subtitle = "Perspectives on architecture, design philosophy, and spatial experience in Nagpur.",
+  limit = 4,
   showViewAll = true,
+  isLandingPage = false,
 }: BlogSectionProps) {
   const [blogs, setBlogs] = React.useState<Blog[]>([]);
   const [loading, setLoading] = React.useState<boolean>(true);
@@ -91,16 +93,16 @@ export function BlogSection({
 
         {/* Loading Skeleton State */}
         {loading && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((idx) => (
+          <div className={`grid grid-cols-1 ${isLandingPage ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-2 lg:grid-cols-3"} gap-6 lg:gap-8`}>
+            {[1, 2, 3, 4].map((idx) => (
               <div
                 key={idx}
-                className="animate-pulse border border-[#D7D0C5] bg-[#FCFBF8] p-6 space-y-4"
+                className={`animate-pulse border border-[#D7D0C5] bg-[#FCFBF8] p-6 space-y-4 rounded-3xl ${isLandingPage && idx > 2 ? "hidden sm:block" : "block"}`}
               >
-                <div className="h-52 bg-[#E8E1D7] w-full" />
-                <div className="h-4 bg-[#E8E1D7] w-1/3" />
-                <div className="h-6 bg-[#E8E1D7] w-3/4" />
-                <div className="h-12 bg-[#E8E1D7] w-full" />
+                <div className="h-52 bg-[#E8E1D7] w-full rounded-xl" />
+                <div className="h-4 bg-[#E8E1D7] w-1/3 rounded" />
+                <div className="h-6 bg-[#E8E1D7] w-3/4 rounded" />
+                <div className="h-12 bg-[#E8E1D7] w-full rounded" />
               </div>
             ))}
           </div>
@@ -116,7 +118,7 @@ export function BlogSection({
 
         {/* Empty Result State */}
         {!loading && !error && blogs.length === 0 && (
-          <div className="p-12 border border-[#D7D0C5] bg-[#FCFBF8] text-center space-y-4 max-w-lg mx-auto">
+          <div className="p-12 border border-[#D7D0C5] bg-[#FCFBF8] text-center space-y-4 max-w-lg mx-auto rounded-3xl">
             <BookOpen className="h-10 w-10 text-[#706B63] mx-auto" />
             <h3 className="font-serif text-xl text-[#242321]">No Articles Published Yet</h3>
             <p className="text-xs text-[#706B63]">
@@ -127,10 +129,16 @@ export function BlogSection({
 
         {/* Blog Grid */}
         {!loading && !error && displayedBlogs.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {displayedBlogs.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
-            ))}
+          <div className={`grid grid-cols-1 ${isLandingPage ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-2 lg:grid-cols-3"} gap-6 lg:gap-8`}>
+            {displayedBlogs.map((blog, idx) => {
+              // On landing page: show 2 blogs on mobile (< 640px), 4 blogs on desktop (>= 640px)
+              const responsiveWrapperClass = isLandingPage && idx >= 2 ? "hidden sm:block" : "block";
+              return (
+                <div key={blog.id || idx} className={responsiveWrapperClass}>
+                  <BlogCard blog={blog} />
+                </div>
+              );
+            })}
           </div>
         )}
 

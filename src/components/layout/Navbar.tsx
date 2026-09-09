@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { label: "About Studio", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
+  { label: "Blogs", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
