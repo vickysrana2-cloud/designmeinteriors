@@ -21,18 +21,18 @@ export function BlogCard({ blog }: BlogCardProps) {
   } = blog;
 
   // Format creation date safely
-  const formattedDate = React.useMemo(() => {
-    if (!createdAt) return "Recently Published";
+  let formattedDate = "Recently Published";
+  if (createdAt) {
     try {
-      return new Date(createdAt).toLocaleDateString("en-US", {
+      formattedDate = new Date(createdAt).toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",
         year: "numeric",
       });
     } catch {
-      return "Recently Published";
+      formattedDate = "Recently Published";
     }
-  }, [createdAt]);
+  }
 
   return (
     <article

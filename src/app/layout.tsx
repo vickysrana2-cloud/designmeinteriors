@@ -20,6 +20,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  manifest: "/manifest.json",
   title: {
     default: "DesignMe Interiors — Interior Designer in Nagpur | Home & Commercial Studio",
     template: "%s | DesignMe Interiors",
