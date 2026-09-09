@@ -21,8 +21,10 @@ const NAV_ITEMS = [
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = React.useState(false);
+  const [visible, setVisible] = React.useState(true);
   const [isOpen, setIsOpen] = React.useState(false);
   const [mounted, setMounted] = React.useState(false);
+  const lastScrollY = React.useRef(0);
 
   const isHomePage = pathname === "/";
   const isHeroNavbar = isHomePage && !scrolled;
@@ -33,12 +35,32 @@ export function Navbar() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+
+      setScrolled(currentScrollY > 20);
+
+      if (currentScrollY <= 20) {
+        setVisible(true);
+        lastScrollY.current = currentScrollY;
+      } else {
+        const diff = currentScrollY - lastScrollY.current;
+        if (Math.abs(diff) > 5) {
+          if (diff > 0) {
+            // Scroll Down -> Hide navbar
+            setVisible(false);
+          } else {
+            // Scroll Up -> Show navbar
+            setVisible(true);
+          }
+          lastScrollY.current = currentScrollY;
+        }
+      }
     };
 
+    lastScrollY.current = window.scrollY;
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -82,8 +104,9 @@ export function Navbar() {
         right-0
         z-50
         transition-all
-        duration-500
-        ease-out
+        duration-300
+        ease-in-out
+        ${visible || isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
         ${isHeroNavbar
           ? "bg-transparent py-5"
           : "bg-[#F5F2EC]/90 backdrop-blur-md border-b border-[#D7D0C5] py-4 shadow-sm"
