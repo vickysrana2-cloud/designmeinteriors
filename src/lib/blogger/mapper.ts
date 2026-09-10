@@ -1,6 +1,7 @@
 import { Blog } from "@/types/blog";
 import { BloggerPost } from "./types";
 import { DEFAULT_FALLBACK_IMAGE } from "@/lib/constants/images";
+import { resolveBloggerPostVideos } from "./resolver";
 
 /**
  * Extracts the first image URL from HTML string if available.
@@ -83,10 +84,16 @@ export function generateSlug(post: BloggerPost): string {
 
 /**
  * Maps Blogger API post object to normalized website Blog model.
- * DIAGNOSTIC ISOLATION TEST: Bypassing resolveBloggerPostVideos temporarily
  */
 export async function mapBloggerPostToBlog(post: BloggerPost): Promise<Blog> {
-  const resolvedContent = post.content || "";
+  let resolvedContent = post.content || "";
+  try {
+    resolvedContent = await resolveBloggerPostVideos(post.content || "", post.url);
+  } catch (err) {
+    console.error(`Error resolving Blogger post videos for post ID ${post.id}:`, err);
+    resolvedContent = post.content || "";
+  }
+
   const extractedImg = post.images?.[0]?.url || extractFirstImage(resolvedContent);
   const coverImage = extractedImg || DEFAULT_FALLBACK_IMAGE;
   const excerpt = extractExcerpt(resolvedContent, 220);
