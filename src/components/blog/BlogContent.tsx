@@ -1,4 +1,14 @@
 import * as React from "react";
+import parse, {
+  domToReact,
+  attributesToProps,
+  Element,
+  DOMNode,
+  HTMLReactParserOptions,
+} from "html-react-parser";
+import { sanitizeBloggerHtml, isTrustedIframeUrl } from "@/lib/blogger/sanitizer";
+import { MediaIframe, MediaVideo } from "./MediaEmbed";
+import { BloggerVideo } from "./BloggerVideo";
 
 interface BlogContentProps {
   content: string;
@@ -14,16 +24,117 @@ export function BlogContent({ content, className = "" }: BlogContentProps) {
     );
   }
 
-  // Pre-process Blogger HTML to sanitize/clean inline styles if needed
-  const cleanedContent = (content || "")
-    // Remove script tags from Blogger HTML
-    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
-    // Remove inline font-family overrides so site font remains consistent
-    .replace(/font-family:[^;"]+;?/gi, "")
-    // Remove hardcoded black background styles from pasted text
-    .replace(/background-color:[^;"]+;?/gi, "")
-    // Ensure images inside post content wrap nicely
-    .replace(/<img /gi, '<img loading="lazy" class="rounded-2xl my-6 border border-[#D7D0C5] max-w-full h-auto shadow-sm" ');
+  // 1. Perform security sanitization preserving layout styles & structures
+  const sanitizedHtml = sanitizeBloggerHtml(content);
+
+  // 2. Configure AST parsing options to transform media tags into responsive components
+  const options: HTMLReactParserOptions = {
+    replace(domNode) {
+      if (domNode instanceof Element && domNode.attribs) {
+        const { name, attribs, children } = domNode;
+        // Convert raw HTML attributes to valid React props (parses style strings into React style objects)
+        const reactProps = attributesToProps(attribs) as Record<string, any>;
+
+        // A. Transform native Blogger video <object class="BLOG_video_class"> elements
+        if (name === "object") {
+          const contentid = attribs.contentid || reactProps.contentid;
+          const rawClass = attribs.class || reactProps.className || "";
+          const isBloggerVideo =
+            Boolean(contentid) || rawClass.includes("BLOG_video_class");
+
+          if (isBloggerVideo) {
+            const width = attribs.width || reactProps.width;
+            const height = attribs.height || reactProps.height;
+            return (
+              <BloggerVideo
+                contentid={contentid}
+                width={width}
+                height={height}
+              />
+            );
+          }
+
+          // Strip arbitrary non-Blogger object tags for security
+          return null;
+        }
+
+        // B. Transform <img> tags into responsive, lazy-loaded images
+        if (name === "img") {
+          const { src, alt, className: rawClass, ...restProps } = reactProps;
+          if (!src) return null;
+
+          return (
+            <img
+              src={src}
+              alt={alt || "Article illustration"}
+              loading="lazy"
+              decoding="async"
+              className="rounded-2xl my-6 border border-[#D7D0C5] max-w-full h-auto shadow-sm mx-auto block"
+              {...restProps}
+            />
+          );
+        }
+
+        // C. Transform <iframe> tags into responsive MediaEmbed or BloggerVideo containers
+        if (name === "iframe") {
+          const { src, title, width, height } = reactProps;
+          if (!src || !isTrustedIframeUrl(src)) {
+            return null; // Strips untrusted iframe origins safely
+          }
+
+          // If iframe is a resolved Blogger video player (video.g endpoint)
+          if (src.includes("video.g")) {
+            return (
+              <BloggerVideo
+                src={src}
+                title={title || "Blogger Native Video"}
+                width={width}
+                height={height}
+              />
+            );
+          }
+
+          return (
+            <MediaIframe
+              src={src}
+              title={title || "Embedded Video"}
+              width={width}
+              height={height}
+            />
+          );
+        }
+
+        // D. Transform native <video> tags into responsive MediaVideo containers
+        if (name === "video") {
+          const { src, poster, ...restProps } = reactProps;
+          return (
+            <MediaVideo src={src} poster={poster} {...restProps}>
+              {children && domToReact(children as DOMNode[], options)}
+            </MediaVideo>
+          );
+        }
+
+        // E. Transform external <a> links to open in a safe new tab
+        if (name === "a") {
+          const { href, target, rel, ...restProps } = reactProps;
+          const isExternal =
+            href && (href.startsWith("http://") || href.startsWith("https://"));
+          return (
+            <a
+              href={href}
+              target={isExternal ? "_blank" : target}
+              rel={isExternal ? "noopener noreferrer" : rel}
+              {...restProps}
+            >
+              {children && domToReact(children as DOMNode[], options)}
+            </a>
+          );
+        }
+      }
+    },
+  };
+
+  const parsedContent = parse(sanitizedHtml, options);
 
   return (
     <div
@@ -53,7 +164,8 @@ export function BlogContent({ content, className = "" }: BlogContentProps) {
         [&_hr]:border-[#D7D0C5] [&_hr]:my-10
         ${className}
       `}
-      dangerouslySetInnerHTML={{ __html: cleanedContent }}
-    />
+    >
+      {parsedContent}
+    </div>
   );
 }

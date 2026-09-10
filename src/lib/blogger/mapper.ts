@@ -1,7 +1,7 @@
 import { Blog } from "@/types/blog";
 import { BloggerPost } from "./types";
 import { DEFAULT_FALLBACK_IMAGE } from "@/lib/constants/images";
-
+import { resolveBloggerPostVideos } from "./resolver";
 
 /**
  * Extracts the first image URL from HTML string if available.
@@ -85,7 +85,7 @@ export function generateSlug(post: BloggerPost): string {
 /**
  * Maps Blogger API post object to normalized website Blog model.
  */
-export function mapBloggerPostToBlog(post: BloggerPost): Blog {
+export async function mapBloggerPostToBlog(post: BloggerPost): Promise<Blog> {
   const extractedImg = post.images?.[0]?.url || extractFirstImage(post.content);
   const coverImage = extractedImg || DEFAULT_FALLBACK_IMAGE;
   const excerpt = extractExcerpt(post.content, 220);
@@ -95,12 +95,15 @@ export function mapBloggerPostToBlog(post: BloggerPost): Blog {
   const category = labels.length > 0 ? labels[0] : "Architecture & Design";
   const author = post.author?.displayName || "DesignMeInteriors Studio";
 
+  // Resolve native Blogger video object tags to authentic video.g player URLs
+  const resolvedContent = await resolveBloggerPostVideos(post.content || "", post.url);
+
   return {
     id: post.id,
     title: post.title || "Untitled Article",
     slug,
     excerpt,
-    content: post.content || "",
+    content: resolvedContent,
     coverImage,
     author,
     category,

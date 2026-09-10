@@ -39,8 +39,7 @@ export async function getBloggerPosts(options?: GetBloggerPostsOptions): Promise
 
   try {
     const res = await fetch(url, {
-      next: { revalidate: 60 },
-
+      next: { revalidate: 3600 },
     });
 
     if (!res.ok) {
@@ -53,7 +52,7 @@ export async function getBloggerPosts(options?: GetBloggerPostsOptions): Promise
       return { blogs: FALLBACK_BLOGS };
     }
 
-    const blogs = data.items.map(mapBloggerPostToBlog);
+    const blogs = await Promise.all(data.items.map(mapBloggerPostToBlog));
     return {
       blogs,
       nextPageToken: data.nextPageToken,
@@ -96,8 +95,7 @@ export async function getBloggerPostById(id: string): Promise<Blog | null> {
 
   try {
     const res = await fetch(url, {
-      next: { revalidate: 60 },
-
+      next: { revalidate: 3600 },
     });
 
     if (!res.ok) {
@@ -105,7 +103,7 @@ export async function getBloggerPostById(id: string): Promise<Blog | null> {
     }
 
     const item = await res.json();
-    return mapBloggerPostToBlog(item);
+    return await mapBloggerPostToBlog(item);
   } catch (error) {
     console.error(`Failed to fetch Blogger post by ID ${id}:`, error);
     return null;
