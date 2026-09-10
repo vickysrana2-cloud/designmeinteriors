@@ -354,12 +354,12 @@ export function Navbar() {
                         </a>
 
                         <a
-                          href="mailto:contact@designmeinteriors.com"
+                          href="mailto:Interiorsdesignme@gmail.com"
                           className="group flex items-center justify-between text-xs text-[#706B63] hover:text-[#9A8060] transition-colors py-0.5"
                         >
                           <div className="flex items-center gap-3">
                             <Mail className="h-4 w-4 text-[#9A8060]" />
-                            <span>contact@designmeinteriors.com</span>
+                            <span>Interiorsdesignme@gmail.com</span>
                           </div>
                           <ArrowUpRight className="h-3.5 w-3.5 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-[#9A8060]" />
                         </a>

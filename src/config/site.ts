@@ -8,7 +8,7 @@ export const siteConfig = {
   phone: "+91 9579540206",
   phoneFormatted: "+91 95795 40206",
   whatsappNumber: "919579540206",
-  email: "contact@designmeinteriors.com",
+  email: "Interiorsdesignme@gmail.com",
   googleMapsUrl: "https://share.google/euMVYDVH6dGXc1s87",
   links: {
     facebook: "https://www.facebook.com/people/Design-Me/61563517471577/",
