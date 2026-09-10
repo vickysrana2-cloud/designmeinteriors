@@ -39,7 +39,8 @@ export async function getBloggerPosts(options?: GetBloggerPostsOptions): Promise
 
   try {
     const res = await fetch(url, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 60 },
+
     });
 
     if (!res.ok) {
@@ -95,7 +96,8 @@ export async function getBloggerPostById(id: string): Promise<Blog | null> {
 
   try {
     const res = await fetch(url, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 60 },
+
     });
 
     if (!res.ok) {
