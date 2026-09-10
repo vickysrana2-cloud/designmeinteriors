@@ -84,13 +84,13 @@ export function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
             </a>
 
             <a
-              href="mailto:contact@designmeinteriors.com"
+              href="mailto:Interiorsdesignme@gmail.com"
               className="flex items-center gap-3 transition-colors hover:text-[#9A8060]"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/5 text-[#9A8060]">
                 <Mail className="h-3.5 w-3.5" />
               </div>
-              <span className="font-medium truncate">contact@designmeinteriors.com</span>
+              <span className="font-medium truncate">Interiorsdesignme@gmail.com</span>
             </a>
           </div>
 

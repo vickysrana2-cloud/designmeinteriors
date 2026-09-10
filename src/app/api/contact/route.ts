@@ -32,7 +32,7 @@ export async function POST(request: Request) {
     }
 
     const receiverEmail =
-      process.env.CONTACT_RECEIVER_EMAIL || "contact@designmeinteriors.com";
+      process.env.CONTACT_RECEIVER_EMAIL || "Interiorsdesignme@gmail.com";
 
     const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
     const smtpPort = parseInt(process.env.SMTP_PORT || "587", 10);
