@@ -24,8 +24,8 @@ import {
 const OFFICES = [
   {
     city: "Nagpur Studio",
-    address: "DesignMeInteriors",
-    district: "Nagpur, Maharashtra, India",
+    address: "Saraswati Palace, Wanjari Nagar",
+    district: "Nagpur, Maharashtra 440003",
     phone: "+91 9579540206",
     email: "Interiorsdesignme@gmail.com",
     hours: "Mon – Sat: 09:30 – 18:30 IST",
