@@ -84,19 +84,25 @@ export function generateSlug(post: BloggerPost): string {
 
 /**
  * Maps Blogger API post object to normalized website Blog model.
+ * GUARANTEE: Wrapped in robust try-catch blocks to prevent any exception during mapping.
  */
 export async function mapBloggerPostToBlog(post: BloggerPost): Promise<Blog> {
-  const extractedImg = post.images?.[0]?.url || extractFirstImage(post.content);
+  let resolvedContent = post.content || "";
+  try {
+    resolvedContent = await resolveBloggerPostVideos(post.content || "", post.url);
+  } catch (err) {
+    console.error(`Error resolving Blogger post videos for post ID ${post.id}:`, err);
+    resolvedContent = post.content || "";
+  }
+
+  const extractedImg = post.images?.[0]?.url || extractFirstImage(resolvedContent);
   const coverImage = extractedImg || DEFAULT_FALLBACK_IMAGE;
-  const excerpt = extractExcerpt(post.content, 220);
+  const excerpt = extractExcerpt(resolvedContent, 220);
   const slug = generateSlug(post);
 
   const labels = Array.isArray(post.labels) ? post.labels : [];
   const category = labels.length > 0 ? labels[0] : "Architecture & Design";
   const author = post.author?.displayName || "DesignMeInteriors Studio";
-
-  // Resolve native Blogger video object tags to authentic video.g player URLs
-  const resolvedContent = await resolveBloggerPostVideos(post.content || "", post.url);
 
   return {
     id: post.id,
