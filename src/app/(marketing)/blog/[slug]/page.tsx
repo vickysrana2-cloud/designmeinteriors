@@ -20,30 +20,37 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const blog = await getBlogBySlug(slug);
+  try {
+    const { slug } = await params;
+    const blog = await getBlogBySlug(slug);
 
-  if (!blog) {
+    if (!blog) {
+      return generateSiteMetadata({
+        title: "Article Not Found | DesignMeInteriors Studio",
+        description: "The requested blog article could not be found.",
+      });
+    }
+
+    const validCoverImage =
+      typeof blog.coverImage === "string" &&
+      (/^https?:\/\//.test(blog.coverImage) || blog.coverImage.startsWith("/"))
+        ? blog.coverImage
+        : DEFAULT_FALLBACK_IMAGE;
+
     return generateSiteMetadata({
-      title: "Article Not Found | DesignMeInteriors Studio",
-      description: "The requested blog article could not be found.",
+      title: `${blog.title} | DesignMeInteriors Studio Journal`,
+      description: blog.excerpt || blog.title,
+      image: validCoverImage,
+      canonicalUrl: `/blog/${blog.slug}`,
+      type: "article",
+    });
+  } catch (err) {
+    console.error("Error in generateMetadata for blog slug:", err);
+    return generateSiteMetadata({
+      title: "DesignMeInteriors Studio Journal",
+      description: "Explore architectural insights and interior design articles.",
     });
   }
-
-  const validCoverImage =
-    typeof blog.coverImage === "string" &&
-    (/^https?:\/\//.test(blog.coverImage) || blog.coverImage.startsWith("/"))
-      ? blog.coverImage
-      : DEFAULT_FALLBACK_IMAGE;
-
-
-  return generateSiteMetadata({
-    title: `${blog.title} | DesignMeInteriors Studio Journal`,
-    description: blog.excerpt || blog.title,
-    image: validCoverImage,
-    canonicalUrl: `/blog/${blog.slug}`,
-    type: "article",
-  });
 }
 
 export default async function BlogDetailPage({ params }: PageProps) {
@@ -53,7 +60,12 @@ export default async function BlogDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  const blog = await getBlogBySlug(slug);
+  let blog = null;
+  try {
+    blog = await getBlogBySlug(slug);
+  } catch (err) {
+    console.error(`Error fetching blog detail for slug "${slug}":`, err);
+  }
 
   if (!blog || blog.published === false) {
     notFound();

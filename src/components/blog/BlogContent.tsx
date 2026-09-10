@@ -1,5 +1,5 @@
 import * as React from "react";
-import parse, {
+import parseFunc, {
   domToReact,
   attributesToProps,
   Element,
@@ -9,6 +9,14 @@ import parse, {
 import { sanitizeBloggerHtml, isTrustedIframeUrl } from "@/lib/blogger/sanitizer";
 import { MediaIframe, MediaVideo } from "./MediaEmbed";
 import { BloggerVideo } from "./BloggerVideo";
+
+// Robust Module Interop for Next.js Server Components & Vercel Serverless Bundling
+const parse =
+  typeof parseFunc === "function"
+    ? parseFunc
+    : (parseFunc as any)?.default && typeof (parseFunc as any).default === "function"
+    ? (parseFunc as any).default
+    : null;
 
 interface BlogContentProps {
   content: string;
@@ -30,6 +38,16 @@ export function BlogContent({ content, className = "" }: BlogContentProps) {
     sanitizedHtml = sanitizeBloggerHtml(content);
   } catch (sanitizerErr) {
     console.error("Sanitizer error in BlogContent:", sanitizerErr);
+  }
+
+  // Fallback if html-react-parser is unavailable or invalid in serverless environment
+  if (typeof parse !== "function") {
+    return (
+      <div
+        className={`prose prose-stone max-w-none text-[#242321] ${className}`}
+        dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+      />
+    );
   }
 
   // 2. Configure AST parsing options to transform media tags into responsive components
