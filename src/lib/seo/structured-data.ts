@@ -28,8 +28,10 @@ export function buildLocalBusinessSchema() {
     priceRange: "₹₹ - ₹₹₹",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Saraswati Palace, Wanjari Nagar",
       addressLocality: "Nagpur",
       addressRegion: "Maharashtra",
+      postalCode: "440003",
       addressCountry: "IN",
     },
     geo: {

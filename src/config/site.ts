@@ -9,6 +9,11 @@ export const siteConfig = {
   phoneFormatted: "+91 95795 40206",
   whatsappNumber: "919579540206",
   email: "Interiorsdesignme@gmail.com",
+  address: "Saraswati Palace, Wanjari Nagar, Nagpur, Maharashtra 440003",
+  addressStreet: "Saraswati Palace, Wanjari Nagar",
+  addressCity: "Nagpur",
+  addressState: "Maharashtra",
+  addressPostalCode: "440003",
   googleMapsUrl: "https://share.google/euMVYDVH6dGXc1s87",
   links: {
     facebook: "https://www.facebook.com/people/Design-Me/61563517471577/",

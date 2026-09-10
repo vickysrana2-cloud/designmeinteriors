@@ -103,7 +103,7 @@ export function Footer() {
             <h4 className="text-xs uppercase tracking-widest text-[#9A8060] font-semibold">
               Navigation
             </h4>
-            <ul className="space-y-3 text-sm text-[#D7D0C5]">
+            <ul className="space-y-2.5 text-sm text-[#D7D0C5]">
               <li>
                 <Link href="/" className="hover:text-[#9A8060] transition-colors">
                   Home Overview
@@ -115,8 +115,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/services" className="hover:text-[#9A8060] transition-colors">
+                  Interior Services
+                </Link>
+              </li>
+              <li>
                 <Link href="/projects" className="hover:text-[#9A8060] transition-colors">
                   Project Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-[#9A8060] transition-colors">
+                  Design Journal & Blog
                 </Link>
               </li>
               <li>
@@ -145,7 +155,7 @@ export function Footer() {
                     Nagpur Studio (Main Office)
                   </span>
                   <span className="block text-[#706B63] group-hover:underline">
-                    Nagpur, Maharashtra, India ↗
+                    Saraswati Palace, Wanjari Nagar, Nagpur, Maharashtra 440003 ↗
                   </span>
                 </a>
                 <a
@@ -177,15 +187,18 @@ export function Footer() {
         <div className="pt-8 border-t border-[#322F2C] flex flex-col sm:flex-row items-center justify-between text-xs text-[#706B63] gap-4">
           <p>© {new Date().getFullYear()} DesignMeInteriors Studio. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span className="hover:text-[#D7D0C5] cursor-pointer transition-colors">
+            <Link
+              href="/privacy"
+              className="hover:text-[#D7D0C5] transition-colors"
+            >
               Privacy Policy
-            </span>
-            <span className="hover:text-[#D7D0C5] cursor-pointer transition-colors">
+            </Link>
+            <Link
+              href="/terms"
+              className="hover:text-[#D7D0C5] transition-colors"
+            >
               Terms of Engagement
-            </span>
-            <span className="hover:text-[#D7D0C5] cursor-pointer transition-colors">
-              Sitemap
-            </span>
+            </Link>
             <Link
               href="/admin"
               className="hover:text-[#9A8060] transition-colors font-medium text-[#706B63]"
