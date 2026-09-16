@@ -5,7 +5,7 @@ export const outdoorLandscapeDesign: Service = {
   number: "04",
   title: "Outdoor & Landscape Design",
   category: "Landscape",
-  shortDescription: "Extending design services to outdoor spaces such as gardens, patios, and decks.",
+  shortDescription: "Planning, designing, and arranging outdoor spaces to make them functional, attractive, comfortable, and connected with nature.",
   description: "Crafting seamlessly integrated outdoor living sanctuaries—from tranquil courtyard gardens to swimming pools, stone terraces, and luxury pergolas.",
   additionalDescription: "We believe architectural design should blur the boundaries between indoors and outdoors. Our landscape studio creates outdoor rooms, custom fire features, native plant schemes, and weather-resistant material selections that age gracefully.",
   image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
@@ -15,24 +15,29 @@ export const outdoorLandscapeDesign: Service = {
   ],
   features: [
     {
-      title: "Hardscape & Terrace Architecture",
-      description: "Natural stone paving, teak decking, retaining walls, and custom pergola shade structures.",
-      icon: "Layers"
-    },
-    {
-      title: "Botanical & Garden Design",
-      description: "Curating climate-resilient native plants, sculptural trees, and low-water organic gardens.",
-      icon: "Sun"
-    },
-    {
-      title: "Outdoor Living & Dining",
-      description: "Integrated outdoor kitchens, stone fire pits, built-in banquettes, and weather-proof textiles.",
+      title: "Site Analysis",
+      description: "Mapping topography, soil conditions, wind corridors, and natural view lines.",
       icon: "Compass"
     },
     {
-      title: "Exterior Lighting & Water",
-      description: "Subtle landscape uplighting, water features, reflecting pools, and automated irrigation systems.",
+      title: "Space Planning and Zoning",
+      description: "Defining functional outdoor zones, patios, decks, and seamless garden walkways.",
+      icon: "Layers"
+    },
+    {
+      title: "Plant Selection",
+      description: "Curating climate-resilient native plants, shade trees, and low-maintenance organic gardens.",
+      icon: "Box"
+    },
+    {
+      title: "Water Harvesting",
+      description: "Designing eco-friendly rainwater harvesting, efficient drip irrigation, and drainage systems.",
       icon: "ShieldCheck"
+    },
+    {
+      title: "Climate and Sunlight",
+      description: "Optimizing sun exposure, seasonal shade structures, and passive cooling micro-climates.",
+      icon: "Sun"
     }
   ],
   sections: [
@@ -69,6 +74,6 @@ export const outdoorLandscapeDesign: Service = {
   ],
   seo: {
     title: "Outdoor & Landscape Design Services | DesignMeInteriors Studio",
-    description: "Extending design services to outdoor spaces such as gardens, patios, and decks."
+    description: "Planning, designing, and arranging outdoor spaces to make them functional, attractive, comfortable, and connected with nature."
   }
 };

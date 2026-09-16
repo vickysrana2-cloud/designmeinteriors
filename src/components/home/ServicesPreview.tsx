@@ -48,43 +48,46 @@ export function ServicesPreview() {
 
       {/* CAROUSEL */}
       <div className="w-full">
-        <Swiper
-          modules={[Autoplay]}
-          loop
-          centeredSlides
-          slidesPerView={1.09}
-          slidesPerGroup={1}
-          spaceBetween={20}
-          speed={700}
-          wrapperClass="!items-start"
-          autoplay={{
-            delay: 1000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-            reverseDirection: false,
-          }}
-          breakpoints={{
-            640: {
-              slidesPerView: 1.7,
-              spaceBetween: 24,
-            },
-            1024: {
-              slidesPerView: 3.1,
-              spaceBetween: 32,
-            },
-          }}
-          className="services-swiper px-5 sm:px-8 lg:px-16 cursor-pointer [&_.swiper-slide]:!cursor-pointer"
-        >
-          {services.map((service, index) => {
-            /*
-              Pattern:
-              01 = SHORT, 02 = TALL, 03 = SHORT
-              04 = TALL, 05 = SHORT, 06 = TALL
-            */
-            const isTall = index % 2 === 1;
+        {(() => {
+          // If service count is less than 6, duplicate items so Swiper's infinite loop completes seamlessly
+          const displayServices =
+            services.length > 0 && services.length < 6
+              ? [...services, ...services]
+              : services;
 
-            return (
-              <SwiperSlide key={service.slug}>
+          return (
+            <Swiper
+              modules={[Autoplay]}
+              loop
+              centeredSlides
+              slidesPerView={1.09}
+              slidesPerGroup={1}
+              spaceBetween={20}
+              speed={700}
+              wrapperClass="!items-start"
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+                reverseDirection: false,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1.7,
+                  spaceBetween: 24,
+                },
+                1024: {
+                  slidesPerView: 3.1,
+                  spaceBetween: 32,
+                },
+              }}
+              className="services-swiper px-5 sm:px-8 lg:px-16 cursor-pointer [&_.swiper-slide]:!cursor-pointer"
+            >
+              {displayServices.map((service, index) => {
+                const isTall = index % 2 === 1;
+
+                return (
+                  <SwiperSlide key={`${service.slug}-${index}`}>
                 <Link href={`/services/${service.slug}`} className="group block cursor-pointer">
                   <article className="cursor-pointer">
                     {/* IMAGE — alternates short/tall */}
@@ -134,6 +137,8 @@ export function ServicesPreview() {
             );
           })}
         </Swiper>
+          );
+        })()}
       </div>
     </section>
   );

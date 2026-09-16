@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Compass, Layers, ShieldCheck } from "lucide-react";
+import { AboutStudioGallery } from "./AboutStudioGallery";
 import { IMAGES } from "@/data/images";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -20,15 +21,8 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease }}
-              className="relative h-[420px] w-full overflow-hidden rounded-3xl border border-[#D7D0C5] shadow-lg sm:h-[520px]"
             >
-              <Image
-                src={IMAGES.aboutMain}
-                alt="DesignMeInteriors Architecture Studio"
-                fill
-                sizes="(max-width: 1023px) 100vw, 50vw"
-                className="object-cover"
-              />
+              <AboutStudioGallery />
             </motion.div>
 
             {/* Overlapping secondary image */}
@@ -62,7 +56,7 @@ export function AboutPreview() {
                 About Our Studio
               </span>
               <h2 className="font-serif text-3xl text-[#242321] sm:text-4xl md:text-5xl leading-tight">
-                Thoughtful design, natural materials & everyday comfort.
+                Designing interiors that reflect clients' personality.
               </h2>
             </motion.div>
 
@@ -73,7 +67,8 @@ export function AboutPreview() {
               transition={{ duration: 0.7, delay: 0.1, ease }}
               className="font-sans text-sm leading-relaxed text-[#706B63] md:text-base"
             >
-              DesignMeInteriors is a Nagpur-based interior design studio. We specialize in custom residential homes, modern office spaces, and commercial interiors. We combine smart space planning with quality natural materials—creating spaces where you love to live and work.
+              Creating spaces that reflect your personality and lifestyle, with thoughtful design, quality materials, and lasting comfort.
+
             </motion.p>
 
             {/* Core Values */}
@@ -89,7 +84,7 @@ export function AboutPreview() {
                   <Compass className="h-4 w-4" />
                   <span className="font-serif text-sm font-semibold text-[#242321]">Smart Layouts</span>
                 </div>
-                <p className="text-xs text-[#706B63] leading-normal">Space planning and lighting designed for daily comfort.</p>
+                <p className="text-xs text-[#706B63] leading-normal">Space planning for better circulation and 3D designs for visualization and everyday comfort.</p>
               </div>
 
               <div className="space-y-2">
@@ -97,7 +92,7 @@ export function AboutPreview() {
                   <Layers className="h-4 w-4" />
                   <span className="font-serif text-sm font-semibold text-[#242321]">Quality Materials</span>
                 </div>
-                <p className="text-xs text-[#706B63] leading-normal">Real teak wood, natural stone, marble, and fine fabrics.</p>
+                <p className="text-xs text-[#706B63] leading-normal">We use only durable and long lasting materials.</p>
               </div>
 
               <div className="space-y-2">

@@ -1,19 +1,20 @@
 import { Service } from "@/types/service";
 import { residentialInteriorDesign } from "./residential-interior-design";
 import { commercialInteriorDesign } from "./commercial-interior-design";
-import { interiorDesignConsultation } from "./interior-design-consultation";
-import { outdoorLandscapeDesign } from "./outdoor-landscape-design";
 import { renovationAndRemodeling } from "./renovation-and-remodeling";
-import { interior2d3dLayouts } from "./interior-2d-3d-layouts";
+import { outdoorLandscapeDesign } from "./outdoor-landscape-design";
 
-export const services: Service[] = [
+const rawServices: Service[] = [
   residentialInteriorDesign,
   commercialInteriorDesign,
-  interiorDesignConsultation,
-  outdoorLandscapeDesign,
   renovationAndRemodeling,
-  interior2d3dLayouts,
+  outdoorLandscapeDesign,
 ];
+
+export const services: Service[] = rawServices.map((service, index) => ({
+  ...service,
+  number: String(index + 1).padStart(2, "0"),
+}));
 
 export function getAllServices(): Service[] {
   return services;

@@ -245,8 +245,8 @@ export const heroSlides: HeroSlide[] = [
     id: 1,
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85",
-    eyebrow: "NAGPUR INTERIOR DESIGN STUDIO",
-    title: "Bespoke Interior Design Studio in Nagpur",
+    eyebrow: "Best interior design studio in nagpur",
+    title: "Custom Made Interior Design Studio in Nagpur",
     description:
       "Crafting thoughtful, functional, and luxury interiors for residential homes, apartments, private villas, and commercial offices across Nagpur.",
     projects: "6+",
@@ -265,7 +265,7 @@ export const heroSlides: HeroSlide[] = [
     eyebrow: "RESIDENTIAL & COMMERCIAL INTERIORS",
     title: "Transforming Spaces with Quality & Purpose",
     description:
-      "From custom teak joinery in Civil Lines to biophilic offices in MIHAN, we bring clarity, beauty, and long-lasting comfort to every space.",
+      "From custom teak furniture in Civil Lines to nature-inspired offices in MIHAN, we create beautiful, functional, and lasting spaces designed with purpose",
     projects: "100%",
     features: [
       "Modular Kitchen & Millwork",

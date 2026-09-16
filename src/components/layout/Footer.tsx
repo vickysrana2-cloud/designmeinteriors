@@ -125,6 +125,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/gallery" className="hover:text-[#9A8060] transition-colors">
+                  Gallery Showcase
+                </Link>
+              </li>
+              <li>
                 <Link href="/blog" className="hover:text-[#9A8060] transition-colors">
                   Design Journal & Blog
                 </Link>

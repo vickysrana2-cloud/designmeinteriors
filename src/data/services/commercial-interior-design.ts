@@ -5,7 +5,7 @@ export const commercialInteriorDesign: Service = {
   number: "02",
   title: "Commercial Interior Design",
   category: "Commercial",
-  shortDescription: "Designing functional and attractive interiors for businesses, including offices, retail spaces, and hospitality venues.",
+  shortDescription: "Designing a space to help a business operate efficiently and create the right experience for its customers, clients, or employees.",
   description: "Brand-defining commercial environments, boutique retail flagship stores, and inspiring corporate headquarters engineered for productivity, client engagement, and seamless operational workflow.",
   additionalDescription: "Commercial architecture must balance high-traffic durability with brand storytelling. We engineer spatial flow, acoustic zoning, adaptive workstations, and architectural lighting that enhance human interaction.",
   image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
@@ -15,23 +15,28 @@ export const commercialInteriorDesign: Service = {
   ],
   features: [
     {
-      title: "Strategic Spatial Planning",
-      description: "Optimizing floorplate density, circulation paths, and multi-functional collaboration zones.",
+      title: "Understanding the Business",
+      description: "Analyzing brand goals, operational workflow, and target demographic requirements.",
       icon: "Compass"
     },
     {
-      title: "Acoustic Engineering",
-      description: "Custom acoustic felt baffling, quiet focus pods, and sound-absorbing timber millwork.",
-      icon: "ShieldCheck"
-    },
-    {
-      title: "Brand Architecture",
-      description: "Translating brand identities into bespoke reception desks, feature walls, and tailored material palettes.",
+      title: "Space Planning and Zoning",
+      description: "Optimizing floorplate density, circulation paths, and multi-functional work zones.",
       icon: "Layers"
     },
     {
-      title: "Architectural Lighting",
-      description: "Human-centric circadian lighting systems, automated daylight harvesting, and task lighting.",
+      title: "Customer Experience",
+      description: "Crafting welcoming reception lobbies, intuitive navigation, and engaging client touchpoints.",
+      icon: "Box"
+    },
+    {
+      title: "Brand Identity",
+      description: "Translating corporate values into bespoke reception desks, architectural finishes, and branded interiors.",
+      icon: "ShieldCheck"
+    },
+    {
+      title: "Safety and Accessibility",
+      description: "Ensuring commercial grade fire compliance, accessibility standards, slip ratings, and durable materials.",
       icon: "Sun"
     }
   ],
@@ -69,6 +74,6 @@ export const commercialInteriorDesign: Service = {
   ],
   seo: {
     title: "Commercial Interior Design Services | DesignMeInteriors Studio",
-    description: "Designing functional and attractive interiors for businesses, including offices, retail spaces, and hospitality venues."
+    description: "Designing a space to help a business operate efficiently and create the right experience for its customers, clients, or employees."
   }
 };

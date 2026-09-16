@@ -102,8 +102,8 @@ export function Hero() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-[1050px]"
             >
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.02] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.02em] text-white backdrop-blur-[2px]">
-                <span className="h-[6px] w-[6px] rounded-full bg-[#9A8060]" />
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#FF6B00]/40 bg-black/40 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.05em] text-[#FF6B00] backdrop-blur-md shadow-[0_0_15px_rgba(255,107,0,0.15)]">
+                <span className="h-[6px] w-[6px] rounded-full bg-[#FF6B00] animate-pulse" />
                 {slide.eyebrow}
               </div>
 
