@@ -5,7 +5,7 @@ export const renovationAndRemodeling: Service = {
   number: "05",
   title: "Renovation and Remodeling",
   category: "Renovation",
-  shortDescription: "Overhauling existing spaces to modernize and improve functionality and aesthetics.",
+  shortDescription: "Improving, updating, and transforming existing buildings or spaces to enhance functionality and aesthetics without complete demolition.",
   description: "Comprehensive structural overhauls, historic building restorations, and layout re-engineering. We breathe new life into existing structures with modern craftsmanship and spatial purity.",
   additionalDescription: "Renovating requires a deep respect for structural integrity combined with bold spatial reimagining. We specialize in converting dated layouts into open-plan, light-filled spaces while upgrading insulation, plumbing, and smart home technology.",
   image: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1200&q=80",
@@ -15,23 +15,28 @@ export const renovationAndRemodeling: Service = {
   ],
   features: [
     {
-      title: "Structural Layout Re-Engineering",
-      description: "Removing load-bearing walls, installing steel beams, and creating open-concept living spaces.",
-      icon: "Layers"
-    },
-    {
-      title: "Historic & Period Restoration",
-      description: "Restoring historic plaster moldings, hardwood floors, and original architectural details.",
-      icon: "ShieldCheck"
-    },
-    {
-      title: "Kitchen & Bath Overhauls",
-      description: "Custom cabinetry, hidden pantries, spa-grade steam showers, and stone island slabs.",
+      title: "Existing Condition Assessment",
+      description: "Thoroughly inspecting structural integrity, MEP systems, and architectural renovation potential.",
       icon: "Compass"
     },
     {
-      title: "MEP & Smart Energy Upgrades",
-      description: "Integrating high-efficiency HVAC systems, radiant floor heating, and smart home automation.",
+      title: "Space Planning and Zoning",
+      description: "Re-engineering floor plans to eliminate dark corridors and optimize natural spatial flow.",
+      icon: "Layers"
+    },
+    {
+      title: "Material Reuse",
+      description: "Restoring and repurposing original timber, stone, and architectural details with modern craftsmanship.",
+      icon: "Box"
+    },
+    {
+      title: "Structural Feasibility",
+      description: "Evaluating load-bearing walls, steel beam installations, and safe architectural modifications.",
+      icon: "ShieldCheck"
+    },
+    {
+      title: "Budget Planning",
+      description: "Providing transparent cost estimation, material scheduling, and milestone value engineering.",
       icon: "Sun"
     }
   ],
@@ -69,6 +74,6 @@ export const renovationAndRemodeling: Service = {
   ],
   seo: {
     title: "Renovation & Remodeling Services | DesignMeInteriors Studio",
-    description: "Overhauling existing spaces to modernize and improve functionality and aesthetics."
+    description: "Improving, updating, and transforming existing buildings or spaces to enhance functionality and aesthetics without complete demolition."
   }
 };

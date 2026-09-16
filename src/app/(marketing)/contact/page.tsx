@@ -223,17 +223,11 @@ function ContactForm() {
                 <option value="commercial-interior-design">
                   Commercial Interior Design
                 </option>
-                <option value="interior-design-consultation">
-                  Interior Design Consultation
-                </option>
-                <option value="outdoor-landscape-design">
-                  Outdoor & Landscape Design
-                </option>
                 <option value="renovation-and-remodeling">
                   Renovation and Remodeling
                 </option>
-                <option value="interior-2d-3d-layouts">
-                  Interior 2D/3D Layouts
+                <option value="outdoor-landscape-design">
+                  Outdoor & Landscape Design
                 </option>
               </select>
             </div>

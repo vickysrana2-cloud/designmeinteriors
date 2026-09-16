@@ -40,7 +40,7 @@ export function ServiceFeatures({ features }: ServiceFeaturesProps) {
           lg:gap-y-14
         "
       >
-        {features.slice(0, 4).map((item, idx) => {
+        {features.map((item, idx) => {
           const isObject = typeof item !== "string";
 
           const title = isObject ? item.title : item;
