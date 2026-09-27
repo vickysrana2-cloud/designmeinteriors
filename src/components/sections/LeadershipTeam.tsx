@@ -95,7 +95,7 @@ export function LeadershipTeam() {
                 Growing up around his father&apos;s furniture contracting work, Sunny was exposed to furniture, materials, construction, and the process of transforming ideas into physical spaces from an early age.
               </p>
               <p>
-                After graduation, he pursued a Diploma in Interior Designing and went on to work as a Senior Interior Consultant for over 6 years. This experience helped him understand that successful interior design is about much more than aesthetics—it requires understanding the client, planning intelligently, managing budgets, and executing every detail with precision.
+                In BCCA, he pursued a Diploma in Interior Designing and went on to work as a Senior Interior Consultant for over 4 years. This experience helped him understand that successful interior design is about much more than aesthetics—it requires understanding the client, planning intelligently, managing budgets, and executing every detail with precision.
               </p>
               <p className="font-normal text-[#242321]">
                 This belief became the foundation of DesignMeInteriors: creating spaces that balance beauty, personal lifestyle, and lasting structural quality.

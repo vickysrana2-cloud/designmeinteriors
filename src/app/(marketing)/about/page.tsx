@@ -37,7 +37,7 @@ const CORE_VALUES = [
   },
   {
     number: "02",
-    title: "Foster Creativity & Designing",
+    title: "Encourage Creativity & Designing",
     description:
       "We believe creativity and design innovation are essential to creating distinctive, meaningful, and effective interior spaces.",
     icon: Lightbulb,

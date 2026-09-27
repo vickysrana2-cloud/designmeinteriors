@@ -19,7 +19,7 @@ const PHILOSOPHY = [
   },
   {
     number: "02",
-    title: "Function Before Decoration",
+    title: "Functional Before Decoration",
     shortTitle: "Functional",
     description:
       "Beautiful spaces should also work beautifully. Every layout is planned for everyday functionality.",
