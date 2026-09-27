@@ -16,8 +16,7 @@ const PROCESS_STEPS = [
     icon: MessageCircle,
     color: "text-[#D97706]",
     badgeBg: "bg-[#FFF8EC] border-[#FDE68A]",
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85",
+    image: "/process_img/consultation.jpg",
   },
   {
     step: "02",
@@ -38,8 +37,7 @@ const PROCESS_STEPS = [
     icon: LayoutGrid,
     color: "text-[#9333EA]",
     badgeBg: "bg-[#FAF5FF] border-[#E9D5FF]",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
+    image: "/process_img/design-development.jpg",
   },
   {
     step: "04",
@@ -49,8 +47,7 @@ const PROCESS_STEPS = [
     icon: Settings,
     color: "text-[#E11D48]",
     badgeBg: "bg-[#FFF1F2] border-[#FECDD3]",
-    image:
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=85",
+    image: "/process_img/execution.jpg",
   },
   {
     step: "05",
@@ -61,7 +58,7 @@ const PROCESS_STEPS = [
     color: "text-[#059669]",
     badgeBg: "bg-[#ECFDF5] border-[#A7F3D0]",
     image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+      "/process_img/handover.png",
   },
 ];
 
