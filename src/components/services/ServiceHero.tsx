@@ -10,7 +10,7 @@ interface ServiceHeroProps {
 }
 
 export function ServiceHero({ service, title, subtitle, description }: ServiceHeroProps) {
-  const displayTitle = title || service?.title || "Explore Our Comprehensive Interior Design Services.";
+  const displayTitle = title || service?.title || "Explore Our Interior Design Services.";
   const displaySubtitle = subtitle || (service?.number ? `Capabilities / ${service.number}` : "OUR SERVICES");
   const displayDesc = service?.shortDescription || service?.description || description || "We specialize in transforming visions into reality. Explore our portfolio of innovative architectural and interior design projects crafted with precision.";
 

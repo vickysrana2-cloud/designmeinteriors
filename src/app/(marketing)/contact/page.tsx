@@ -64,7 +64,7 @@ function ContactForm() {
     phone: "",
     location: "",
     serviceType: initialService,
-    budget: "",
+    budget: "Under ₹10 Lakhs",
     message: "",
   });
 
@@ -229,6 +229,7 @@ function ContactForm() {
                 <option value="outdoor-landscape-design">
                   Outdoor & Landscape Design
                 </option>
+                <option value="other">Other</option>
               </select>
             </div>
 
@@ -243,11 +244,10 @@ function ContactForm() {
                   setFormData({ ...formData, budget: e.target.value })
                 }
               >
-                <option value="">Select Estimated Budget (Optional)</option>
                 <option value="Under ₹10 Lakhs">Under ₹10 Lakhs</option>
-                <option value="₹10 Lakhs – ₹25 Lakhs">₹10 Lakhs – ₹25 Lakhs</option>
-                <option value="₹25 Lakhs – ₹50 Lakhs">₹25 Lakhs – ₹50 Lakhs</option>
-                <option value="₹50 Lakhs +">₹50 Lakhs +</option>
+                <option value="₹10 Lakhs to ₹20 Lakhs">₹10 Lakhs to ₹20 Lakhs</option>
+                <option value="₹20 Lakhs to ₹40 Lakhs">₹20 Lakhs to ₹40 Lakhs</option>
+                <option value="₹40 Lakhs +">₹40 Lakhs +</option>
                 <option value="Flexible / Undecided">Flexible / Undecided</option>
               </select>
             </div>
