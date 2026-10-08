@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "@/app/globals.css";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
+import { LoadingEffect } from "@/components/layout/LoadingEffect";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildLocalBusinessSchema, buildWebSiteSchema } from "@/lib/seo/structured-data";
 import { siteConfig } from "@/config/site";
@@ -90,6 +91,7 @@ export default function RootLayout({
         <JsonLd data={[localBusinessSchema, webSiteSchema]} />
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-[#F5F2EC] text-[#242321]">
+        <LoadingEffect />
         {children}
         <WhatsAppFloat />
       </body>
