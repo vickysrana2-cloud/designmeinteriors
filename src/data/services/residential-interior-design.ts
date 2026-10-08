@@ -8,7 +8,7 @@ export const residentialInteriorDesign: Service = {
   shortDescription: "Creating homes that are functional, comfortable, aesthetically pleasing, and tailored to the people who live there.",
   description: "Our residential studio creates bespoke living environments that reflect the unique lifestyle and personal aesthetic of private clients. From custom joinery to rare stone sourcing, we deliver sanctuaries of calm and distinction.",
   additionalDescription: "Every residence is tailored as a personal narrative. We harmonize custom architectural millwork, hand-selected tactile textiles, bespoke furniture engineering, and museum-grade art curation to build warm, enduring homes.",
-  image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+  image: "/servicesImages/residential.png",
   secondaryImages: [
     "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
     "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80"

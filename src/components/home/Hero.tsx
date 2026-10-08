@@ -107,11 +107,11 @@ export function Hero() {
                 {slide.eyebrow}
               </div>
 
-              <h1 className="max-w-[950px] text-white font-semibold tracking-[-0.055em] leading-[0.94] text-[56px] sm:text-[68px] md:text-[78px] lg:text-[86px] xl:text-[90px]">
+              <h1 className="max-w-[950px] text-white font-semibold tracking-[-0.055em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] leading-[0.94] text-[56px] sm:text-[68px] md:text-[78px] lg:text-[86px] xl:text-[90px]">
                 {slide.title}
               </h1>
 
-              <p className="ml-0 mt-8 max-w-[421px] text-[16px] font-medium leading-[1.35] text-white sm:ml-[40px] md:ml-[65px] md:mt-9 md:text-[17px] lg:text-[18px] lg:leading-6">
+              <p className="ml-0 mt-8 max-w-[421px] text-[16px] font-medium leading-[1.35] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] [text-shadow:_0_2px_8px_rgba(0,0,0,0.9)] sm:ml-[40px] md:ml-[65px] md:mt-9 md:text-[17px] lg:text-[18px] lg:leading-6">
                 {slide.description}
               </p>
 

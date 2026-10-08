@@ -8,7 +8,7 @@ export const commercialInteriorDesign: Service = {
   shortDescription: "Designing a space to help a business operate efficiently and create the right experience for its customers, clients, or employees.",
   description: "Brand-defining commercial environments, boutique retail flagship stores, and inspiring corporate headquarters engineered for productivity, client engagement, and seamless operational workflow.",
   additionalDescription: "Commercial architecture must balance high-traffic durability with brand storytelling. We engineer spatial flow, acoustic zoning, adaptive workstations, and architectural lighting that enhance human interaction.",
-  image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80",
+  image: "/servicesImages/commercial.png",
   secondaryImages: [
     "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
     "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"

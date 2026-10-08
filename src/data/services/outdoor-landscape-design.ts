@@ -8,7 +8,7 @@ export const outdoorLandscapeDesign: Service = {
   shortDescription: "Planning, designing, and arranging outdoor spaces to make them functional, attractive, comfortable, and connected with nature.",
   description: "Crafting seamlessly integrated outdoor living sanctuaries—from tranquil courtyard gardens to swimming pools, stone terraces, and luxury pergolas.",
   additionalDescription: "We believe architectural design should blur the boundaries between indoors and outdoors. Our landscape studio creates outdoor rooms, custom fire features, native plant schemes, and weather-resistant material selections that age gracefully.",
-  image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+  image: "/servicesImages/outdoorAndLandscape.png",
   secondaryImages: [
     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
     "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
