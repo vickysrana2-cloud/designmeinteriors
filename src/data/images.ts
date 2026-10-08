@@ -137,7 +137,7 @@ export const SERVICES: Service[] = [
     title: "Interior Architecture",
     description: "Complete floor plan design, space planning, and structural layouts to maximize natural light and overall room comfort.",
     features: ["Space Planning & Layouts", "Wall & Room Alterations", "3D Photorealistic Views", "Custom Lighting Plans"],
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80",
+    image: "/servicesImages/residential.png",
   },
   {
     id: "residential-design",
@@ -145,7 +145,7 @@ export const SERVICES: Service[] = [
     title: "Residential Interior Design",
     description: "Complete home interior design—from private villas to modern apartments—combining beauty, function, and everyday comfort.",
     features: ["Custom Furniture & Cabinets", "Material & Finish Selection", "Curated Furniture Sourcing", "Decor & Lighting Setup"],
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+    image: "/servicesImages/commercial.png",
   },
   {
     id: "commercial-spaces",
@@ -161,7 +161,7 @@ export const SERVICES: Service[] = [
     title: "Turnkey Project Management",
     description: "Complete project management from start to finish, including contractor supervision, material buying, and final hassle-free handover.",
     features: ["Contractor Management", "Budget & Schedule Tracking", "On-site Quality Supervision", "Complete Ready-to-Move Handover"],
-    image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80",
+    image: "/servicesImages/outdoorAndLandscape.png",
   }
 ];
 
@@ -240,7 +240,8 @@ export interface HeroSlide {
   previewImage: string;
 }
 
-export const heroSlides: HeroSlide[] = [
+// Backup of original unsplash hero slides
+export const backupHeroSlides: HeroSlide[] = [
   {
     id: 1,
     image:
@@ -274,5 +275,38 @@ export const heroSlides: HeroSlide[] = [
     ],
     previewImage:
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=400&q=80",
+  },
+];
+
+export const heroSlides: HeroSlide[] = [
+  {
+    id: 1,
+    image: "/heroSection/front landing page.png",
+    eyebrow: "Best interior design studio in nagpur",
+    title: "Custom Made Interior Design Studio in Nagpur",
+    description:
+      "Crafting thoughtful, functional, and luxury interiors for residential homes, apartments, private villas, and commercial offices across Nagpur.",
+    projects: "6+",
+    features: [
+      "2D/3D Floor Layouts",
+      "Turnkey Execution",
+      "Residential & Commercial",
+    ],
+    previewImage: "/heroSection/front landing page.png",
+  },
+  {
+    id: 2,
+    image: "/heroSection/second_landing_page.png",
+    eyebrow: "RESIDENTIAL & COMMERCIAL INTERIORS",
+    title: "Transforming Spaces with Quality & Purpose",
+    description:
+      "From custom teak furniture in Civil Lines to nature-inspired offices in MIHAN, we create beautiful, functional, and lasting spaces designed with purpose",
+    projects: "100%",
+    features: [
+      "Modular Kitchen & Millwork",
+      "Space Ergonomics",
+      "Quality Craftsmanship",
+    ],
+    previewImage: "/heroSection/second_landing_page.png",
   },
 ];
